@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { ROUTES } from './constants';
+import { Navigation } from './components';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           component={component}
         />
       ))}
+      <Navigation />
     </>
   );
 };
