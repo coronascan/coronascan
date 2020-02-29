@@ -1,1 +1,1 @@
-# coronascan
+# Corona Scan
