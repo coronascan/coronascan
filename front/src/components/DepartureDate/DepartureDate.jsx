@@ -17,6 +17,7 @@ class DepartureDate extends React.Component {
                     onChange={this.onChange}
                     value={this.state.date}
                     minDate={new Date()}
+                    maxDate={new Date(Date.parse(new Date()) + 30 * 1000 * 60 * 60 * 24)}
                 />
             </div>
         );
