@@ -4,7 +4,7 @@ import './DepartureDate.css';
 
 class DepartureDate extends React.Component {
     state = {
-        date: new Date(),
+        date: new Date()
     }
 
     onChange = date => this.setState({ date })
@@ -16,6 +16,7 @@ class DepartureDate extends React.Component {
                 <Calendar
                     onChange={this.onChange}
                     value={this.state.date}
+                    minDate={new Date()}
                 />
             </div>
         );
