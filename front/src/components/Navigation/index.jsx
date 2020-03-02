@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../constants';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import './style.css';
 
 const Navigation = ({ children, onClick }) => {
@@ -13,7 +14,9 @@ const Navigation = ({ children, onClick }) => {
           exact={path === '/'}
           to={path}
         >
-          {name}
+          <ButtonToolbar>
+            <Button variant="primary">{name}</Button>
+          </ButtonToolbar>
         </NavLink>
       ))}
     </nav>
