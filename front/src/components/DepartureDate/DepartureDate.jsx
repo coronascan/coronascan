@@ -19,6 +19,7 @@ class DepartureDate extends React.Component {
                     minDate={new Date()}
                     maxDate={new Date(Date.parse(new Date()) + 30 * 1000 * 60 * 60 * 24)}
                     onClickDay={(value) => GetDepartureDate(value)}
+                    calendarType={"Hebrew"}
                 />
             </div>
         );
@@ -37,11 +38,9 @@ function ToggleCalender() {
 }
 
 function GetDepartureDate(val) {
-    const departureDate = String(val);
-    const dateArray = departureDate.split(" ");
-    const year = dateArray[3];
-    const month = dateArray[1];
-    const day = dateArray[2];
+    const year = val.getFullYear();
+    const month = 1 + val.getMonth();
+    const day = val.getDate();
     const departureBtn = document.querySelector('.departureDate__button');
     const calendar = document.querySelector('.react-calendar');
     departureBtn.innerText = `${year}/${month}/${day}`;
