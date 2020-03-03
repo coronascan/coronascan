@@ -1,0 +1,11 @@
+.departureDate__button{
+    width: 100px;
+    height: 50px;
+}
+.react-calendar{
+    display: none;
+}
+
+.react-calendar__navigation__next2-button, .react-calendar__navigation__prev2-button {
+    display: none;
+}
