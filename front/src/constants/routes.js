@@ -1,10 +1,22 @@
-import { HomePage, WorldPage, MapPage, WarningPage, AboutPage } from '../pages';
+import {
+  HomePage,
+  ResultPage,
+  WorldPage,
+  MapPage,
+  WarningPage,
+  AboutPage,
+} from '../pages';
 
 const ROUTES = [
   {
     path: '/',
     name: '입국 가능 국가 조회',
     component: HomePage,
+  },
+  {
+    path: '/:contry',
+    name: '입국 가능 국가 조회 결과',
+    component: ResultPage,
   },
   {
     path: '/world',

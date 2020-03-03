@@ -12,11 +12,14 @@ const Navigation = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" activeKey={pathname}>
-          {ROUTES.map(({ path, name }) => (
-            <Nav.Link key={path} href={path}>
-              {name}
-            </Nav.Link>
-          ))}
+          {ROUTES.map(
+            ({ path, name }) =>
+              !path.includes(':') && (
+                <Nav.Link key={path} href={path}>
+                  {name}
+                </Nav.Link>
+              ),
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
