@@ -7,14 +7,16 @@ const App = () => {
   return (
     <>
       <Navigation />
-      {ROUTES.map(({ path, component }) => (
-        <Route
-          key={path}
-          path={path}
-          exact={path === '/'}
-          component={component}
-        />
-      ))}
+      <main>
+        {ROUTES.map(({ path, component }) => (
+          <Route
+            key={path}
+            path={path}
+            exact={path === '/'}
+            component={component}
+          />
+        ))}
+      </main>
     </>
   );
 };
