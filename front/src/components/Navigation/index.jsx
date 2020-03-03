@@ -6,15 +6,8 @@ import './style.css';
 
 const Navigation = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
-    <Navbar
-      collapseOnSelect
-      expand="md"
-      bg="dark"
-      variant="dark"
-      className="navigation"
-    >
+    <Navbar expand="md" bg="dark" variant="dark" className="navigation">
       <Navbar.Brand href="/">Corona Scan</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
