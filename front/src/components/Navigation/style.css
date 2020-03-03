@@ -1,15 +1,3 @@
-.nav {
-  position: absolute;
-  left: 50%;
-  bottom: 10vh;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem;
-  width: 60%;
-  border: 1px solid #000;
-}
-
-.nav .active {
-  font-weight: bold;
+.navigation {
+  box-shadow: 0 0 2rem #00000010;
 }
