@@ -11,8 +11,8 @@ const Navigation = () => {
     <Navbar
       collapseOnSelect
       expand="md"
-      bg="#fff"
-      variant="light"
+      bg="dark"
+      variant="dark"
       className="navigation"
     >
       <Navbar.Brand href="/">Corona Scan</Navbar.Brand>
