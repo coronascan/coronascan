@@ -6,6 +6,7 @@ import { Navigation } from './components';
 const App = () => {
   return (
     <>
+      <Navigation />
       {ROUTES.map(({ path, component }) => (
         <Route
           key={path}
@@ -14,7 +15,6 @@ const App = () => {
           component={component}
         />
       ))}
-      <Navigation />
     </>
   );
 };
