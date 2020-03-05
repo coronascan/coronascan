@@ -10,13 +10,8 @@ const App = () => {
     <>
       <Navigation />
       <main style={{ background: color }}>
-        {ROUTES.map(({ path, component }) => (
-          <Route
-            key={path}
-            path={path}
-            exact={path === '/'}
-            component={component}
-          />
+        {ROUTES.map(({ path, component, exact }) => (
+          <Route key={path} path={path} exact={exact} component={component} />
         ))}
       </main>
     </>

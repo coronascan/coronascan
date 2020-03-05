@@ -12,11 +12,13 @@ const ROUTES = [
     path: '/',
     name: '입국 가능 국가 조회하기',
     component: HomePage,
+    exact: true,
   },
   {
-    path: '/:contry',
+    path: '/result/:contry',
     name: '입국 가능 국가 조회 결과',
     component: ResultPage,
+    exact: true,
   },
   {
     path: '/world',
