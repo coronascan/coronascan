@@ -31,3 +31,15 @@ body {
     padding: 5vh 15vw;
   }
 }
+
+#root > main.bg-denied {
+  background: #a43f3d;
+}
+
+#root > main.bg-limit {
+  background: #e7a3a2;
+}
+
+#root > main.bg-pass {
+  background: #9fd3d0;
+}
