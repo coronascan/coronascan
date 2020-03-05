@@ -10,7 +10,7 @@ import {
 const ROUTES = [
   {
     path: '/',
-    name: '입국 가능 국가 조회',
+    name: '입국 가능 국가 조회하기',
     component: HomePage,
   },
   {
@@ -20,7 +20,7 @@ const ROUTES = [
   },
   {
     path: '/world',
-    name: '전세계 확진자',
+    name: '전 세계 확진자',
     component: WorldPage,
   },
   {
@@ -30,7 +30,7 @@ const ROUTES = [
   },
   {
     path: '/warning',
-    name: '외교부 권고 사항',
+    name: '외교부 여행 경고',
     component: WarningPage,
   },
   {
