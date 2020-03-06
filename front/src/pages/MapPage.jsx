@@ -11,6 +11,7 @@ const googleAPIKey = "AIzaSyC5JTn-jFdZ3t68S049uTSnTOCdXmvHg_A"
 해당 없음 : 초록 (default)
 */
 
+
 const data = [
   ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }],
   ['France', 1, "<b>입국제한조치</b><br>blah"],
@@ -18,12 +19,12 @@ const data = [
 ]
 
 const options = {
-  //datalessRegionColor: 'green',
   colorAxis: {colors: ['black', 'red']},
   tooltip: { isHtml: true, trigger: "visible" }
 };
 
 class MapPage extends Component {
+
   render() {
     return <div>
       <Container>
