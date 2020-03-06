@@ -42,4 +42,9 @@ body {
 
 #root > main.bg-pass {
   background: #9fd3d0;
+  
+/* TODO: 나중에 page 하위 폴더로 옮기기 */
+#reactgooglegraph-1 > div > div:first-child {
+  width: 100% !important;
+  height: 100% !important;
 }
