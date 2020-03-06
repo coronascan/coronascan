@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Chart } from "react-google-charts"
-const googleAPIKey = "AIzaSyC5JTn-jFdZ3t68S049uTSnTOCdXmvHg_A"
+const googleAPIKey = "AIzaSyBTvsuJcbhSf2giulYdP66791797JE4ZTA"
 
 /*
 입국 금지 : 검정 (0)
@@ -9,11 +9,6 @@ const googleAPIKey = "AIzaSyC5JTn-jFdZ3t68S049uTSnTOCdXmvHg_A"
 입국 제한 : 빨강 (1)
   - 국가명, 입국제한조치 제목 출력, 기준일자시간, 국가명 옆의 칸인 입국 제한 조치
 해당 없음 : default
-*/
-
-/*
-data 형식
-  -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
 */
 
 let data = [
@@ -32,12 +27,19 @@ class MapPage extends Component {
   getRestrictionData = async()=>{
     const response = await fetch('/map')
     const body = await response.json()
-    console.log(body)
-    /*
-    body.array.forEach(country => {
+/*
+data 형식
+  -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
+*/
+    body.forEach(elem =>{
+      let country = new Array()
+      country.push(elem.nation_eng)
+      country.push(elem.state)
+      country.push(elem.tooltip)
+      
       data.push(country)
     })
-     */
+
   }
 
   constructor(props){
