@@ -1,0 +1,30 @@
+.result-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  word-break: keep-all;
+}
+
+.result-card {
+  margin-bottom: 2rem;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.result-card .action {
+  margin: 1rem 0;
+  font-size: 36px;
+}
+
+.result-card .body {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(164, 63, 61, 0.3);
+  text-align: left;
+  white-space: pre-wrap;
+}
