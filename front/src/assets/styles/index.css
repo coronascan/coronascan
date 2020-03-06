@@ -15,10 +15,34 @@ body {
 }
 
 #root {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
+#root > main {
+  flex: 1;
+  padding: 5vh 5vw;
+}
+
+@media (min-width: 768px) {
+  #root > main {
+    padding: 5vh 15vw;
+  }
+}
+
+#root > main.bg-denied {
+  background: #a43f3d;
+}
+
+#root > main.bg-limit {
+  background: #e7a3a2;
+}
+
+#root > main.bg-pass {
+  background: #9fd3d0;
+  
 /* TODO: 나중에 page 하위 폴더로 옮기기 */
 #reactgooglegraph-1 > div > div:first-child {
   width: 100% !important;
