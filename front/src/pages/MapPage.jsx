@@ -11,11 +11,8 @@ const googleAPIKey = "AIzaSyC5JTn-jFdZ3t68S049uTSnTOCdXmvHg_A"
 해당 없음 : 초록 (default)
 */
 
-
-const data = [
-  ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }],
-  ['France', 1, "<b>입국제한조치</b><br>blah"],
-  ['Japan', 0, "<b>입국금지조치</b><br>~~~"]
+let data = [
+  ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
 ]
 
 const options = {
@@ -24,7 +21,26 @@ const options = {
 };
 
 class MapPage extends Component {
+  
+  state = {countries : this.data}
 
+  getRestrictionData = async()=>{
+    const response = await fetch("url")
+    const body = await response.json()
+    
+    body.array.forEach(country => {
+      data.push(country)
+    })
+  }
+
+  constructor(props){
+    super(props)
+
+    this.getRestrictionData().then(()=>{
+      this.setState({countries : data})
+    })
+  }
+  
   render() {
     return <div>
       <Container>
