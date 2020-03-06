@@ -16,37 +16,38 @@ let data = [
 ]
 
 const options = {
-  colorAxis: {colors: ['black', 'red']},
+  colorAxis: { colors: ['black', 'red'] },
   tooltip: { isHtml: true, trigger: "visible" }
 };
 
 class MapPage extends Component {
-  
-  state = {countries : this.data}
 
-  getRestrictionData = async()=>{
+  state = { countries: this.data }
+
+  getRestrictionData = async () => {
     const response = await fetch('/map')
     const body = await response.json()
-/*
-data 형식
-  -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
-*/
-    body.forEach(elem =>{
+    
+    /*
+    data 형식
+      -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
+    */
+
+    body.forEach(elem => {
       let country = new Array()
       country.push(elem.nation_eng)
       country.push(elem.state)
       country.push(elem.tooltip)
-      
+
       data.push(country)
     })
-
   }
 
-  constructor(props){
+  constructor(props) {
     super(props)
 
-    this.getRestrictionData().then(()=>{
-      this.setState({countries : data})
+    this.getRestrictionData().then(() => {
+      this.setState({ countries: data })
     })
   }
 
@@ -58,8 +59,8 @@ data 형식
           height={'100%'}
           chartType="GeoChart"
           mapsApiKey={googleAPIKey}
-          data={data}
-          options= {options}
+          data={this.state.countries}
+          options={options}
         />
       </Container>
     </div>
