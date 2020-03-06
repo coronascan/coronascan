@@ -8,7 +8,12 @@ const googleAPIKey = "AIzaSyC5JTn-jFdZ3t68S049uTSnTOCdXmvHg_A"
   - 입국금지 제목, 국가명, 기준일자 시간, 국가명 옆의 칸인 입국 제한 조치
 입국 제한 : 빨강 (1)
   - 국가명, 입국제한조치 제목 출력, 기준일자시간, 국가명 옆의 칸인 입국 제한 조치
-해당 없음 : 초록 (default)
+해당 없음 : default
+*/
+
+/*
+data 형식
+  -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
 */
 
 let data = [
@@ -25,7 +30,7 @@ class MapPage extends Component {
   state = {countries : this.data}
 
   getRestrictionData = async()=>{
-    const response = await fetch("url")
+    const response = await fetch("/restrictions")
     const body = await response.json()
     
     body.array.forEach(country => {
@@ -40,7 +45,7 @@ class MapPage extends Component {
       this.setState({countries : data})
     })
   }
-  
+
   render() {
     return <div>
       <Container>
