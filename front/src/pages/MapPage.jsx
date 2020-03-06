@@ -30,12 +30,14 @@ class MapPage extends Component {
   state = {countries : this.data}
 
   getRestrictionData = async()=>{
-    const response = await fetch("/restrictions")
+    const response = await fetch('/map')
     const body = await response.json()
-    
+    console.log(body)
+    /*
     body.array.forEach(country => {
       data.push(country)
     })
+     */
   }
 
   constructor(props){

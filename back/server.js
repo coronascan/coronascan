@@ -16,12 +16,13 @@ const connection = mongoose.connection;
 
 let Restriction = require('./collections/restrictions.model');
 
-restrictionRoutes.route('/').get(function(req,res){
+app.get('/map',function(req,res){
+    console.log("map in")
     Restriction.find(function(err,restrictions){
         if(err){
             console.log(err);
         }else{
-            res.json(restrictions);
+            res.send(restrictions)
         }
     });
 });
