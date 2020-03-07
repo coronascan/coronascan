@@ -4,10 +4,10 @@ import { ListGroupItem } from 'react-bootstrap'
 class ListItem extends Component {
 
     render() {
-        const items = this.props.items
+        const lists = this.props.lists
         
         return(
-            items.map((item)=>{
+            lists.map((item)=>{
                 return(
                     <div>
                         <ListGroupItem>
