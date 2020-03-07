@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { Chart } from "react-google-charts"
+import Item from './ListItem'
 const googleAPIKey = "AIzaSyBTvsuJcbhSf2giulYdP66791797JE4ZTA"
 
 /*
@@ -11,6 +12,7 @@ const googleAPIKey = "AIzaSyBTvsuJcbhSf2giulYdP66791797JE4ZTA"
 해당 없음 : default
 */
 
+let items = []
 let data = [
   ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
 ]
@@ -22,16 +24,18 @@ const options = {
 
 class MapPage extends Component {
 
-  state = { countries: data }
-  
+  state = {
+    countries: data, //지도 위의 데이터
+    lists: items // 리스트뷰 데이터
+  }
+
+  /*
+  data 형식
+    -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
+  */
   getRestrictionData = async () => {
     const response = await fetch('/map')
     const body = await response.json()
-    
-    /*
-    data 형식
-      -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
-   */
 
     body.forEach(elem => {
       let country = new Array()
@@ -39,6 +43,10 @@ class MapPage extends Component {
       country.push(elem.state)
       country.push(elem.tooltip)
 
+      if(elem.listview){
+        items.push(country)
+        return true
+      }
       data.push(country)
     })
   }
@@ -49,8 +57,10 @@ class MapPage extends Component {
     this.getRestrictionData().then(() => {
       this.setState({ countries: data })
     })
+
+    items.push(["test1"], ["test2"])
   }
- 
+
   render() {
     return <div>
       <Container>
@@ -62,6 +72,12 @@ class MapPage extends Component {
           data={this.state.countries}
           options={options}
         />
+      </Container>
+
+      <Container>
+        <ListGroup>
+          <Item items={this.state.lists}/>
+        </ListGroup>
       </Container>
     </div>
   }
