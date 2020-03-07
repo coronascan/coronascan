@@ -12,11 +12,10 @@ const googleAPIKey = "AIzaSyBTvsuJcbhSf2giulYdP66791797JE4ZTA"
 */
 
 let data = [
-  ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }],
+  ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
 ]
 
 const options = {
-  displayMode : 'markers',
   colorAxis: { colors: ['black', 'red'] },
   tooltip: { isHtml: true, trigger: "visible" }
 };
@@ -24,7 +23,6 @@ const options = {
 class MapPage extends Component {
 
   state = { countries: data }
-
   
   getRestrictionData = async () => {
     const response = await fetch('/map')

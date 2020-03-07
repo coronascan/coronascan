@@ -7,7 +7,8 @@ let Restriction = new Schema({
     nation_eng:String,
     state: Number,
     detail: String,
-    tooltip: String
+    tooltip: String,
+    listview : Boolean
 });
 
 module.exports = mongoose.model('Restriction', Restriction);
