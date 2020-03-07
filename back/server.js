@@ -7,8 +7,6 @@ const mongoose = require('mongoose');
 const db_config = require('./config/db-config.json');
 const PORT = 4001;
 
-let Restriction = require('./collections/restrictions.model');
-
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -16,13 +14,15 @@ app.use(bodyParser.json());
 mongoose.connect(db_config.addr,{useNewUrlParser: true});
 const connection = mongoose.connection;
 
+let Restriction = require('./collections/restrictions.model');
 
-restrictionRoutes.route('/').get(function(req,res){
+app.get('/map',function(req,res){
+    console.log("map in")
     Restriction.find(function(err,restrictions){
         if(err){
             console.log(err);
         }else{
-            res.json(restriction);
+            res.send(restrictions)
         }
     });
 });
@@ -30,7 +30,6 @@ restrictionRoutes.route('/').get(function(req,res){
 connection.once('open', function(){
     console.log("MongoDB database connection established successfully");
 })
-
 
 app.use('/restrictions', restrictionRoutes);
 
