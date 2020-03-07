@@ -22,8 +22,8 @@ const options = {
 
 class MapPage extends Component {
 
-  state = { countries: this.data }
-
+  state = { countries: data }
+  
   getRestrictionData = async () => {
     const response = await fetch('/map')
     const body = await response.json()
@@ -31,7 +31,7 @@ class MapPage extends Component {
     /*
     data 형식
       -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
-    */
+   */
 
     body.forEach(elem => {
       let country = new Array()
@@ -50,7 +50,7 @@ class MapPage extends Component {
       this.setState({ countries: data })
     })
   }
-
+ 
   render() {
     return <div>
       <Container>
