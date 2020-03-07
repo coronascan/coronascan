@@ -12,18 +12,20 @@ const googleAPIKey = "AIzaSyBTvsuJcbhSf2giulYdP66791797JE4ZTA"
 */
 
 let data = [
-  ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
+  ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }],
 ]
 
 const options = {
+  displayMode : 'markers',
   colorAxis: { colors: ['black', 'red'] },
   tooltip: { isHtml: true, trigger: "visible" }
 };
 
 class MapPage extends Component {
 
-  state = { countries: this.data }
+  state = { countries: data }
 
+  
   getRestrictionData = async () => {
     const response = await fetch('/map')
     const body = await response.json()
@@ -31,7 +33,7 @@ class MapPage extends Component {
     /*
     data 형식
       -> ["나라명(영어)", "상태", "디테일(툴팁용)"]
-    */
+   */
 
     body.forEach(elem => {
       let country = new Array()
@@ -50,7 +52,7 @@ class MapPage extends Component {
       this.setState({ countries: data })
     })
   }
-
+ 
   render() {
     return <div>
       <Container>
