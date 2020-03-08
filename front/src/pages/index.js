@@ -1,4 +1,4 @@
-export { default as HomePage } from './HomePage';
+export { default as HomePage } from './HomePage/HomePage';
 export { default as ResultPage } from './ResultPage';
 export { default as WorldPage } from './WorldPage';
 export { default as MapPage } from './MapPage/index';
