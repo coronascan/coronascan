@@ -36,6 +36,7 @@ const ROUTES = [
     path: '/map',
     name: '제한 조치 시행국 지도로 보기',
     component: MapPage,
+    exact: true,
   },
   {
     path: '/warning',
