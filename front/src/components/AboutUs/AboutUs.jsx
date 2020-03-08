@@ -9,7 +9,7 @@ function AboutUs({ name, img, position, info }) {
                 alt={name}
             />
             <div className="member__name-box">
-                <h2>{name}</h2>
+                <h3>{name}</h3>
                 <span>Position : {position}</span>
             </div>
         </div>

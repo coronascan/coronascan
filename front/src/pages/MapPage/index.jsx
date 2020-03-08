@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import Item from '../../components/MapPage/ListItem';
 import Map from '../../components/MapPage/Map';
 import './style.css';
@@ -46,12 +46,10 @@ class MapPage extends Component {
 
   constructor(props) {
     super(props);
-
     this.getRestrictionData().then(() => {
       this.setState({ countries: data });
     });
-
-    items.push(['test1'], ['test2']);
+    
   }
 
   render() {

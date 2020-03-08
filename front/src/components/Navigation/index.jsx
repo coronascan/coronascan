@@ -7,7 +7,7 @@ import './style.css';
 const Navigation = () => {
   const { pathname } = useLocation();
   return (
-    <Navbar expand="md" bg="dark" variant="dark" className="navigation">
+    <Navbar expand="md" bg="black" variant="dark" className="navigation">
       <Navbar.Brand href="/">Corona Scan</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
