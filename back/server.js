@@ -9,26 +9,28 @@ const PORT = 4001;
 app.use(cors());
 app.use(bodyParser.json());
 
-//nodemon server
+// connect mongodb
 mongoose.connect(db_config.addr,{useNewUrlParser: true});
 const connection = mongoose.connection;
 
-let Restriction = require('./collections/restrictions.model');
+const Restriction = require('./collections/restrictions.model');
+const Warning = require('./collections/warnings.model');
 
 app.get('/map',(req,res)=>{
     console.log("/map in")
-    Restriction.find(function(err,restrictions){
-        if(err){
-            console.log(err);
-        }else{
-            res.send(restrictions)
-        }
+    Restriction.find((err,restrictions)=>{
+        if(err){console.log(err); return false;}
+        res.send(restrictions)
+
     });
 });
 
 app.get('/warning', (req, res)=>{
     console.log("/warning in")
-    
+    Warning.find((err, warnings)=>{
+        if(err){console.log(err); return false;}
+        res.send(warnings)
+    })
 })
 
 connection.once('open', function(){
