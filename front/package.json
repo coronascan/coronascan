@@ -16,11 +16,13 @@
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-calendar": "^2.19.2",
+    "react-cool-onclickoutside": "^1.3.2",
     "react-dom": "^16.13.0",
     "react-google-charts": "^3.0.15",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "react-search": "^2.1.1"
+    "react-search": "^2.1.1",
+    "use-places-autocomplete": "^1.0.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
