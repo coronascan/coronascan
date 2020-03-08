@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Alert } from 'react-bootstrap'
 import Map from '../components/MapPage/Map'
 
-let temp = [
+//외교부 권고사항이 다른 곳에서 필요한지? 필요 없다면 db에 필요한 것만 넣자
+
+let data = [
   ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
 ]
 class WarningPage extends Component {
   
   state = {
-    countries : temp
+    countries : data
   }
   render() {
     return (
