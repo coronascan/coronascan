@@ -11,8 +11,8 @@ const AutoComplete = () => {
     setValue,
     clearSuggestions
   } = usePlacesAutocomplete({
-    requestOptions: { types: ['(cities)'] },
-    debounce: 300
+    requestOptions: { types: ["(regions)"] },
+    debounce: 600
   });
 
 

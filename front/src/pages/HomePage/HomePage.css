@@ -56,9 +56,11 @@
     list-style: none;
     background: #fff;
     border: 1px solid #e3e3e3;
-    padding: 10px 0;
 }
 .homepage__contents div ul li{
-    line-height: 30px;
+    padding: 10px 0;
     cursor: pointer;
+}
+.homepage__contents div ul li:hover{
+    background: #f2f2f2;
 }
