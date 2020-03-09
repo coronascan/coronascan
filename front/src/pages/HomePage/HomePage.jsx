@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AutoComplete from '../../components/HomePage/AutoComplete';
 import { Button } from 'react-bootstrap';
 import './HomePage.css';
@@ -21,7 +21,7 @@ const HomePage = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default HomePage;
