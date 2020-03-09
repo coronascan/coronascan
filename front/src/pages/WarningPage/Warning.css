@@ -1,0 +1,21 @@
+.warning__container{
+    display: flex;
+    align-items: baseline;
+}
+.warning__step{
+    margin-left: 20px;
+}
+.mail_submit_btn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+label{
+    font-size: 14px;
+}
+
+@media (max-width: 960px){
+    .warning__container{
+        flex-direction: column;
+    }
+}

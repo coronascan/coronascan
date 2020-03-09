@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import Item from '../../components/MapPage/ListItem';
 import Map from '../../components/MapPage/Map';
-import './style.css';
 
 /*
 입국 금지 : 검정 (0)
