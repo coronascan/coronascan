@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Alert } from 'react-bootstrap'
+import { Container, Row, Col, Alert } from 'react-bootstrap'
 import Map from '../components/MapPage/Map'
 
 let data = [
