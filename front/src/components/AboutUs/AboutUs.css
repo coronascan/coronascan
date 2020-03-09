@@ -1,4 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); */
+.about-us__text{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
 .member__container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -9,7 +15,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* font-family: 'Montserrat', sans-serif; */
 }
 .member-box img{
     width: 108px;
@@ -30,7 +35,7 @@
     margin-left: 20px;
     margin-bottom: 20px;
 }
-.member__name-box h2{
+.member__name-box h3{
     font-size: 18px;
     margin: 0;
     font-weight: bold;

@@ -1,0 +1,40 @@
+
+.homepage{
+    background-image: url(./Worldmap_bg.svg);
+    text-align: center;
+    height: 100vh;
+}
+.homepage__contents{
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 50px 0;
+    margin: auto;
+    transform: translateY(30%);
+}
+.homepage__contents h3{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.homepage__btn-group{
+    position: relative;
+    width: 680px;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.homepage__btn-group button:nth-child(1){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.homepage__btn-group button:nth-child(2){
+    float: right;
+}
+
+/* AutoComplete */
+.sc-bdVaJa{
+    max-width: 680px;
+    margin: 0 auto;
+    /* border: 1px solid #000; */
+}

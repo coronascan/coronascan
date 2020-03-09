@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +7,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  height: 100vh;
 }
 
 #root {
@@ -21,28 +19,75 @@ body {
   height: 100%;
 }
 
-#root > main {
+/* #root > main {
   flex: 1;
-  padding: 5vh 5vw;
+} */
+
+h2{
+  font-size: 24px;
+  padding: 110px 0 0;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
-  #root > main {
-    padding: 5vh 15vw;
+section {
+  max-width: 1320px;
+  padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+  h2{
+    font-size: 18px;
+    font-weight: bold;
   }
 }
 
+.bg-grey{
+  background: #f4f4f4;
+}
+.bg-red01{
+  background: #EDD3D2;
+}
+.bg-red02{
+  background: #E7A3A2;
+}
+.bg-red03{
+  background: #CB6E6D;
+}
+.bg-red04{
+  background: #A43F3D;
+}
+.bg-red05{
+  background: #731B1A;
+}
+
+.bg-alert-red{
+  /* .bg-red04 */
+  background: #A43F3D;
+}
+.bg-alert-yellow{
+  background: #BDAF7E;
+}
+.bg-alert-blue{
+  background: #3D6298;
+}
+.bg-alert-black{
+  background: #3E3E3E;
+}
+
+
 #root > main.bg-denied {
+  /* .bg-red04 */
   background: #a43f3d;
 }
 
 #root > main.bg-limit {
+  /* .bg-red02 */
   background: #e7a3a2;
 }
 
 #root > main.bg-pass {
   background: #9fd3d0;
-  
+}
 /* TODO: 나중에 page 하위 폴더로 옮기기 */
 #reactgooglegraph-1 > div > div:first-child {
   width: 100% !important;
