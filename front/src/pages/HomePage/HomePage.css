@@ -50,3 +50,24 @@
 .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
     padding-right: 10px;
 }
+
+@media (max-width: 767px){
+    .homepage__contents h3{
+        font-size: 14px;
+    }
+    .homepage__contents{
+        transform: none;
+        margin-top: 30px;
+    }
+    .homepage__btn-group{
+        width: 100%;
+    }
+    .homepage__btn-group button:nth-child(1){
+        position: initial;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    .homepage__btn-group button:nth-child(2){
+        float: none;
+    }
+}

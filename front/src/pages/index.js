@@ -3,6 +3,6 @@ export { default as ResultPage } from './ResultPage';
 export { default as ResultMapPage } from './ResultMapPage';
 export { default as WorldPage } from './WorldPage';
 export { default as MapPage } from './MapPage/index';
-export { default as WarningPage } from './WarningPage';
+export { default as WarningPage } from './WarningPage/WarningPage';
 export { default as AboutPage } from './AboutPage';
-export { default as MailPage } from './MailPage';
+export { default as MailPage } from './MailPage/MailPage';
