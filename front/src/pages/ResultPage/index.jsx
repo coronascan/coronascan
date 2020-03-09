@@ -48,7 +48,7 @@ const ResultPage = props => {
           {/* // TODO: 입국 허용일 때 문구 추가 */}
           {data.state ? '입국 제한 조치' : '입국 금지 조치'}
         </h3>
-        <p>{data.date} 기준, 출처 외교부</p>
+        <p className="source">{data.date} 기준, 출처 : 외교부</p>
         <p className="body">{data.detail}</p>
       </div>
       <Button variant="dark" onClick={handleClick}>

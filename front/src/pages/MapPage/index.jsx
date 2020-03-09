@@ -36,10 +36,11 @@ class MapPage extends Component {
       country.push(elem.state);
       country.push(elem.tooltip);
 
-      if (elem.listview) {
+      if (elem.listview == true) {
         items.push(country);
         return true;
       }
+
       data.push(country);
     });
   };

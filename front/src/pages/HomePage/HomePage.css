@@ -8,7 +8,7 @@
     max-width: 900px;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 15px;
-    padding: 50px 0;
+    padding: 50px 20px;
     margin: auto;
     transform: translateY(30%);
 }
@@ -33,8 +33,20 @@
 }
 
 /* AutoComplete */
-.sc-bdVaJa{
+.homepage__contents>div{
+    position: relative;
     max-width: 680px;
-    margin: 0 auto;
-    /* border: 1px solid #000; */
+    margin: 0 auto 40px;
+}
+.homepage__contents input{
+    outline: none;
+    padding-left: 30px;
+}
+
+.MuiOutlinedInput-notchedOutline{
+    border: 1px solid #000 !important;
+}
+
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    padding-right: 10px;
 }
