@@ -47,7 +47,7 @@ const MemberList = [
 const About = () => {
   return <section>
     <h2>About Us</h2>
-    <span>6인조 여성 개발팀</span>
+    <span className="about-us__text">6인조 여성 개발팀</span>
     <div className="member__container">
       {MemberList.map(renderAboutUs)}
     </div>

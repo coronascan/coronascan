@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "google": "^2.1.0",
+    "pdftk": "^0.0.0-rc.0",
+    "react-search": "^2.1.1"
+  }
+}

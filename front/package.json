@@ -14,12 +14,13 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
     "react": "^16.13.0",
-    "react-calendar": "^2.19.2",
     "react-bootstrap": "^1.0.0-beta.17",
+    "react-calendar": "^2.19.2",
     "react-dom": "^16.13.0",
     "react-google-charts": "^3.0.15",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-search": "^2.1.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -38,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4001"
 }

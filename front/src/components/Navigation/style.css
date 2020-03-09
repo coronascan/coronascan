@@ -1,3 +1,19 @@
 .navigation {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
   box-shadow: 0 0 2rem #00000010;
+}
+.navbar-dark .navbar-toggler{
+  border-color: none;
+}
+.bg-black {
+  background-color: #242424 !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 14px;
+}
+.navbar-dark .navbar-nav .nav-link.active{
+  color: #E7A3A2;
 }
