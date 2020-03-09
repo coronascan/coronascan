@@ -8,14 +8,14 @@ let data = [
 class WarningPage extends Component {
 
   state = {
-    countries : data
+    countries: data
   }
 
-  getWarningData= async()=>{
+  getWarningData = async () => {
     const response = await fetch('/warning')
     const body = await response.json()
-    
-    body.forEach((country)=>{
+
+    body.forEach((country) => {
       let countries = []
       countries.push(country.nation_eng)
       countries.push(country.state)
@@ -25,20 +25,18 @@ class WarningPage extends Component {
     })
   }
 
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.getWarningData().then(()=>{
-      this.setState({countries : data})
+    this.getWarningData().then(() => {
+      this.setState({ countries: data })
     })
   }
 
   render() {
     return (
-      <div>
+      <section>
+        <h2>코로나 관련 외교부 여행 권고사항</h2>
         <Container>
-          <Row>
-            <h1>코로나 관련 외교부 여행 권고사항</h1>
-          </Row>
           <Row>
             <Alert variant="primary">여행 단계별 행동 요령</Alert>
           </Row>
@@ -63,7 +61,7 @@ class WarningPage extends Component {
             <Map countries={this.state.countries}></Map>
           </Row>
         </Container>
-      </div>
+      </section>
     )
   }
 }
