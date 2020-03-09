@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/lab": "^4.0.0-alpha.45",
     "google": "^2.1.0",
+    "material-ui": "^0.20.2",
     "nodemailer": "^6.4.4",
     "pdftk": "^0.0.0-rc.0",
     "react-search": "^2.1.1"

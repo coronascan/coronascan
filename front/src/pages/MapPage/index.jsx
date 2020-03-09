@@ -50,10 +50,6 @@ class MapPage extends Component {
     this.getRestrictionData().then(() => {
       this.setState({ countries: data });
     });
-<<<<<<< HEAD
-
-=======
->>>>>>> 53
   }
 
   render() {
