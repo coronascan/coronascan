@@ -2,11 +2,11 @@ import {
   HomePage,
   ResultPage,
   ResultMapPage,
-  WorldPage,
   MapPage,
   WarningPage,
   AboutPage,
   NotFoundPage,
+  MailPage,
 } from '../pages';
 
 const ROUTES = [
@@ -29,11 +29,6 @@ const ROUTES = [
     exact: true,
   },
   {
-    path: '/world',
-    name: '전 세계 확진자',
-    component: WorldPage,
-  },
-  {
     path: '/map',
     name: '제한 조치 시행국 지도로 보기',
     component: MapPage,
@@ -41,7 +36,7 @@ const ROUTES = [
   },
   {
     path: '/warning',
-    name: '외교부 여행 경고',
+    name: '외교부 여행 경보',
     component: WarningPage,
   },
   {
@@ -53,6 +48,11 @@ const ROUTES = [
     path: '/404',
     name: 'Not Found',
     component: NotFoundPage,
+  },
+  {
+    path: '/mail',
+    name: 'Mail Us',
+    component: MailPage,
   },
 ];
 

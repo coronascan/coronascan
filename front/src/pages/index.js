@@ -6,3 +6,4 @@ export { default as MapPage } from './MapPage/index';
 export { default as WarningPage } from './WarningPage';
 export { default as AboutPage } from './AboutPage';
 export { default as NotFoundPage } from './NotFoundPage';
+export { default as MailPage } from './MailPage';

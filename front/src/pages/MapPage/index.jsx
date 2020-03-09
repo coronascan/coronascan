@@ -50,17 +50,19 @@ class MapPage extends Component {
     this.getRestrictionData().then(() => {
       this.setState({ countries: data });
     });
-    
   }
 
   render() {
     return (
-      <div className="map-area">
-        <Map countries={this.state.countries} />
-        <ListGroup>
-          <Item lists={this.state.lists} />
-        </ListGroup>
-      </div>
+      <section>
+        <h2>입국 제한 조치 시행국 지도로 보기</h2>
+        <div className="map-area">
+          <Map countries={this.state.countries} />
+          <ListGroup>
+            <Item lists={this.state.lists} />
+          </ListGroup>
+        </div>
+      </section>
     );
   }
 }
