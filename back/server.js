@@ -52,7 +52,7 @@ app.post('/mail', (req, res)=>{
     let mailOptions = {
       from: email,
       to: 'coronascan2020@gmail.com',
-      subject: "from : " + email +" "+ subject,
+      subject: subject + "[from : " + email +"]",
       text: contents
     };
   
