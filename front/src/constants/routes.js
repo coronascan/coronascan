@@ -9,6 +9,11 @@ import {
 
 const ROUTES = [
   {
+    path: '/map',
+    name: '제한 조치 시행국 지도로 보기',
+    component: MapPage,
+  },
+  {
     path: '/',
     name: '입국 가능 국가 조회하기',
     component: HomePage,
@@ -19,16 +24,6 @@ const ROUTES = [
     name: '입국 가능 국가 조회 결과',
     component: ResultPage,
     exact: true,
-  },
-  {
-    path: '/world',
-    name: '전 세계 확진자',
-    component: WorldPage,
-  },
-  {
-    path: '/map',
-    name: '제한 조치 시행국 지도로 보기',
-    component: MapPage,
   },
   {
     path: '/warning',
