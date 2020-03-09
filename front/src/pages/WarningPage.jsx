@@ -8,14 +8,14 @@ let data = [
 class WarningPage extends Component {
 
   state = {
-    countries: data
+    countries : data
   }
 
-  getWarningData = async () => {
+  getWarningData= async()=>{
     const response = await fetch('/warning')
     const body = await response.json()
-
-    body.forEach((country) => {
+    
+    body.forEach((country)=>{
       let countries = []
       countries.push(country.nation_eng)
       countries.push(country.state)
@@ -25,10 +25,10 @@ class WarningPage extends Component {
     })
   }
 
-  constructor(props) {
+  constructor(props){
     super(props)
-    this.getWarningData().then(() => {
-      this.setState({ countries: data })
+    this.getWarningData().then(()=>{
+      this.setState({countries : data})
     })
   }
 
