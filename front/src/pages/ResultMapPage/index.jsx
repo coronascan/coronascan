@@ -45,6 +45,7 @@ class ResultMapPage extends Component {
       data.push([nation_eng, 0, tooltip]);
     } catch (error) {
       console.log('선택한 국가 정보 가져오기 실패');
+      this.props.history.push('/404');
     }
   };
 

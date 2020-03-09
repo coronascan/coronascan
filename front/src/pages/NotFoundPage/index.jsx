@@ -3,7 +3,6 @@ import { Button } from 'react-bootstrap';
 import './NotFoundPage.css';
 
 const notFoundPage = props => {
-  console.log(props.history);
   return (
     <div className="not-found-area">
       <h2>404 Not Found</h2>
