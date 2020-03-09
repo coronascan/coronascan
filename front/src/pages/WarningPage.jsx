@@ -6,7 +6,7 @@ let data = [
   ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
 ]
 class WarningPage extends Component {
-  
+
   state = {
     countries : data
   }
@@ -59,9 +59,9 @@ class WarningPage extends Component {
           </Row>
         </Container>
         <Container>
-        <Row>
-          <Map countries = {this.state.countries}></Map>
-        </Row>
+          <Row>
+            <Map countries={this.state.countries}></Map>
+          </Row>
         </Container>
       </div>
     )
