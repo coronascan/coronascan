@@ -14,7 +14,8 @@ const Navigation = () => {
         <Nav className="mr-auto" activeKey={pathname}>
           {ROUTES.map(
             ({ path, name }) =>
-              !path.includes(':') && (
+              !path.includes(':') &&
+              !path.includes('404') && (
                 <Nav.Link key={path} href={path}>
                   {name}
                 </Nav.Link>

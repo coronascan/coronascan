@@ -6,6 +6,7 @@ import {
   MapPage,
   WarningPage,
   AboutPage,
+  NotFoundPage,
 } from '../pages';
 
 const ROUTES = [
@@ -47,6 +48,11 @@ const ROUTES = [
     path: '/about',
     name: 'About Us',
     component: AboutPage,
+  },
+  {
+    path: '/404',
+    name: 'Not Found',
+    component: NotFoundPage,
   },
 ];
 

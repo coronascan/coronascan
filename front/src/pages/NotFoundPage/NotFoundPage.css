@@ -1,0 +1,13 @@
+.not-found-area {
+  height: 100vh;
+}
+
+.not-found-area p {
+  margin-top: 2rem;
+  text-align: center;
+}
+.not-found-area button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
