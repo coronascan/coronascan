@@ -5,6 +5,7 @@ import {
   MapPage,
   WarningPage,
   AboutPage,
+  MailPage
 } from '../pages';
 
 const ROUTES = [
@@ -39,6 +40,11 @@ const ROUTES = [
     path: '/about',
     name: 'About Us',
     component: AboutPage,
+  },
+  {
+    path: '/mail',
+    name: 'Mail Us',
+    component: MailPage,
   },
 ];
 
