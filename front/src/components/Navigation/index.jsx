@@ -8,7 +8,7 @@ const Navigation = () => {
   const { pathname } = useLocation();
   return (
     <Navbar expand="md" bg="black" variant="dark" className="navigation">
-      <Navbar.Brand href="/">Corona Scan</Navbar.Brand>
+      <Navbar.Brand href="/"></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" activeKey={pathname}>

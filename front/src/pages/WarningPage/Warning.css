@@ -1,10 +1,28 @@
 .warning__container{
     display: flex;
     align-items: baseline;
+    margin-top: 50px;
+}
+.warning__container h3{
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-top: 20px;
+    color: #A43F3D;
+}
+
+.warning__container ul{
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 10px 21px #e7eeef;
+    padding: 30px 30px 30px 50px;
+    border-radius: 15px;
+    margin: 10px 20px 40px;
 }
 .warning__step{
     margin-left: 20px;
 }
+
 .mail_submit_btn{
     position: relative;
     left: 50%;
@@ -17,5 +35,9 @@ label{
 @media (max-width: 960px){
     .warning__container{
         flex-direction: column;
+        margin-top: 20px;
+    }
+    .warning__container ul, .warning__map{
+        width: 100%;
     }
 }
