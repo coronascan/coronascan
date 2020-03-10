@@ -1,8 +1,7 @@
 import {
+  MapPage,
   HomePage,
   ResultPage,
-  WorldPage,
-  MapPage,
   WarningPage,
   AboutPage,
 } from '../pages';
