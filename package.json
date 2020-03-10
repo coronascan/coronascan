@@ -3,6 +3,7 @@
     "google": "^2.1.0",
     "nodemailer": "^6.4.4",
     "pdftk": "^0.0.0-rc.0",
-    "react-search": "^2.1.1"
+    "react-search": "^2.1.1",
+    "react-simple-maps": "^1.0.0-beta.0"
   }
 }
