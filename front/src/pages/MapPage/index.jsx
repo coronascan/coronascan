@@ -54,7 +54,7 @@ class MapPage extends Component {
   render() {
     return (
       <section>
-        <h2>입국 제한 조치 시행국 지도로 보기</h2>
+        <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
         <div className="map-area">
           <Map countries={this.state.countries} />
           <ListGroup>

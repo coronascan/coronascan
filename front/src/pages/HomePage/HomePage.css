@@ -1,12 +1,17 @@
 
 .homepage{
-    background-image: url(./Worldmap_bg.svg);
+    position: relative;
+    /* background: url(./Worldmap_bg.svg) no-repeat center;
+    background-size: cover; */
+    /* background: #fafafa; */
+    background: #f2f7fb;
     text-align: center;
     height: 100vh;
 }
 .homepage__contents{
     max-width: 900px;
     background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 21px #e7eeef;
     border-radius: 15px;
     padding: 50px 20px;
     margin: auto;
@@ -19,7 +24,7 @@
 .homepage__btn-group{
     position: relative;
     width: 680px;
-    margin: auto;
+    margin: 0 auto !important;
     text-align: center;
     overflow: hidden;
 }

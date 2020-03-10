@@ -26,8 +26,10 @@ body {
 
 h2{
   font-size: 24px;
-  padding: 110px 0 0;
+  font-weight: bold;
   text-align: center;
+  padding: 150px 0 0;
+  margin-bottom: 0;
 }
 
 section {
@@ -58,7 +60,6 @@ section {
 @media (max-width: 767px) {
   h2{
     font-size: 18px;
-    font-weight: bold;
   }
   .btn{
     width: 100%;
