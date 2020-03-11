@@ -16,6 +16,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
+
 .member-box img{
     width: 108px;
     height: 108px;
@@ -53,5 +54,6 @@
 @media screen and (max-width:767px){
     .member__container{
         grid-template-columns: repeat(1, 1fr);
+        padding: 0;
     }
 }

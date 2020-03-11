@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import Item from '../../components/MapPage/ListItem';
 import Map from '../../components/MapPage/Map';
-import './style.css';
-
+import ReactTooltip from "react-tooltip";
+import MapChart from '../../components/MapPage/MapChart'
 /*
 입국 금지 : 검정 (0)
   - 입국금지 제목, 국가명, 기준일자 시간, 국가명 옆의 칸인 입국 제한 조치
@@ -19,49 +19,51 @@ let items = [];
 let data = [
   ['Country', 'State', { role: 'tooltip', type: 'string', p: { html: true } }],
 ];
+let state = {
+  countries: data, //지도 위의 데이터
+  lists: items, // 리스트뷰 데이터
+};
+const getRestrictionData = async () => {
+  const response = await fetch('/map');
+  const body = await response.json();
 
-class MapPage extends Component {
-  state = {
-    countries: data, //지도 위의 데이터
-    lists: items, // 리스트뷰 데이터
-  };
+  body.forEach(elem => {
+    let country = new Array();
+    country.push(elem.nation_eng);
+    country.push(elem.state);
+    country.push(elem.tooltip);
 
-  getRestrictionData = async () => {
-    const response = await fetch('/map');
-    const body = await response.json();
+    if (elem.listview == true) {
+      items.push(country);
+      return true;
+    }
 
-    body.forEach(elem => {
-      let country = new Array();
-      country.push(elem.nation_eng);
-      country.push(elem.state);
-      country.push(elem.tooltip);
-
-      if (elem.listview == true) {
-        items.push(country);
-        return true;
-      }
-
-      data.push(country);
-    });
-  };
-
-  constructor(props) {
-    super(props);
-    this.getRestrictionData().then(() => {
-      this.setState({ countries: data });
-    });
-  }
-
-  render() {
-    return (
+    data.push(country);
+  });
+};
+// constructor(props) {
+//   super(props);
+//   this.getRestrictionData().then(() => {
+//     this.setState({ countries: data });
+//   });
+// }
+function MapPage() {
+  const [content, setContent] = useState(""); 
+  return (
+    <section>
+      <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
-        <Map countries={this.state.countries} />
+        <MapChart
+        setTooltipContent={setContent}
+        />
+        <ReactTooltip>{content}</ReactTooltip>
+        {/* <Map countries={this.state.countries} /> */}
         <ListGroup>
-          <Item lists={this.state.lists} />
+          <Item lists={state.lists} />
         </ListGroup>
       </div>
-    );
-  }
+    </section>
+  );
 }
 
 export default MapPage;
