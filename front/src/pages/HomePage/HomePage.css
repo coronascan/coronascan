@@ -4,6 +4,7 @@
     background: #f2f7fb;
     text-align: center;
     height: 100vh;
+    max-width: 100%;
 }
 .homepage__contents{
     max-width: 900px;
