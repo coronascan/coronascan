@@ -37,7 +37,11 @@ label{
         flex-direction: column;
         margin-top: 20px;
     }
-    .warning__container ul, .warning__map{
+    .warning__map{
         width: 100%;
+    }
+    .warning__container ul{
+        width: 100%;
+        margin: 10px;
     }
 }
