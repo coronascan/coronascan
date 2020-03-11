@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   ComposableMap,
   Geographies,
@@ -13,46 +13,41 @@ const geoUrl =
 const markers = [
   { markerOffset: -15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
 ];
-let testData = [
-    [{country : "BRA"}, {detail : "test"}],
-    [{country : "VNM"}, {detail : "test1"}],
-    [{country : "JPN"}, {detail : "test2"}],
-];
-const MapChart = ({setTooltipContent}) => {
 
+const colorScale = [
+      "#ffedea",
+      "#ffcec5",
+      "#ffad9f",
+      "#ff8a75",
+      "#ff5533",
+      "#e2492d",
+      "#be3d26",
+      "#9a311f",
+      "#782618"];
+
+const MapChart = ({setTooltipContent, countries}) => {
     return (
     <div>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
         <ZoomableGroup zoom={1}>
         <Geographies geography={geoUrl}>
             {({ geographies }) =>
-              geographies.map(geo => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(`${NAME} — ${POP_EST}`);
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent("");
-                  }}
-                  style={{
-                    default: {
-                      fill: "#D6D6DA",
-                      outline: "none"
-                    },
-                    hover: {
-                      fill: "#F53",
-                      outline: "none"
-                    },
-                    pressed: {
-                      fill: "#E42",
-                      outline: "none"
-                    }
-                  }}
-                />
-              ))
+              geographies.map(geo => {
+                const cur = countries.find(s => s.nation_eng === geo.properties.NAME);
+                  return(
+                    <Geography
+                    fill={cur? (cur.state == 0? "red" : "black") : "#EEE"}
+                    key={geo.rsmKey}
+                    geography={geo}
+                    onMouseEnter={() => {
+                      if(cur) setTooltipContent(`${cur.nation_kr} — ${cur.tooltip}`);
+                    }}
+                    onMouseLeave={() => {
+                      setTooltipContent("");
+                    }}
+                  />
+                  )
+              } )
             }
           </Geographies>
      

@@ -9,6 +9,8 @@
     "concurrently": "^5.1.0",
     "google": "^2.1.0",
     "pdftk": "^0.0.0-rc.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^16.13.0",
     "react-search": "^2.1.1",
     "react-simple-maps": "^1.0.0-beta.0",
     "react-tooltip": "^4.0.5"
