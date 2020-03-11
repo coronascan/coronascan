@@ -36,13 +36,11 @@ class WarningPage extends Component {
   render() {
     return (
       <section>
-        <h2>코로나 관련 외교부 여행 권고사항</h2>
+        <h2>❗️ 코로나 관련 외교부 여행 권고사항</h2>
         <div className="warning__container">
           <Container>
             <Row>
-              <Alert variant="primary">여행 단계별 행동 요령</Alert>
-            </Row>
-            <Row>
+              <h3>여행 단계별 행동 요령</h3>
               <ul className="warning__step">
                 <li>1단계(남색경보) : (체류자) 신변안전 유의, (여행예정자) 여행 유의</li>
                 <li>2단계(황색경보) : (체류자) 신변안전 특별유의, (여행예정자) 여행 필요성 신중 검토</li>
@@ -51,9 +49,7 @@ class WarningPage extends Component {
               </ul>
             </Row>
             <Row>
-              <Alert variant="primary">최신 여행 경보 단계</Alert>
-            </Row>
-            <Row>
+              <h3>최신 여행 경보 단계</h3>
               <ul className="warning__step">
                 <li>일본 일본 전 지역(후쿠시마 원전 주변지역 제외)에 남색경보 발령 (02.29)</li>
                 <li>이탈리아 	이탈리아 북부지역 3개 주(롬바르디아주, 베네토주, 에밀리아-로마냐주)에 황색경보 발령 (02.28)</li>
@@ -64,7 +60,9 @@ class WarningPage extends Component {
           </Container>
           <Container>
             <Row>
-              <Map countries={this.state.countries}></Map>
+              <div className="warning__map">
+                <Map countries={this.state.countries}></Map>
+              </div>
             </Row>
           </Container>
         </div>

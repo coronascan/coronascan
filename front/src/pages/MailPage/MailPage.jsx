@@ -43,7 +43,7 @@ class MailPage extends Component {
     render() {
         return (
             <section className="mail_section">
-                <Container><h2>Mail Us</h2></Container>
+                <Container><h2>✉️ Mail Us</h2></Container>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
