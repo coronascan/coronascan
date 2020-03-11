@@ -5,6 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const db_config = require('./config/db-config.json');
 const PORT = 4001;
+const nodemailer = require('nodemailer')
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -32,6 +33,42 @@ app.get('/warning', (req, res)=>{
         res.send(warnings)
     })
 })
+
+app.post('/mail', (req, res)=>{
+    console.log(req.body)
+
+    const email = req.body.email;
+    const subject = req.body.subject;
+    const contents = req.body.contents;
+
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'coronascan2020@gmail.com',
+        pass: db_config.password
+      }
+    });
+  
+    let mailOptions = {
+      from: email,
+      to: 'coronascan2020@gmail.com',
+      subject: subject + "[from : " + email +"]",
+      text: contents
+    };
+  
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      }
+      else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  
+    res.redirect("/mail");
+})
+
 
 connection.once('open', function(){
     console.log("MongoDB database connection established successfully");

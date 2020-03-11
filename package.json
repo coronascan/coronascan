@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "install": "(cd front && npm install) && (cd back && npm install)",
+    "start": "concurrently \"cd front && PORT=3001 npm start\" \"cd back && PORT=3001 npm start\"",
+    "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
+  },
   "dependencies": {
+    "concurrently": "^5.1.0",
     "google": "^2.1.0",
     "pdftk": "^0.0.0-rc.0",
     "react-search": "^2.1.1"

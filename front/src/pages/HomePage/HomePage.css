@@ -1,14 +1,16 @@
 
 .homepage{
-    background-image: url(./Worldmap_bg.svg);
+    position: relative;
+    background: #f2f7fb;
     text-align: center;
     height: 100vh;
 }
 .homepage__contents{
     max-width: 900px;
     background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 21px #e7eeef;
     border-radius: 15px;
-    padding: 50px 0;
+    padding: 50px 20px;
     margin: auto;
     transform: translateY(30%);
 }
@@ -19,7 +21,7 @@
 .homepage__btn-group{
     position: relative;
     width: 680px;
-    margin: auto;
+    margin: 0 auto !important;
     text-align: center;
     overflow: hidden;
 }
@@ -33,8 +35,41 @@
 }
 
 /* AutoComplete */
-.sc-bdVaJa{
+.homepage__contents>div{
+    position: relative;
     max-width: 680px;
-    margin: 0 auto;
-    /* border: 1px solid #000; */
+    margin: 0 auto 40px;
+}
+.homepage__contents input{
+    outline: none;
+    padding-left: 30px;
+}
+
+.MuiOutlinedInput-notchedOutline{
+    border: 1px solid #000 !important;
+}
+
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
+    padding-right: 10px;
+}
+
+@media (max-width: 767px){
+    .homepage__contents h3{
+        font-size: 14px;
+    }
+    .homepage__contents{
+        transform: none;
+        margin-top: 45px;
+    }
+    .homepage__btn-group{
+        width: 100%;
+    }
+    .homepage__btn-group button:nth-child(1){
+        position: initial;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    .homepage__btn-group button:nth-child(2){
+        float: none;
+    }
 }
