@@ -6,6 +6,7 @@
   min-height: 100vh;
   word-break: keep-all;
   padding-bottom: 50px;
+  margin: auto;
 }
 
 .result-card {

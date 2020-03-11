@@ -1,12 +1,10 @@
 
 .homepage{
     position: relative;
-    /* background: url(./Worldmap_bg.svg) no-repeat center;
-    background-size: cover; */
-    /* background: #fafafa; */
     background: #f2f7fb;
     text-align: center;
     height: 100vh;
+    max-width: 100%;
 }
 .homepage__contents{
     max-width: 900px;
@@ -62,7 +60,7 @@
     }
     .homepage__contents{
         transform: none;
-        margin-top: 30px;
+        margin-top: 45px;
     }
     .homepage__btn-group{
         width: 100%;
