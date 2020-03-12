@@ -30,7 +30,7 @@ app.get('/main', (req, res)=>{
     })
   }
   
-  fetch()
+  fetch();
 
 })
 
