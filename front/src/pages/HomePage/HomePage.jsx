@@ -12,7 +12,6 @@ const HomePage = props => {
   async function getRestrictionsCount() {
     const response = await fetch('/main');
     const body = await response.json();
-    console.log(body)
     setProhibitions(body.prohibitions)
     setRestrictions(body.restrictions)
   }
