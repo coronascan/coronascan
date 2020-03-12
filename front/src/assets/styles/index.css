@@ -10,6 +10,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 #root {
@@ -35,6 +36,7 @@ h2{
 section {
   max-width: 1320px;
   padding: 0 20px;
+  margin: auto;
 }
 
 .btn {

@@ -13,7 +13,7 @@
     border-radius: 15px;
     padding: 50px 20px;
     margin: auto;
-    transform: translateY(30%);
+    transform: translateY(10%);
 }
 
 .homepage__contents h3{
@@ -56,24 +56,17 @@
 }
 
 .count__parent{
-    width: 100%;
-    margin: 50px auto;
     display: flex;
-    position: relative;
-    max-width: 900px;
+    justify-content: space-around;
+    max-width: 300px;
+    margin: 30px auto 0;
+    background: #ffcfcf;
+    padding: 20px 10px 10px;
+    border-radius: 15px;
 }
 
-.prohibitions {
-    border: none;
-    flex:1;
-    width:30%;
-}
-
-.restrictions{
-    border: none;
-    flex:1;
-    margin: 0px 5%;
-    width:30%;
+.count__parent h3{
+    font-size: 16px;
 }
 
 @media (max-width: 767px){
