@@ -15,6 +15,7 @@
     margin: auto;
     transform: translateY(30%);
 }
+
 .homepage__contents h3{
     font-size: 20px;
     margin-bottom: 15px;
@@ -52,6 +53,27 @@
 
 .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
     padding-right: 10px;
+}
+
+.count__parent{
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    position: relative;
+    max-width: 900px;
+}
+
+.prohibitions {
+    border: none;
+    flex:1;
+    width:30%;
+}
+
+.restrictions{
+    border: none;
+    flex:1;
+    margin: 0px 5%;
+    width:30%;
 }
 
 @media (max-width: 767px){

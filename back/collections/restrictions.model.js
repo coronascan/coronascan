@@ -5,7 +5,7 @@ let Restriction = new Schema({
     continent : {type : String, required : true},
     nation_kr: {type : String},
     nation_eng: {type : String, required : true, unique : true},
-    state: {type : Number, required : true},
+    state: {type : String, required : true},
     detail: {type : String, required : true},
     tooltip: {type : String, required : true},
     listview : {type : Boolean, required : true},

@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AutoComplete from '../../components/HomePage/AutoComplete';
 import { Button } from 'react-bootstrap';
 import './HomePage.css';
 import CountUp from 'react-countup';
 
 const HomePage = props => {
-  const [country, setCountry, prohibitions, restrictions] = useState();
-  const getResult = (route, country) => {
+  const [country, setCountry] = useState();
+  const [prohibitions, setProhibitions] = useState(0);
+  const [restrictions, setRestrictions] = useState(0);
 
+  async function getRestrictionsCount() {
+    const response = await fetch('/main');
+    const body = await response.json();
+    console.log(body)
+    setProhibitions(body.prohibitions)
+    setRestrictions(body.restrictions)
+  }
+
+  useEffect(() => {
+    getRestrictionsCount();
+  }, [])
+
+  const getResult = (route, country) => {
     if (country === '') {
       alert('국가 또는 지역을 입력해주세요');
       return;
@@ -34,18 +48,18 @@ const HomePage = props => {
           }}>지도로 확인하기</Button>
         </div>
       </div>
-      <section>
-      <div>
-          입국 금지 국가<br/>
-          <CountUp end={104}/>
+      <div className="count__parent">
+        <div className="prohibitions">
+          <h2>입국 금지 국가</h2><br/>
+          <h3><CountUp end={prohibitions} /></h3>
         </div>
-        <div>
-          입국 제한 국가<br/>
-          <CountUp end={30}/>
+        <div className="restrictions">
+          <h2>입국 제한 국가</h2><br/>
+          <h3><CountUp end={restrictions} /></h3>
         </div>
-      </section>
+      </div>
     </section>
-    
+
   );
 };
 

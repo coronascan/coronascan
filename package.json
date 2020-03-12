@@ -8,6 +8,7 @@
     "@vx/pattern": "^0.0.195",
     "concurrently": "^5.1.0",
     "google": "^2.1.0",
+    "nodemailer": "^6.4.5",
     "pdftk": "^0.0.0-rc.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.0",

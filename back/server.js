@@ -17,12 +17,28 @@ const connection = mongoose.connection;
 const Restriction = require('./collections/restrictions.model');
 const Warning = require('./collections/warnings.model');
 
+app.get('/main', (req, res)=>{
+  console.log("/main in")
+  let ret = {
+    restrictions : 0,
+    prohibitions : 0
+  }
+
+  Restriction.countDocuments({state : 0}, (err, cnt)=>{
+    if(err) console.err(err)
+    ret.prohibitions = cnt
+  }).then(Restriction.countDocuments({state : 1}, (err, cnt)=>{
+    if(err) console.err(err)
+    ret.restrictions = cnt
+  })).then(()=> res.send(ret))
+
+})
+
 app.get('/map',(req,res)=>{
     console.log("/map in")
     Restriction.find((err,restrictions)=>{
         if(err){console.log(err); return false;}
         res.send(restrictions)
-
     });
 });
 
@@ -35,7 +51,7 @@ app.get('/warning', (req, res)=>{
 })
 
 app.post('/mail', (req, res)=>{
-    console.log(req.body)
+    console.log("/mail in")
 
     const email = req.body.email;
     const subject = req.body.subject;
@@ -56,14 +72,9 @@ app.post('/mail', (req, res)=>{
       text: contents
     };
   
-    
     transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      }
-      else {
-        console.log('Email sent: ' + info.response);
-      }
+      if (error) console.log(error);
+      else console.log('Email sent: ' + info.response);
     });
   
     res.redirect("/mail");

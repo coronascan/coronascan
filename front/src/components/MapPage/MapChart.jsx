@@ -14,17 +14,6 @@ const markers = [
   { markerOffset: -15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
 ];
 
-const colorScale = [
-      "#ffedea",
-      "#ffcec5",
-      "#ffad9f",
-      "#ff8a75",
-      "#ff5533",
-      "#e2492d",
-      "#be3d26",
-      "#9a311f",
-      "#782618"];
-
 const MapChart = ({setTooltipContent, countries}) => {
     return (
     <div>
@@ -52,7 +41,7 @@ const MapChart = ({setTooltipContent, countries}) => {
           </Geographies>
      
           {/* marker */}
-        {/* {markers.map(({ name, coordinates, markerOffset }) => (
+        {markers.map(({ name, coordinates, markerOffset }) => (
         <Marker key={name} coordinates={coordinates}>
           <circle r={10} fill="#F00" stroke="#fff" strokeWidth={2} />
           <text
@@ -63,7 +52,7 @@ const MapChart = ({setTooltipContent, countries}) => {
             {name}
           </text>
         </Marker>
-      ))} */}
+      ))}
         </ZoomableGroup>
       </ComposableMap>
     </div>
