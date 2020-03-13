@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ListGroup } from 'react-bootstrap';
-import Item from '../../components/MapPage/ListItem';
-import Map from '../../components/MapPage/Map';
 import ReactTooltip from "react-tooltip";
 import MapChart from '../../components/MapPage/MapChart'
 

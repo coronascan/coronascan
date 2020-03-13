@@ -19,18 +19,18 @@ const Warning = require('./collections/warnings.model');
 
 app.get('/main', (req, res)=>{
   console.log("/main in")
-  let ret = {
-    restrictions : 0,
-    prohibitions : 0
-  }
+  
+  async function fetch(){
+    const prohibitions = await Restriction.countDocuments({state : 0})
+    const restrictions = await Restriction.countDocuments({state : 1})
 
-  Restriction.countDocuments({state : 0}, (err, cnt)=>{
-    if(err) console.err(err)
-    ret.prohibitions = cnt
-  }).then(Restriction.countDocuments({state : 1}, (err, cnt)=>{
-    if(err) console.err(err)
-    ret.restrictions = cnt
-  })).then(()=> res.send(ret))
+    res.send({
+      restrictions : restrictions,
+      prohibitions : prohibitions
+    })
+  }
+  
+  fetch();
 
 })
 
