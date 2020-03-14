@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Route } from 'react-router-dom';
 import { ROUTES } from './constants';
 import { Navigation } from './components';
-import BgContext from './contexts/BgContext';
+import ResultContext from './contexts/ResultContext';
 
 const App = () => {
-  const { color } = useContext(BgContext);
+  const { color } = useContext(ResultContext);
   return (
     <>
       <Navigation />

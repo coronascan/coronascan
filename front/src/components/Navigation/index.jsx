@@ -13,8 +13,8 @@ const Navigation = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" activeKey={pathname}>
           {ROUTES.map(
-            ({ path, name }) =>
-              !path.includes(':') && (
+            ({ path, name, navigation }) =>
+              navigation && (
                 <Nav.Link key={path} href={path}>
                   {name}
                 </Nav.Link>

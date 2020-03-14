@@ -6,7 +6,7 @@ import {
   WorldPage,
   WarningPage,
   AboutPage,
-  MailPage
+  MailPage,
 } from '../pages';
 
 const ROUTES = [
@@ -15,21 +15,23 @@ const ROUTES = [
     name: '제한 조치 시행국 지도로 보기',
     component: MapPage,
     exact: true,
+    navigation: true,
   },
   {
     path: '/',
     name: '입국 가능 국가 조회하기',
     component: HomePage,
     exact: true,
+    navigation: true,
   },
   {
-    path: '/result/:country',
+    path: '/result',
     name: '입국 가능 국가 조회 결과(나라 입력 후)',
     component: ResultPage,
     exact: true,
   },
   {
-    path: '/map/:country',
+    path: '/map',
     name: '입국 가능 국가 조회 결과(국가 선택 후)',
     component: ResultMapPage,
     exact: true,
@@ -38,16 +40,19 @@ const ROUTES = [
     path: '/warning',
     name: '외교부 여행 경보',
     component: WarningPage,
+    navigation: true,
   },
   {
     path: '/about',
     name: 'About Us',
     component: AboutPage,
+    navigation: true,
   },
   {
     path: '/mail',
     name: 'Mail Us',
     component: MailPage,
+    navigation: true,
   },
 ];
 
