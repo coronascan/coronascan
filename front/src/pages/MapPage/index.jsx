@@ -11,7 +11,7 @@ export function MapPage() {
   const [countries, setData] = useState([]);
 
   async function fetchUrl(){
-    const response = await fetch('/map');
+    const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/map');
     const body = await response.json();
     body.forEach(elem => {
       let country = new Array();

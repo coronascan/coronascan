@@ -24,7 +24,7 @@ const ResultMapPage = props => {
     const getRestrictionData = async () => {
       // 전체 목록
       try {
-        const response = await fetch('/map');
+        const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/map');
         const body = await response.json();
         body.forEach(elem => {
           const { nation_eng, state, tooltip } = elem;
@@ -45,7 +45,7 @@ const ResultMapPage = props => {
         return;
       }
       try {
-        const response = await fetch('/map');
+        const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/map');
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();

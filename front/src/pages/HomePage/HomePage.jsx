@@ -11,7 +11,7 @@ const HomePage = props => {
   const [restrictions, setRestrictions] = useState(0);
 
   async function getRestrictionsCount() {
-    const response = await fetch('/main');
+    const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/main');
     const body = await response.json();
     setProhibitions(body.prohibitions);
     setRestrictions(body.restrictions);

@@ -13,7 +13,7 @@ class WarningPage extends Component {
   }
 
   getWarningData = async () => {
-    const response = await fetch('/warning')
+    const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/warning')
     const body = await response.json()
 
     body.forEach((country) => {

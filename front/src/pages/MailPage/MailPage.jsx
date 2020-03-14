@@ -28,7 +28,7 @@ class MailPage extends Component {
             "contents": this.state.contents
         }
 
-        await fetch('/mail', {
+        await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/mail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', },
             body: JSON.stringify(data)

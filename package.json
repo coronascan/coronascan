@@ -1,7 +1,8 @@
 {
   "scripts": {
     "install": "(cd front && npm install) && (cd back && npm install)",
-    "start": "concurrently \"cd front && PORT=3001 npm start\" \"cd back && npm start\""
+    "start": "concurrently \"cd front && npm start\" \"cd back && npm start\"",
+    "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
     },
   "dependencies": {
     "@vx/pattern": "^0.0.195",

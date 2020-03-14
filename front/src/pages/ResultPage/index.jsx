@@ -25,7 +25,7 @@ const ResultPage = props => {
         return;
       }
       try {
-        const response = await fetch('/map');
+        const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/map');
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();
@@ -33,9 +33,6 @@ const ResultPage = props => {
             nation_kr.includes(target),
           );
           setData(data);
-        } else {
-          props.history.push('/');
-          alert('데이터 조회에 문제가 생겼습니다😥 다시 시도해주세요.');
         }
       } catch (error) {
         console.log(error);

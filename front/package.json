@@ -6,7 +6,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync ./build s3://coronascan --profile=coronascan",
+    "upload" : "yarn build && yarn deploy"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.5",
@@ -49,5 +51,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4001"
+  "proxy": "http://coronascan.s3-website-us-east-1.amazonaws.com"
 }
