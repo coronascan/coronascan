@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Map from '../../components/MapPage/Map';
+import ResultContext from '../../contexts/ResultContext';
 
 /*
 입국 금지 : 검정 (0)
@@ -16,51 +17,62 @@ const data = [
   ['Country', 'State', { role: 'tooltip', type: 'string', p: { html: true } }],
 ];
 
-class ResultMapPage extends Component {
-  state = {
-    countries: data, //지도 위의 데이터
-  };
+const ResultMapPage = props => {
+  const [countries, setCountries] = useState(data);
 
-  getRestrictionData = async () => {
-    // 전체 목록
-    try {
-      const response = await fetch('/map');
-      const body = await response.json();
-      body.forEach(elem => {
-        const { nation_eng, state, tooltip } = elem;
-        data.push([nation_eng, state, tooltip]);
-      });
-    } catch (error) {
-      console.log('전체 국가 정보를 가져오기 실패');
-    }
-  };
-  getTargetData = async () => {
-    // 선택한 국가 정보
-    try {
-      const target = {};
-      const country = this.props.match.params.country;
-      const response = await fetch(`/result/${country}`);
-      target = await response.json();
-      const { nation_eng, tooltip } = target;
-      data.push([nation_eng, 0, tooltip]);
-    } catch (error) {
-      console.log('선택한 국가 정보 가져오기 실패');
-    }
-  };
+  useEffect(() => {
+    const getRestrictionData = async () => {
+      // 전체 목록
+      try {
+        const response = await fetch('/map');
+        const body = await response.json();
+        body.forEach(elem => {
+          const { nation_eng, state, tooltip } = elem;
+          data.push([nation_eng, state, tooltip]);
+        });
+      } catch (error) {
+        console.log('전체 국가 정보를 가져오기 실패');
+      }
+    };
+    getRestrictionData();
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.getRestrictionData().then(() => {
-      this.setState({ countries: data });
-    });
-    this.getTargetData().then(() => {
-      this.setState({ countries: data });
-    });
-  }
+  const { target, changeBg } = useContext(ResultContext);
+  useEffect(() => {
+    const fetchData = async () => {
+      if (target === '중국') {
+        data.push(['China', 0, '입국제한']);
+        return;
+      }
+      try {
+        const response = await fetch('/map');
+        console.log(response);
+        if (response.status === 200) {
+          const list = await response.json();
+          const [{ nation_eng, tooltip }] = list.filter(({ nation_kr }) =>
+            nation_kr.includes(target),
+          );
+          data.push([nation_eng, 0, tooltip]);
+          setCountries(data);
+        } else {
+          props.history.push('/');
+          alert('데이터 조회에 문제가 생겼습니다😥 다시 시도해주세요.');
+        }
+      } catch (error) {
+        console.log(error);
+        props.history.push('/');
+        alert('데이터 조회에 문제가 생겼습니다😥 다시 시도해주세요.');
+      } finally {
+        // TODO: 입국 허용일 때 배경색 추가
+        const bg = data.state ? '#e7a3a2' : '#a43f3d';
+        console.log(bg);
+        changeBg(bg);
+      }
+    };
+    fetchData();
+  }, []);
 
-  render() {
-    return <Map countries={this.state.countries} />;
-  }
-}
+  return <Map countries={countries} />;
+};
 
 export default ResultMapPage;
