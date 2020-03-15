@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "install": "(cd front && npm install) && (cd back && npm install)",
+    "start": "concurrently \"cd front && PORT=3001 npm start\" \"cd back && PORT=3001 npm start\"",
+    "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
+  },
+  "dependencies": {
+    "@vx/pattern": "^0.0.195",
+    "concurrently": "^5.1.0",
+    "google": "^2.1.0",
+    "nodemailer": "^6.4.5",
+    "pdftk": "^0.0.0-rc.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^16.13.0",
+    "react-search": "^2.1.1",
+    "react-simple-maps": "^1.0.0-beta.0",
+    "react-tooltip": "^4.0.5"
+  }
+}
