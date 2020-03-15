@@ -49,9 +49,11 @@ const ResultMapPage = props => {
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();
-          const [{ nation_eng, tooltip }] = list.filter(({ nation_kr }) =>
+          let [{ nation_eng, tooltip }] = list.filter(({ nation_kr }) =>
             nation_kr.includes(target),
           );
+          if (!nation_eng) nation_eng = target;
+          if (!tooltip) tooltip = '입국 가능';
           data.push([nation_eng, 0, tooltip]);
           setCountries(data);
         } else {
