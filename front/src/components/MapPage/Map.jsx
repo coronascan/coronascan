@@ -4,7 +4,7 @@ const googleAPIKey = "AIzaSyBTvsuJcbhSf2giulYdP66791797JE4ZTA"
 
 const options = {
     colorAxis: { colors: ['3D6298', 'BDAF7E', 'A43F3D'] },
-    tooltip: { isHtml: true, trigger: "visible" }
+    tooltip: { isHtml: true, trigger: "selection" }
 };
 
 class Map extends Component {
