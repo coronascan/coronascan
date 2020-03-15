@@ -25,7 +25,7 @@ const MapChart = ({setTooltipContent, countries}) => {
                 const cur = countries.find(s => s.nation_eng === geo.properties.NAME);
                   return(
                     <Geography
-                    fill={cur? (cur.state == 0? "red" : "black") : "#EEE"}
+                    fill={cur? (cur.state == 0? "#731B1A" : "#E7A3A2") : "#EEEEEE"}
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {
