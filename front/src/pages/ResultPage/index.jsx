@@ -29,9 +29,20 @@ const ResultPage = props => {
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();
-          const [data] = list.filter(({ nation_kr }) =>
+          let [data] = list.filter(({ nation_kr }) =>
             nation_kr.includes(target),
           );
+          if (!data.length) {
+            data = {
+              _id: '',
+              continent: '',
+              nation_kr: target,
+              nation_eng: target,
+              state: '2',
+              detail: '입국 가능한 국가입니다.',
+              tooltip: '입국 가능',
+            };
+          }
           setData(data);
         } else {
           props.history.push('/');
@@ -43,8 +54,9 @@ const ResultPage = props => {
         alert('데이터 조회에 문제가 생겼습니다😥 다시 시도해주세요.');
       } finally {
         // TODO: 입국 허용일 때 배경색 추가
-        const bg = data.state ? '#e7a3a2' : '#a43f3d';
-        console.log(bg);
+        const { state } = data;
+        const bg =
+          state == '0' ? '#A43F3D' : state == '1' ? '#E7A3A2' : `#9FD3D0`;
         changeBg(bg);
       }
     };
@@ -60,8 +72,13 @@ const ResultPage = props => {
         <h3 className="action">
           {/* // TODO: 입국 허용일 때 문구 추가 */}
           {data?.state ? '입국 제한 조치' : '입국 금지 조치'}
+          {data?.state == '0'
+            ? '입국 금지 조치'
+            : data?.state == '1'
+            ? '입국 제한 조치'
+            : `입국 가능`}
         </h3>
-        <p className="source">{data?.date} 기준, 출처 : 외교부</p>
+        <p className="source">출처 : 외교부</p>
         <p className="body">{data?.detail}</p>
       </div>
       <Button variant="dark" onClick={handleClick}>
