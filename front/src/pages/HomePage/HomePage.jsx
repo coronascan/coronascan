@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import './HomePage.css';
 import CountUp from 'react-countup';
 import ResultContext from '../../contexts/ResultContext';
+import Config from '../../config/config'
 
 const HomePage = props => {
   // const [country, setCountry] = useState();
@@ -11,7 +12,7 @@ const HomePage = props => {
   const [restrictions, setRestrictions] = useState(0);
 
   async function getRestrictionsCount() {
-    const response = await fetch('/main');
+    const response = await fetch(Config.server_url + '/main');
     const body = await response.json();
     setProhibitions(body.prohibitions);
     setRestrictions(body.restrictions);

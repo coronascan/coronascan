@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Alert } from 'react-bootstrap'
 import Map from '../../components/MapPage/Map'
 import './Warning.css';
+import Config from '../../config/config'
 
 let data = [
   ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
@@ -13,7 +14,7 @@ class WarningPage extends Component {
   }
 
   getWarningData = async () => {
-    const response = await fetch('/warning')
+    const response = await fetch(Config.server_url + '/warning')
     const body = await response.json()
 
     body.forEach((country) => {

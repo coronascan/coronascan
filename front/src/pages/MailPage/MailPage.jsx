@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import './MailPage.css';
+import Config from '../../config/config'
 
 class MailPage extends Component {
 
@@ -28,7 +29,7 @@ class MailPage extends Component {
             "contents": this.state.contents
         }
 
-        await fetch('/mail', {
+        await fetch(Config.server_url + '/mail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', },
             body: JSON.stringify(data)

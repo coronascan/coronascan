@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactTooltip from "react-tooltip";
 import MapChart from '../../components/MapPage/MapChart'
+import Config from '../../config/config'
 
 let items = [];
 let data = [];
@@ -11,7 +12,7 @@ export function MapPage() {
   const [countries, setData] = useState([]);
 
   async function fetchUrl(){
-    const response = await fetch('/map');
+    const response = await fetch(Config.server_url + '/map');
     const body = await response.json();
     body.forEach(elem => {
       let country = new Array();
