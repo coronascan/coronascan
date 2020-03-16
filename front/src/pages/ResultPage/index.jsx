@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import ResultContext from '../../contexts/ResultContext';
 import './style.css';
+import Config from '../../config/config'
+
 
 const ResultPage = props => {
   console.log('result page');
@@ -25,7 +27,7 @@ const ResultPage = props => {
         return;
       }
       try {
-        const response = await fetch('/map');
+        const response = await fetch(Config.server_url + '/map');
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();
