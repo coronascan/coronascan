@@ -11,7 +11,7 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const markers = [
-  { markerOffset: -15, name: "마셜제도", coordinates: [168.693584, 7.234930] },
+  { markerOffset: -15, name: "마셜제도", coordinates: [168.693584, 5.234930] },
   { markerOffset: -15, name: "마이크로 네시아", coordinates: [150.391330, 8.423249] },
   { markerOffset: -15, name: "사모아 (미국령)", coordinates: [-170.719511, -14.281424] },
   { markerOffset: -15, name: "싱가포르", coordinates: [103.735747, 1.349692] },
