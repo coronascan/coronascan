@@ -1,4 +1,5 @@
 {
     "addr" : "mongodb://coronascan:corona19scan@cluster0-shard-00-00-emxux.mongodb.net:27017,cluster0-shard-00-01-emxux.mongodb.net:27017,cluster0-shard-00-02-emxux.mongodb.net:27017/coronascan?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
-    "password" : "corona19scan%%"
+    "password" : "corona19scan%%",
+    "server_url" : "http://ec2-3-88-69-5.compute-1.amazonaws.com"
 }

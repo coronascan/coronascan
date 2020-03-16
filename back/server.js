@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const db_config = require('./config/db-config.json');
+const config = require('./config/db-config.json');
 const PORT = 4001;
 const nodemailer = require('nodemailer')
 
@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // connect mongodb
-mongoose.connect(db_config.addr,{useNewUrlParser: true});
+mongoose.connect(config.addr,{useNewUrlParser: true});
 const connection = mongoose.connection;
 
 const Restriction = require('./collections/restrictions.model');
@@ -61,7 +61,7 @@ app.post('/mail', (req, res)=>{
       service: 'gmail',
       auth: {
         user: 'coronascan2020@gmail.com',
-        pass: db_config.password
+        pass: config.password
       }
     });
   
@@ -77,7 +77,7 @@ app.post('/mail', (req, res)=>{
       else console.log('Email sent: ' + info.response);
     });
   
-    res.redirect("/mail");
+    res.redirect(config.server_url + "/mail");
 })
 
 
