@@ -7,6 +7,7 @@ import {
   WarningPage,
   AboutPage,
   MailPage,
+  WarningEntryPage
 } from '../pages';
 
 const ROUTES = [
@@ -40,6 +41,12 @@ const ROUTES = [
     path: '/warning',
     name: '외교부 여행 경보',
     component: WarningPage,
+    navigation: true,
+  },
+  {
+    path: '/warningentry',
+    name: '특별입국 절차 시행국',
+    component: WarningEntryPage,
     navigation: true,
   },
   {
