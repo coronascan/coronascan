@@ -8,7 +8,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync ./build s3://corona.scan --profile=coronascan",
-    "upload" : "npm run build && npm run deploy" 
+    "upload": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.5",
