@@ -7,11 +7,11 @@ let items = [];
 let data = [];
 
 export function MapPage() {
-  
-  const [content, setContent] = useState(""); 
+
+  const [content, setContent] = useState("");
   const [countries, setData] = useState([]);
 
-  async function fetchUrl(){
+  async function fetchUrl() {
     const response = await fetch(Config.server_url + '/map');
     const body = await response.json();
     body.forEach(elem => {
@@ -19,12 +19,12 @@ export function MapPage() {
       country.push(elem.nation_eng);
       country.push(elem.state);
       country.push(elem.tooltip);
-  
+
       if (elem.listview == true) {
         items.push(country);
         return true;
       }
-  
+
       data.push(country);
     });
 
@@ -36,12 +36,12 @@ export function MapPage() {
   }, []);
 
   return (
-    <section>
+    <section style={{ backgroundColor: "#fff" }}>
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
         <MapChart
-        countries = {countries}
-        setTooltipContent={setContent}
+          countries={countries}
+          setTooltipContent={setContent}
         />
         <ReactTooltip>{content}</ReactTooltip>
       </div>
