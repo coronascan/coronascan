@@ -30,7 +30,7 @@ const HomePage = props => {
       alert('국가 또는 지역을 입력해주세요');
       return;
     }
-    if(target === 'Everywhere'){
+    if (target === '모든 국가') {
       props.history.push('/map')
       return
     }
@@ -59,7 +59,6 @@ const HomePage = props => {
         </div>
       </div>
       <div className="homepage__contents">
-        <h3>입국을 원하는 지역, 국가를 입력해주세요</h3>
         <AutoComplete />
         <div className="homepage__btn-group">
           <Button

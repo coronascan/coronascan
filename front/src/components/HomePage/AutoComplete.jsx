@@ -8,7 +8,7 @@ function ReactAutoComplete() {
       id="country-list"
       options={countryList}
       getOptionLabel={options => options}
-      renderInput={params => <TextField {...params} placeholder="Everywhere" variant="outlined" />}
+      renderInput={params => <TextField {...params} label="입국을 원하는 지역, 국가를 입력해주세요" variant="outlined" />}
     />
   );
 }
@@ -16,7 +16,7 @@ function ReactAutoComplete() {
 export default ReactAutoComplete;
 
 const countryList = [
-  "Everywhere",
+  "모든 국가",
   "가나",
   "가봉",
   "가이아나",

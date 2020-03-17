@@ -1,11 +1,12 @@
 {
   "scripts": {
     "install": "(cd front && npm install) && (cd back && npm install)",
-    "start": "concurrently \"cd front && PORT=3001 npm start\" \"cd back && PORT=3001 npm start\"",
+    "start": "concurrently \"cd front && npm start\" \"cd back && npm start\"",
     "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
-  },
+    },
   "dependencies": {
     "@vx/pattern": "^0.0.195",
+    "cf": "^0.0.3",
     "concurrently": "^5.1.0",
     "google": "^2.1.0",
     "nodemailer": "^6.4.5",
