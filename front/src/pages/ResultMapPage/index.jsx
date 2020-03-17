@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Map from '../../components/MapPage/Map';
 import ResultContext from '../../contexts/ResultContext';
+import Config from '../../config/config'
 
 /*
 입국 금지 : 검정 (0)
@@ -24,7 +25,7 @@ const ResultMapPage = props => {
     const getRestrictionData = async () => {
       // 전체 목록
       try {
-        const response = await fetch('/map');
+        const response = await fetch(Config.server_url + '/map');
         const body = await response.json();
         body.forEach(elem => {
           const { nation_eng, state, tooltip } = elem;
@@ -45,7 +46,7 @@ const ResultMapPage = props => {
         return;
       }
       try {
-        const response = await fetch('/map');
+        const response = await fetch(Config.server_url + '/map');
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();
