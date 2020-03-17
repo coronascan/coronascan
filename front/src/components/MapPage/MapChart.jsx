@@ -91,15 +91,15 @@ const MapChart = ({ setTooltipContent, countries }) => {
 
           {/* marker */}
           {markers.map(({ name, coordinates, markerOffset }) => (
-            <Marker key={name} coordinates={coordinates}>
-              <circle r={3} fill="none" stroke="#FF5533" strokeWidth={2} />
-              <text
-                textAnchor="middle"
-                y={markerOffset + 30}
-                style={{ fontFamily: "system-ui", fill: "#000", fontSize: "10px" }}
-              >
-                {name}
-              </text>
+            <Marker key={name} coordinates={coordinates}
+              onMouseEnter={e => {
+                setTooltipContent(name);
+              }}
+              onMouseLeave={() => {
+                setTooltipContent("");
+              }}
+            >
+              <circle r={3} fill="#FF5533" />
             </Marker>
           ))}
         </ZoomableGroup>
