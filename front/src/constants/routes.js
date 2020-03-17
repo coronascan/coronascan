@@ -32,7 +32,7 @@ const ROUTES = [
     exact: true,
   },
   {
-    path: '/map',
+    path: '/maps',
     name: '입국 가능 국가 조회 결과(국가 선택 후)',
     component: ResultMapPage,
     exact: true,
