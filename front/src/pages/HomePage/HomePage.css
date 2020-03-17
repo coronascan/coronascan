@@ -5,6 +5,7 @@
     text-align: center;
     height: 100vh;
     max-width: 100%;
+    overflow-y: hidden;
 }
 .homepage__contents{
     max-width: 900px;
