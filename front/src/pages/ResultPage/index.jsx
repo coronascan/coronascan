@@ -7,9 +7,7 @@ import Config from '../../config/config'
 
 
 const ResultPage = props => {
-  console.log('result page');
-  const [data, setData] = useState({});
-
+  let [data, setData] = useState({});
   const { target, changeBg } = useContext(ResultContext);
 
   useEffect(() => {
@@ -27,28 +25,19 @@ const ResultPage = props => {
         return;
       }
       try {
-        const response = await fetch(Config.server_url + '/map');
-        console.log(response);
+        const response = await fetch(Config.server_url + '/maps/' + target);
         if (response.status === 200) {
-          const list = await response.json();
-          let [data] = list.filter(({ nation_kr }) =>
-            nation_kr.includes(target),
-          );
-          if (!data.length) {
-            data = {
-              _id: '',
-              continent: '',
-              nation_kr: target,
-              nation_eng: target,
-              state: '2',
-              detail: '입국 가능한 국가입니다.',
-              tooltip: '입국 가능',
-            };
+          const list = await response.json()
+          data = {
+            _id: list._id,
+            continent: '',
+            nation_kr: list.nation_kr,
+            nation_eng: list.nation_eng,
+            state: list.state,
+            detail: list.detail,
+            tooltip: list.state == '0'? '입국 금지' : '입국 제한',
           }
-          setData(data);
-        } else {
-          props.history.push('/');
-          alert('데이터 조회에 문제가 생겼습니다😥 다시 시도해주세요.');
+          setData(data)
         }
       } catch (error) {
         console.log(error);
@@ -62,6 +51,7 @@ const ResultPage = props => {
         changeBg(bg);
       }
     };
+    
     fetchData();
   }, []);
 
@@ -73,12 +63,11 @@ const ResultPage = props => {
         <p className="name">{data?.nation_kr}</p>
         <h3 className="action">
           {/* // TODO: 입국 허용일 때 문구 추가 */}
-          {data?.state ? '입국 제한 조치' : '입국 금지 조치'}
           {data?.state == '0'
             ? '입국 금지 조치'
             : data?.state == '1'
-            ? '입국 제한 조치'
-            : `입국 가능`}
+              ? '입국 제한 조치'
+              : `입국 가능`}
         </h3>
         <p className="source">출처 : 외교부</p>
         <p className="body">{data?.detail}</p>
