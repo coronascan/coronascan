@@ -60,7 +60,7 @@ const ResultPage = props => {
   return (
     <section className="result-area">
       <div className="result-card">
-        <p className="name">{data?.nation_kr}</p>
+        <p className="name">{target}</p>
         <h3 className="action">
           {/* // TODO: 입국 허용일 때 문구 추가 */}
           {data?.state == '0'
