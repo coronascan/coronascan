@@ -37,6 +37,11 @@ label{
     font-size: 14px;
 }
 
+.tooltip_kr {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 @media (max-width: 960px){
     .warning__container{
         flex-direction: column;

@@ -7,6 +7,7 @@ import {
   WarningPage,
   AboutPage,
   MailPage,
+  WarningEntryPage
 } from '../pages';
 
 const ROUTES = [
@@ -31,7 +32,7 @@ const ROUTES = [
     exact: true,
   },
   {
-    path: '/map',
+    path: '/maps',
     name: '입국 가능 국가 조회 결과(국가 선택 후)',
     component: ResultMapPage,
     exact: true,
@@ -40,6 +41,12 @@ const ROUTES = [
     path: '/warning',
     name: '외교부 여행 경보',
     component: WarningPage,
+    navigation: true,
+  },
+  {
+    path: '/warningentry',
+    name: '특별입국 절차 시행국',
+    component: WarningEntryPage,
     navigation: true,
   },
   {
