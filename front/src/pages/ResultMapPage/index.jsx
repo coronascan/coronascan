@@ -46,11 +46,7 @@ const ResultMapPage = props => {
         return;
       }
       try {
-<<<<<<< HEAD
         const response = await fetch(Config.server_url + '/map');
-=======
-        const response = await fetch('http://ec2-54-196-23-111.compute-1.amazonaws.com/map');
->>>>>>> ffbf7a8b2fd9510f0b564788ffebc0126ebec635
         console.log(response);
         if (response.status === 200) {
           const list = await response.json();
