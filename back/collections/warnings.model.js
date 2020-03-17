@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let Warning = new Schema({
+    date: { type: Date },
     continent: { type: String, required: true },
     nation_kr: { type: String },
     nation_eng: { type: String, required: true, unique: true },
@@ -11,5 +12,7 @@ let Warning = new Schema({
     tooltip: { type: String, required: true },
     listview: { type: Boolean },
 });
+
+Warning.set('timestamps', true);
 
 module.exports = mongoose.model('Warning', Warning);
