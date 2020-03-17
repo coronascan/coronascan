@@ -1,31 +1,66 @@
-import { HomePage, WorldPage, MapPage, WarningPage, AboutPage } from '../pages'
+import {
+  MapPage,
+  HomePage,
+  ResultPage,
+  ResultMapPage,
+  WorldPage,
+  WarningPage,
+  AboutPage,
+  MailPage,
+  WarningEntryPage
+} from '../pages';
 
 const ROUTES = [
   {
-    path: '/',
-    name: '방문 가능 국가 조회',
-    component: HomePage,
+    path: '/map',
+    name: '제한 조치 시행국 지도로 보기',
+    component: MapPage,
+    exact: true,
+    navigation: true,
   },
   {
-    path: '/world',
-    name: '국가별 확진자',
-    component: WorldPage,
+    path: '/',
+    name: '입국 가능 국가 조회하기',
+    component: HomePage,
+    exact: true,
+    navigation: true,
+  },
+  {
+    path: '/result',
+    name: '입국 가능 국가 조회 결과(나라 입력 후)',
+    component: ResultPage,
+    exact: true,
   },
   {
     path: '/map',
-    name: '지도로 보기',
-    component: MapPage,
+    name: '입국 가능 국가 조회 결과(국가 선택 후)',
+    component: ResultMapPage,
+    exact: true,
   },
   {
     path: '/warning',
-    name: '입국 금지 국가',
+    name: '외교부 여행 경보',
     component: WarningPage,
+    navigation: true,
+  },
+  {
+    path: '/warningentry',
+    name: '특별입국 절차 시행국',
+    component: WarningEntryPage,
+    navigation: true,
   },
   {
     path: '/about',
     name: 'About Us',
     component: AboutPage,
+    navigation: true,
   },
-]
+  {
+    path: '/mail',
+    name: 'Mail Us',
+    component: MailPage,
+    navigation: true,
+  },
+];
 
-export default ROUTES
+export default ROUTES;

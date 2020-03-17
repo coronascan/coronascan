@@ -6,20 +6,32 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync ./build s3://corona.scan --profile=coronascan",
+    "upload" : "npm run build && npm run deploy" 
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/lab": "^4.0.0-alpha.45",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
+    "material-ui": "^0.20.2",
     "react": "^16.13.0",
-    "react-calendar": "^2.19.2",
     "react-bootstrap": "^1.0.0-beta.17",
+    "react-bootstrap-typeahead": "^4.0.0",
+    "react-calendar": "^2.19.2",
+    "react-cool-onclickoutside": "^1.3.2",
+    "react-countup": "^4.3.3",
     "react-dom": "^16.13.0",
     "react-google-charts": "^3.0.15",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-search": "^2.1.1",
+    "react-simple-maps": "^1.0.0-beta.0",
+    "react-tooltip": "^4.1.1",
+    "use-places-autocomplete": "^1.0.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -38,5 +50,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4001"
 }
