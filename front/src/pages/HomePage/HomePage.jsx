@@ -77,7 +77,7 @@ const HomePage = props => {
             onClick={() => {
               const input = document.querySelector('input');
               const country = input.value;
-              getResult('map', country);
+              getResult('maps', country);
             }}
           >
             지도로 확인하기
