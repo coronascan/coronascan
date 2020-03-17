@@ -7,7 +7,6 @@ import ResultContext from '../../contexts/ResultContext';
 import Config from '../../config/config'
 
 const HomePage = props => {
-  // const [country, setCountry] = useState();
   const [prohibitions, setProhibitions] = useState(0);
   const [restrictions, setRestrictions] = useState(0);
 
@@ -18,10 +17,12 @@ const HomePage = props => {
     setRestrictions(body.restrictions);
   }
 
+  /* DB 테이블에서 불러오기
   useEffect(() => {
     getRestrictionsCount();
   }, []);
-
+  */
+ 
   const { changeTarget } = useContext(ResultContext);
   const getResult = (route, country) => {
     if (country === '') {
@@ -43,13 +44,13 @@ const HomePage = props => {
         <div className="prohibitions">
           <h3>입국 금지 국가</h3>
           <h3>
-            <CountUp end={prohibitions} />
+            <CountUp end={77} />
           </h3>
         </div>
         <div className="restrictions">
           <h3>입국 제한 국가</h3>
           <h3>
-            <CountUp end={restrictions} />
+            <CountUp end={63} />
           </h3>
         </div>
       </div>
