@@ -22,14 +22,18 @@ const HomePage = props => {
     getRestrictionsCount();
   }, []);
   */
- 
+
   const { changeTarget } = useContext(ResultContext);
   const getResult = (route, country) => {
-    if (country === '') {
+    let target = country;
+    if (target === '') {
       alert('국가 또는 지역을 입력해주세요');
       return;
     }
-    let target = country;
+    if(target === 'Everywhere'){
+      props.history.push('/map')
+      return
+    }
     if (target.includes(',')) {
       target = target.split(', ')[1];
     }
