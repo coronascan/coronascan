@@ -51,5 +51,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://coronascan.s3-website-us-east-1.amazonaws.com"
+  "proxy": "http://localhost:4001"
+
 }
