@@ -38,6 +38,11 @@ const HomePage = props => {
       target = target.split(', ')[1];
     }
     changeTarget(target);
+    if (route === 'maps') {
+      alert('추후 업데이트 예정입니다.');
+      props.history.push(`/map`);
+      return;
+    }
     props.history.push(`/${route}`);
   };
 
