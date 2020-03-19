@@ -1,6 +1,4 @@
 .warning__container{
-    display: flex;
-    align-items: baseline;
     margin-top: 50px;
 }
 
@@ -42,16 +40,16 @@ label{
     font-weight: bold;
 }
 
+.warning__map.special path {
+    fill: #E7A3A2;
+    stroke: #E7A3A2;
+}
+
 @media (max-width: 960px){
     .warning__container{
-        flex-direction: column;
         margin-top: 20px;
     }
-    .warning__map{
-        width: 100%;
-    }
     .warning__container ul{
-        width: 100%;
         margin: 10px;
     }
 }
