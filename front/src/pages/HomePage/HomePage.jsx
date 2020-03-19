@@ -32,7 +32,7 @@ const HomePage = props => {
     }
     if (target === '모든 국가') {
       props.history.push('/map')
-      return
+      return;
     }
     if (target.includes(',')) {
       target = target.split(', ')[1];
