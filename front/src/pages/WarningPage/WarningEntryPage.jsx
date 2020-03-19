@@ -42,10 +42,11 @@ class WarningEntryPage extends Component {
                         <Row>
                             <Col md={12} lg={6}>
                                 <ul className="warning__step">
-                                    <li className="warning__title"><h3>특별입국 절차</h3></li>
-                                    <li>내국인, 외국인 건강 상태 질문서, 특별 검역 신고서 제출 의무</li>
+                                    <li className="warning__title"><h3>내·외국인 특별입국 절차</h3></li>
+                                    <li>내·외국인 건강 상태 질문서, 특별 검역 신고서 제출 의무</li>
                                     <li>1대 1 발열 검사, 국내 체류 주소, 연락처 제출</li>
                                     <li>입국 후 자가 진단 앱 설치 후 매일 건강 상태 제출 의무</li>
+                                    <li>유증상시 1399 연계 및 선별 진료소 안내, 무응답시 유선 확인</li>
                                 </ul>
                                 <ul className="warning__step">
                                     <li className="warning__title"><h3>대상 국가</h3></li>
@@ -63,11 +64,6 @@ class WarningEntryPage extends Component {
                                 </div>
                             </Col>
                         </Row>
-                        {/* <Row>
-                            <Col sm>
-                                
-                            </Col>
-                        </Row> */}
                     </Container>
                 </div>
             </section>
