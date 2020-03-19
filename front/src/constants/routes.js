@@ -45,7 +45,7 @@ const ROUTES = [
   },
   {
     path: '/warningentry',
-    name: '특별입국 절차 시행국',
+    name: '특별입국 절차',
     component: WarningEntryPage,
     navigation: true,
   },

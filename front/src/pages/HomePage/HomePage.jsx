@@ -32,12 +32,17 @@ const HomePage = props => {
     }
     if (target === '모든 국가') {
       props.history.push('/map')
-      return
+      return;
     }
     if (target.includes(',')) {
       target = target.split(', ')[1];
     }
     changeTarget(target);
+    if (route === 'maps') {
+      alert('추후 업데이트 예정입니다.');
+      props.history.push(`/map`);
+      return;
+    }
     props.history.push(`/${route}`);
   };
 
