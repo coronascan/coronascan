@@ -28,7 +28,6 @@ export function MapPage(props) {
 
       data.push(country);
     });
-
     setData(body);
   }
 

@@ -64,7 +64,6 @@ let markers = [
 ];
 
 const MapChart = ({ selected, setTooltipContent, countries }) => {
-
   if (selected) {
     console.log("selected! ", selected)
     markers.push(
@@ -79,7 +78,7 @@ const MapChart = ({ selected, setTooltipContent, countries }) => {
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {
-                const cur = countries.find(s => s.nation_eng === geo.properties.NAME);
+                const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
                 return (
                   <Geography
                     fill={cur ? (cur.state == 0 ? "#731B1A" : "#E7A3A2") : "#EEEEEE"}
