@@ -38,12 +38,8 @@ const HomePage = props => {
       target = target.split(', ')[1];
     }
     changeTarget(target);
-    if (route === 'maps') {
-      alert('추후 업데이트 예정입니다.');
-      props.history.push(`/map`);
-      return;
-    }
     props.history.push(`/${route}`);
+    
   };
 
   return (
@@ -81,7 +77,7 @@ const HomePage = props => {
             onClick={() => {
               const input = document.querySelector('input');
               const country = input.value;
-              getResult('maps', country);
+              getResult('map', country);
             }}
           >
             지도로 확인하기
