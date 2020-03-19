@@ -40,15 +40,13 @@ class WarningEntryPage extends Component {
                 <div className="warning__container">
                     <Container fluid>
                         <Row>
-                            <Col sm>
+                            <Col md={12} lg={6}>
                                 <ul className="warning__step">
                                     <li className="warning__title"><h3>특별입국 절차</h3></li>
                                     <li>내국인, 외국인 건강 상태 질문서, 특별 검역 신고서 제출 의무</li>
                                     <li>1대 1 발열 검사, 국내 체류 주소, 연락처 제출</li>
                                     <li>입국 후 자가 진단 앱 설치 후 매일 건강 상태 제출 의무</li>
                                 </ul>
-                            </Col>
-                            <Col sm>
                                 <ul className="warning__step">
                                     <li className="warning__title"><h3>대상 국가</h3></li>
                                     <li>03.19 0시부터 국내에 입국하는 모든 내, 외국인 대상 특별입국 절차 적용</li>
@@ -59,14 +57,17 @@ class WarningEntryPage extends Component {
                                     <li>02.04 중국발 국내 입국자에 특별입국 절차 적용</li>
                                 </ul>
                             </Col>
-                        </Row>
-                        <Row>
-                            <Col sm>
-                                <div className="warning__map">
+                            <Col md={12} lg={6}>
+                                <div className="warning__map special">
                                     <Map countries={this.state.countries}></Map>
                                 </div>
                             </Col>
                         </Row>
+                        {/* <Row>
+                            <Col sm>
+                                
+                            </Col>
+                        </Row> */}
                     </Container>
                 </div>
             </section>
