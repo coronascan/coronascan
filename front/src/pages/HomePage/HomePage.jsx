@@ -49,13 +49,13 @@ const HomePage = props => {
         <div className="prohibitions">
           <h3>입국 금지 국가</h3>
           <h3>
-            <CountUp end={77} />
+            <CountUp end={100} />
           </h3>
         </div>
         <div className="restrictions">
           <h3>입국 제한 국가</h3>
           <h3>
-            <CountUp end={63} />
+            <CountUp end={57} />
           </h3>
         </div>
       </div>
