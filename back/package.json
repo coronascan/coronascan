@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "nodemon server.js",
-    "start" : "concurrently \"npm run dev\" \"cd ../ && cd front && npm run start\""
+    "dev": "nodemon server.js",
+    "start": "concurrently \"npm run dev\" \"cd ../ && cd front && npm run start\""
   },
   "keywords": [],
   "author": "",

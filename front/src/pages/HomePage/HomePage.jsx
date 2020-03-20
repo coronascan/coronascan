@@ -13,6 +13,7 @@ const HomePage = props => {
   async function getRestrictionsCount() {
     const response = await fetch(Config.server_url + '/main');
     const body = await response.json();
+
     setProhibitions(body.prohibitions);
     setRestrictions(body.restrictions);
   }

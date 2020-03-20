@@ -14,6 +14,8 @@ export function MapPage() {
   async function fetchUrl() {
     const response = await fetch(Config.server_url + '/map');
     const body = await response.json();
+    console.log(body);
+
     body.forEach(elem => {
       let country = new Array();
       country.push(elem.nation_eng);
