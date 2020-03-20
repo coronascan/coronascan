@@ -18,11 +18,10 @@ const HomePage = props => {
     setRestrictions(body.restrictions);
   }
 
-  /* DB 테이블에서 불러오기
   useEffect(() => {
     getRestrictionsCount();
   }, []);
-  */
+  
 
   const { changeTarget } = useContext(ResultContext);
   const getResult = (route, country) => {
@@ -39,12 +38,8 @@ const HomePage = props => {
       target = target.split(', ')[1];
     }
     changeTarget(target);
-    if (route === 'maps') {
-      alert('추후 업데이트 예정입니다.');
-      props.history.push(`/map`);
-      return;
-    }
     props.history.push(`/${route}`);
+    
   };
 
   return (
@@ -54,13 +49,13 @@ const HomePage = props => {
         <div className="prohibitions">
           <h3>입국 금지 국가</h3>
           <h3>
-            <CountUp end={100} />
+            <CountUp end={prohibitions} />
           </h3>
         </div>
         <div className="restrictions">
           <h3>입국 제한 국가</h3>
           <h3>
-            <CountUp end={57} />
+            <CountUp end={restrictions} />
           </h3>
         </div>
       </div>
@@ -82,7 +77,7 @@ const HomePage = props => {
             onClick={() => {
               const input = document.querySelector('input');
               const country = input.value;
-              getResult('maps', country);
+              getResult('map', country);
             }}
           >
             지도로 확인하기

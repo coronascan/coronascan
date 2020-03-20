@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -10,7 +10,7 @@ import {
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const markers = [
+let markers = [
   { markerOffset: -15, name: "마셜제도", coordinates: [168.693584, 5.234930] },
   { markerOffset: -15, name: "마이크로 네시아", coordinates: [150.391330, 8.423249] },
   { markerOffset: -15, name: "사모아 (미국령)", coordinates: [-170.719511, -14.281424] },
@@ -34,8 +34,6 @@ const MapChart = ({ setTooltipContent, countries }) => {
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {
-                console.log(countries);
-
                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
 
                 return (
