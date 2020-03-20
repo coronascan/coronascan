@@ -17,10 +17,10 @@ let markers = [
   { markerOffset: -15, name: "싱가포르", coordinates: [103.735747, 1.349692] },
   { markerOffset: -15, name: "키리바시", coordinates: [-157.179187, 1.794526] },
   { markerOffset: -15, name: "팔레스타인", coordinates: [35.075487, 31.782324] },
-  { markerOffset: -15, name: "동티모르", coordinates: [125.892941, -8.613932] },
+  // { markerOffset: -15, name: "동티모르", coordinates: [125.892941, -8.613932] },
   { markerOffset: -15, name: "마카오", coordinates: [113.592763, 22.168211] },
-  { markerOffset: -15, name: "세인트루시아", coordinates: [-60.903418, 16.395210] },
-  { markerOffset: -15, name: "세인트빈센트 그레나딘", coordinates: [-61.228207, 13.294267] },
+  // { markerOffset: -15, name: "세인트루시아", coordinates: [-60.903418, 16.395210] },
+  // { markerOffset: -15, name: "세인트빈센트 그레나딘", coordinates: [-61.228207, 13.294267] },
   { markerOffset: -15, name: "세인트키츠 네비스", coordinates: [-62.588495, 17.167367] },
   { markerOffset: -15, name: "바베이도스", coordinates: [-59.501907, 13.348333] },
   { markerOffset: -15, name: "몰타", coordinates: [14.427318, 35.898707] },
@@ -35,7 +35,6 @@ const MapChart = ({ setTooltipContent, countries }) => {
             {({ geographies }) =>
               geographies.map(geo => {
                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
-
                 return (
                   <Geography
                     fill={cur ? (cur.state == 0 ? "#731B1A" : "#E7A3A2") : "#EEEEEE"}
@@ -57,7 +56,9 @@ const MapChart = ({ setTooltipContent, countries }) => {
           {markers.map(({ name, coordinates }) => (
             <Marker key={name} coordinates={coordinates}
               onMouseEnter={e => {
-                setTooltipContent(`${name}`);
+                let tooltip = '';
+                const cur = countries.find(s => s.nation_kr === name ? tooltip = s.tooltip : tooltip = '');
+                setTooltipContent(`${name} — ${tooltip}`);
               }}
               onMouseLeave={() => {
                 setTooltipContent("");
@@ -68,7 +69,7 @@ const MapChart = ({ setTooltipContent, countries }) => {
           ))}
         </ZoomableGroup>
       </ComposableMap>
-    </div>
+    </div >
   );
 };
 

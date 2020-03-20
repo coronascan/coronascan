@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactTooltip from "react-tooltip";
 import MapChart from '../../components/MapPage/MapChart'
 import Config from '../../config/config'
@@ -15,8 +15,6 @@ export function MapPage(props) {
   async function fetchUrl() {
     const response = await fetch(Config.server_url + '/map');
     const body = await response.json();
-    console.log(body);
-
     body.forEach(elem => {
       let country = new Array();
       country.push(elem.nation_eng);
@@ -40,7 +38,7 @@ export function MapPage(props) {
   const context = useContext(ResultContext);
 
   return (
-    
+
     <section style={{ backgroundColor: "#fff" }}>
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
