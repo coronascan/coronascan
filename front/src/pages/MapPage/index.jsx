@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import ReactTooltip from "react-tooltip";
 import MapChart from '../../components/MapPage/MapChart'
 import Config from '../../config/config'
+import ResultContext from '../../contexts/ResultContext';
 
 let items = [];
 let data = [];
 
-export function MapPage() {
+export function MapPage(props) {
 
   const [content, setContent] = useState("");
   const [countries, setData] = useState([]);
@@ -27,7 +28,6 @@ export function MapPage() {
 
       data.push(country);
     });
-
     setData(body);
   }
 
@@ -35,11 +35,15 @@ export function MapPage() {
     fetchUrl();
   }, []);
 
+  const context = useContext(ResultContext);
+
   return (
+    
     <section style={{ backgroundColor: "#fff" }}>
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
         <MapChart
+          selected={context.target}
           countries={countries}
           setTooltipContent={setContent}
         />

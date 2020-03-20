@@ -16,6 +16,7 @@ const connection = mongoose.connection;
 
 const Restriction = require('./collections/restrictions.model');
 const Warning = require('./collections/warnings.model');
+const Source = require('./collections/sources.model');
 
 app.get('/main', (req, res)=>{
   console.log("/main in")
@@ -23,10 +24,11 @@ app.get('/main', (req, res)=>{
   async function fetch(){
     const prohibitions = await Restriction.countDocuments({state : 0})
     const restrictions = await Restriction.countDocuments({state : 1})
-
+    const source = await Source.find()
     res.send({
       restrictions : restrictions,
-      prohibitions : prohibitions
+      prohibitions : prohibitions,
+      source : source
     })
   }
   
@@ -36,6 +38,15 @@ app.get('/main', (req, res)=>{
 
 app.get('/maps/:selected', (req, res)=>{
   const selected = req.params.selected
+  Restriction.findOne({nation_kr : selected,
+    $meta: ""
+  }, (err, result) =>{
+    if(err){console.log(err); return false;}
+    console
+    if(result) return res.send(result)
+    res.send({})
+  });
+
   Restriction.findOne({nation_kr : selected}, (err, result) =>{
     if(err){console.log(err); return false;}
     if(result) return res.send(result)
