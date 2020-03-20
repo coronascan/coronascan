@@ -62,13 +62,9 @@ let markers = [
   // { markerOffset: -15, name: "말리", coordinates: [,] },
   // { markerOffset: -15, name: "에티오피아", coordinates: [,] },
 ];
-
 const MapChart = ({ selected, setTooltipContent, countries }) => {
   if (selected) {
-    console.log("selected! ", selected)
-    markers.push(
-      { markerOffset: -15, name: "동티모르", coordinates: [125.892941, -8.613932] }
-    )
+    console.log(selected)
   }
 
   return (
@@ -79,9 +75,30 @@ const MapChart = ({ selected, setTooltipContent, countries }) => {
             {({ geographies }) =>
               geographies.map(geo => {
                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
+                const isSelected = geo.properties.ISO_A3 === "JPN"
+                if(isSelected){
+                  return (
+                    <Geography
+                    fill={"black"}
+                    key={geo.rsmKey}
+                    geography={geo}
+                    onMouseEnter={() => {
+                      if(cur) setTooltipContent(`${cur.nation_kr} — ${cur.tooltip}`);
+                      setTooltipContent(`${selected} - "입국 가능"`)
+                    }}
+                    onMouseLeave={() => {
+                      setTooltipContent("");
+                    }}
+                  />
+                  )
+                }
                 return (
                   <Geography
-                    fill={cur ? (cur.state == 0 ? "#731B1A" : "#E7A3A2") : "#EEEEEE"}
+                    fill={
+                      cur ? (cur.nation_kr === selected? "blue" : 
+                      (cur.state == 0 ? "#731B1A" : "#E7A3A2")) :
+                       "#EEEEEE"
+                    }
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {
