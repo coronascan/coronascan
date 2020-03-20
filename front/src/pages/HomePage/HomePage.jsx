@@ -17,11 +17,10 @@ const HomePage = props => {
     setRestrictions(body.restrictions);
   }
 
-  /* DB 테이블에서 불러오기
   useEffect(() => {
     getRestrictionsCount();
   }, []);
-  */
+  
 
   const { changeTarget } = useContext(ResultContext);
   const getResult = (route, country) => {
@@ -49,13 +48,13 @@ const HomePage = props => {
         <div className="prohibitions">
           <h3>입국 금지 국가</h3>
           <h3>
-            <CountUp end={100} />
+            <CountUp end={prohibitions} />
           </h3>
         </div>
         <div className="restrictions">
           <h3>입국 제한 국가</h3>
           <h3>
-            <CountUp end={57} />
+            <CountUp end={restrictions} />
           </h3>
         </div>
       </div>

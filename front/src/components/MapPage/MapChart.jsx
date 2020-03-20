@@ -63,10 +63,6 @@ let markers = [
   // { markerOffset: -15, name: "에티오피아", coordinates: [,] },
 ];
 const MapChart = ({ selected, setTooltipContent, countries }) => {
-  if (selected) {
-    console.log(selected)
-  }
-
   return (
     <div>
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
@@ -75,23 +71,6 @@ const MapChart = ({ selected, setTooltipContent, countries }) => {
             {({ geographies }) =>
               geographies.map(geo => {
                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
-                const isSelected = geo.properties.ISO_A3 === "JPN"
-                if(isSelected){
-                  return (
-                    <Geography
-                    fill={"black"}
-                    key={geo.rsmKey}
-                    geography={geo}
-                    onMouseEnter={() => {
-                      if(cur) setTooltipContent(`${cur.nation_kr} — ${cur.tooltip}`);
-                      setTooltipContent(`${selected} - "입국 가능"`)
-                    }}
-                    onMouseLeave={() => {
-                      setTooltipContent("");
-                    }}
-                  />
-                  )
-                }
                 return (
                   <Geography
                     fill={
