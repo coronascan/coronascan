@@ -1,4 +1,15 @@
 form{
     max-width: 600px;
-    margin: 40px auto 0;
+    margin: 40px auto 20px;
+    background: #fff;
+    padding: 50px 70px 30px;
+    border: 1px solid #E9ECF3;
+    border-radius: 10px;
+    box-shadow: 0 10px 21px #f7f6f6;
+}
+
+@media screen and (max-width:767px){
+    form{
+        padding: 50px 30px 30px;
+    }
 }

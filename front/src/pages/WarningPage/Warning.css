@@ -1,3 +1,6 @@
+.section__warning_entry .row{
+    align-items: center;
+}
 .warning__container{
     margin-top: 50px;
 }
@@ -8,7 +11,7 @@
     border: 1px solid #E9ECF3;
     padding: 30px 30px 30px 50px;
     border-radius: 15px;
-    margin: 10px 20px 40px;
+    margin: 10px 0 20px;
 }
 .warning__step{
     margin-left: 20px;
@@ -42,7 +45,9 @@ label{
 
 .warning__map.special path {
     fill: #E7A3A2;
-    stroke: #E7A3A2;
+}
+.warning__map.warning path {
+    fill : #3D6298;
 }
 
 @media (max-width: 960px){
@@ -50,6 +55,9 @@ label{
         margin-top: 20px;
     }
     .warning__container ul{
-        margin: 10px;
+        margin: 10px 0;
+    }
+    .col-sm, .col-lg-6, .col-md-12{
+        padding: 0 5px;
     }
 }

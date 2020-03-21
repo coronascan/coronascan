@@ -36,6 +36,7 @@ h2{
 section {
   max-width: 1320px;
   padding: 0 20px;
+  background: #FBFBFC;
   margin: auto;
 }
 
@@ -43,7 +44,7 @@ section {
   min-width: 120px;
   height: 50px;
   padding: 0 20px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .btn-dark{
   background: #242424;

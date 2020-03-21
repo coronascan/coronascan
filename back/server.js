@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // connect mongodb
-mongoose.connect(config.addr,{useNewUrlParser: true});
+mongoose.connect(config.addr,{useUnifiedTopology: true, useNewUrlParser: true});
 const connection = mongoose.connection;
 
 const Restriction = require('./collections/restrictions.model');
@@ -22,18 +22,20 @@ app.get('/main', (req, res)=>{
   console.log("/main in")
   
   async function fetch(){
-    const prohibitions = await Restriction.countDocuments({state : 0})
-    const restrictions = await Restriction.countDocuments({state : 1})
+   
+    const prohibitions = await Restriction.count({state : 0})
+    const restrictions = await Restriction.count({state : 1})
+    
     const source = await Source.find()
     res.send({
       restrictions : restrictions,
       prohibitions : prohibitions,
       source : source
     })
+    res.send({"result" : ret})
   }
   
   fetch();
-
 })
 
 app.get('/maps/:selected', (req, res)=>{
@@ -108,3 +110,14 @@ connection.once('open', function(){
 app.listen(PORT, function(){
     console.log("Server is running on PORT: " + PORT);
 });
+
+process.on('exit', (err)=>{
+  console.log("exit", err)
+  connection.close()
+  process.exit()
+})
+
+process.on('uncaughtException', (err)=>{
+  console.log("uncaught", err)
+  
+})
