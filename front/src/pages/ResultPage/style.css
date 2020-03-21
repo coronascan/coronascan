@@ -13,6 +13,7 @@
   margin: 120px 0 50px;
   padding: 3rem;
   max-width: 900px;
+  min-width: 500px;
   text-align: center;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.8);
@@ -32,8 +33,14 @@
 .result-card .body {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(164, 63, 61, 0.3);
+  border-top: 1px solid rgba(97, 97, 97, 0.3);
   text-align: left;
   white-space: pre-wrap;
   text-align: justify;
+}
+
+@media screen and (max-width:767px){
+  .result-card{
+    min-width: 80%;
+  }
 }

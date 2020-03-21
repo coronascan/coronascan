@@ -23,7 +23,7 @@ const HomePage = props => {
   useEffect(() => {
     getRestrictionsCount();
   }, []);
-  
+
 
   const { changeTarget } = useContext(ResultContext);
   const getResult = (route, country) => {
@@ -39,9 +39,11 @@ const HomePage = props => {
     if (target.includes(',')) {
       target = target.split(', ')[1];
     }
+    console.log('target', target);
+
     changeTarget(target);
     props.history.push(`/${route}`);
-    
+
   };
 
   return (
@@ -62,7 +64,7 @@ const HomePage = props => {
         </div>
       </div>
       <div>
-          <h5>출처 : {source}</h5>
+        <h5>출처 : {source}</h5>
       </div>
       <div className="homepage__contents">
         <AutoComplete />
