@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // connect mongodb
-mongoose.connect(config.addr,{useNewUrlParser: true});
+mongoose.connect(config.addr,{useUnifiedTopology: true, useNewUrlParser: true});
 const connection = mongoose.connection;
 
 const Restriction = require('./collections/restrictions.model');
@@ -110,3 +110,14 @@ connection.once('open', function(){
 app.listen(PORT, function(){
     console.log("Server is running on PORT: " + PORT);
 });
+
+process.on('exit', (err)=>{
+  console.log("exit", err)
+  connection.close()
+  process.exit()
+})
+
+process.on('uncaughtException', (err)=>{
+  console.log("uncaught", err)
+  
+})

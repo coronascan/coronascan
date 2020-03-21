@@ -10,16 +10,22 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
     padding: 0 40px;
+    margin-bottom: 20px;
 }
 .member-box{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px 30px;
+    border: 1px solid #E9ECF3;
+    border-radius: 15px;
+    box-shadow: 0 10px 21px #f7f6f6;
 }
 
 .member-box div[class*="member__img"]{
-    width: 108px;
-    height: 108px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
 }
 .member-box div[class*="aimb"]{
@@ -81,5 +87,8 @@
     .member__container{
         grid-template-columns: repeat(1, 1fr);
         padding: 0;
+    }
+    .member__container{
+        grid-gap: 20px;
     }
 }
