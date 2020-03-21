@@ -3,6 +3,7 @@ import ReactTooltip from "react-tooltip";
 import MapChart from '../../components/MapPage/MapChart'
 import Config from '../../config/config'
 import ResultContext from '../../contexts/ResultContext';
+import './MapPage.css';
 
 let items = [];
 let data = [];
