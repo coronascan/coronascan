@@ -1,3 +1,6 @@
+.section__warning_entry .row{
+    align-items: center;
+}
 .warning__container{
     margin-top: 50px;
 }

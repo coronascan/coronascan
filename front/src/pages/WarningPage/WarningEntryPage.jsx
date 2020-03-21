@@ -35,7 +35,7 @@ class WarningEntryPage extends Component {
 
     render() {
         return (
-            <section>
+            <section className="section__warning_entry">
                 <h2>❗️ 특별입국 절차 대상 국가</h2>
                 <div className="warning__container">
                     <Container fluid>
