@@ -40,7 +40,7 @@ export function MapPage(props) {
 
   return (
 
-    <section style={{ backgroundColor: "#fff" }}>
+    <section className="section__map-page" style={{ backgroundColor: "#fff" }}>
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
         <MapChart

@@ -1,3 +1,21 @@
+.section__map-page{
+    height: 100vh;
+    overflow: hidden;
+}
 path.rsm-geography {
     outline: none;
+}
+.map-area{
+    overflow: hidden;
+}
+
+@media screen and (max-width:767px){
+    .map-area svg {
+        width: 100%;
+        height: 500px;
+    }
+    .__react_component_tooltip.tbb01df3-a9c3-42b4-84db-abd0f11f2dd5.place-top.type-dark {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
 }
