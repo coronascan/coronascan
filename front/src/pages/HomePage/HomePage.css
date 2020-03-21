@@ -1,7 +1,6 @@
-
 .homepage{
     position: relative;
-    background: #f2f7fb;
+    background: #FBFBFC;
     text-align: center;
     height: 100vh;
     max-width: 100%;
@@ -9,8 +8,8 @@
 }
 .homepage__contents{
     max-width: 900px;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 21px #e7eeef;
+    background: #fff;
+    border: 1px solid #D2D2D2;
     border-radius: 15px;
     padding: 50px 20px;
     margin: auto;
@@ -20,6 +19,48 @@
 .homepage__contents h3{
     font-size: 20px;
     margin-bottom: 15px;
+}
+
+/* count */
+.count__parent{
+    max-width: 400px;
+    margin: 30px auto 0;
+    background: #f5f5f5;
+    border: 1px solid #D2D2D2;
+    padding: 20px 10px;
+    border-radius: 15px;
+}
+.count__parent div{
+    display: inline-block;
+}
+
+.count__parent span{
+    font-size: 24px;
+    font-weight: bold;
+}
+.count__parent .prohibitions{
+    margin-right: 20px;
+    color: #d2403e;
+}
+.count__parent .restrictions{
+    color: #fd9d9c;
+}
+.count__container{
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+.count__container img{
+    position: absolute;
+}
+.count__container img:nth-child(1){
+    top: -100px;
+    left: 90px;
+    width: 15%;
+}
+.count__container img:nth-child(2){
+    right: 40px;
+    width: 20%;
 }
 .homepage__btn-group{
     position: relative;
@@ -35,6 +76,12 @@
 }
 .homepage__btn-group button:nth-child(2){
     float: right;
+}
+.count__parent .count__source{
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
 }
 
 /* AutoComplete */
@@ -56,20 +103,6 @@
     padding-right: 10px;
 }
 
-.count__parent{
-    display: flex;
-    justify-content: space-around;
-    max-width: 300px;
-    margin: 30px auto 0;
-    background: #ffcfcf;
-    padding: 20px 10px 10px;
-    border-radius: 15px;
-}
-
-.count__parent h3{
-    font-size: 16px;
-}
-
 @media (max-width: 767px){
     .homepage__contents h3{
         font-size: 14px;
@@ -88,5 +121,8 @@
     }
     .homepage__btn-group button:nth-child(2){
         float: none;
+    }
+    .count__container img{
+        display: none;
     }
 }
