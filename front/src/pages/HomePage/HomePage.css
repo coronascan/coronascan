@@ -1,6 +1,5 @@
 .homepage{
     position: relative;
-    background: #FBFBFC;
     text-align: center;
     height: 100vh;
     max-width: 100%;
@@ -9,7 +8,7 @@
 .homepage__contents{
     max-width: 900px;
     background: #fff;
-    border: 1px solid #D2D2D2;
+    border: 1px solid #E9ECF3;
     border-radius: 15px;
     padding: 50px 20px;
     margin: auto;
@@ -25,8 +24,8 @@
 .count__parent{
     max-width: 400px;
     margin: 30px auto 0;
-    background: #f5f5f5;
-    border: 1px solid #D2D2D2;
+    background: #f5f5f7;
+    border: 1px solid #E9ECF3;
     padding: 20px 10px;
     border-radius: 15px;
 }
@@ -35,7 +34,7 @@
 }
 
 .count__parent span{
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 }
 .count__parent .prohibitions{
