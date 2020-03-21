@@ -39,8 +39,7 @@ export function MapPage(props) {
   const context = useContext(ResultContext);
 
   return (
-
-    <section>
+    <section className="section__map-page">
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
         <MapChart

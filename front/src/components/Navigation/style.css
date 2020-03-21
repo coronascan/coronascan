@@ -35,10 +35,6 @@ a.nav-link{
   padding: 10px 0;
 }
 
-.map-area{
-  margin-top: 50px;
-}
-
 @media screen and (max-width:767px){
   .navigation {
     padding: 10px 20px;
