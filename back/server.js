@@ -22,18 +22,20 @@ app.get('/main', (req, res)=>{
   console.log("/main in")
   
   async function fetch(){
-    const prohibitions = await Restriction.countDocuments({state : 0})
-    const restrictions = await Restriction.countDocuments({state : 1})
+   
+    const prohibitions = await Restriction.count({state : 0})
+    const restrictions = await Restriction.count({state : 1})
+    
     const source = await Source.find()
     res.send({
       restrictions : restrictions,
       prohibitions : prohibitions,
       source : source
     })
+    res.send({"result" : ret})
   }
   
   fetch();
-
 })
 
 app.get('/maps/:selected', (req, res)=>{
