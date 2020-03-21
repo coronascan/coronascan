@@ -36,7 +36,7 @@ class WarningPage extends Component {
 
   render() {
     return (
-      <section>
+      <section className="section__warning">
         <h2>❗️ 코로나 관련 외교부 여행 권고사항</h2>
         <div className="warning__container">
           <Container fluid>
@@ -65,7 +65,7 @@ class WarningPage extends Component {
             </Row>
             <Row>
               <Col sm>
-                <div className="warning__map">
+                <div className="warning__map warning">
                   <Map countries={this.state.countries}></Map>
                 </div>
               </Col>
