@@ -26,8 +26,12 @@ const ResultPage = props => {
       }
       try {
         const response = await fetch(Config.server_url + '/maps/' + target);
+        console.log('response', response);
+
         if (response.status === 200) {
           const list = await response.json()
+          console.log('list', list);
+
           data = {
             _id: list._id,
             continent: '',
@@ -35,8 +39,10 @@ const ResultPage = props => {
             nation_eng: list.nation_eng,
             state: list.state,
             detail: list.detail,
-            tooltip: list.state == '0'? '입국 금지' : '입국 제한',
+            tooltip: list.state == '0' ? '입국 금지' : '입국 제한',
           }
+          console.log('data', data);
+
           setData(data)
         }
       } catch (error) {
@@ -51,7 +57,7 @@ const ResultPage = props => {
         changeBg(bg);
       }
     };
-    
+
     fetchData();
   }, []);
 
