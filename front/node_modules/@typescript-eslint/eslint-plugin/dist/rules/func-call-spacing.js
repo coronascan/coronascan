@@ -72,7 +72,7 @@ exports.default = util.createRule({
             var _a;
             const isOptionalCall = util.isOptionalOptionalChain(node);
             const closingParenToken = sourceCode.getLastToken(node);
-            const lastCalleeTokenWithoutPossibleParens = sourceCode.getLastToken((_a = node.typeParameters, (_a !== null && _a !== void 0 ? _a : node.callee)));
+            const lastCalleeTokenWithoutPossibleParens = sourceCode.getLastToken((_a = node.typeParameters) !== null && _a !== void 0 ? _a : node.callee);
             const openingParenToken = sourceCode.getFirstTokenBetween(lastCalleeTokenWithoutPossibleParens, closingParenToken, eslint_utils_1.isOpeningParenToken);
             if (!openingParenToken || openingParenToken.range[1] >= node.range[1]) {
                 // new expression with no parens...

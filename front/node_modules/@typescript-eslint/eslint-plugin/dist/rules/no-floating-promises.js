@@ -97,7 +97,8 @@ exports.default = util.createRule({
                 // If the outer expression is a call, it must be either a `.then()` or
                 // `.catch()` that handles the promise.
                 return (!isPromiseCatchCallWithHandler(node) &&
-                    !isPromiseThenCallWithRejectionHandler(node));
+                    !isPromiseThenCallWithRejectionHandler(node) &&
+                    !isPromiseFinallyCallWithHandler(node));
             }
             else if (ts.isConditionalExpression(node)) {
                 // We must be getting the promise-like value from one of the branches of the
@@ -166,5 +167,10 @@ function isPromiseThenCallWithRejectionHandler(expression) {
     return (tsutils.isPropertyAccessExpression(expression.expression) &&
         expression.expression.name.text === 'then' &&
         expression.arguments.length >= 2);
+}
+function isPromiseFinallyCallWithHandler(expression) {
+    return (tsutils.isPropertyAccessExpression(expression.expression) &&
+        expression.expression.name.text === 'finally' &&
+        expression.arguments.length >= 1);
 }
 //# sourceMappingURL=no-floating-promises.js.map

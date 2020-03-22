@@ -656,7 +656,7 @@ exports.default = util_1.createRule({
             'ArrayExpression, ArrayPattern'(node) {
                 var _a;
                 const openingBracket = sourceCode.getFirstToken(node);
-                const closingBracket = sourceCode.getTokenAfter((_a = node.elements[node.elements.length - 1], (_a !== null && _a !== void 0 ? _a : openingBracket)), eslint_utils_1.isClosingBracketToken);
+                const closingBracket = sourceCode.getTokenAfter((_a = node.elements[node.elements.length - 1]) !== null && _a !== void 0 ? _a : openingBracket, eslint_utils_1.isClosingBracketToken);
                 addElementListIndent(node.elements, openingBracket, closingBracket, options.ArrayExpression);
             },
             ArrowFunctionExpression(node) {

@@ -26,6 +26,34 @@ function getCustomMessage(bannedType) {
     }
     return '';
 }
+/*
+  Defaults for this rule should be treated as an "all or nothing"
+  merge, so we need special handling here.
+
+  See: https://github.com/typescript-eslint/typescript-eslint/issues/686
+ */
+const defaultTypes = {
+    String: {
+        message: 'Use string instead',
+        fixWith: 'string',
+    },
+    Boolean: {
+        message: 'Use boolean instead',
+        fixWith: 'boolean',
+    },
+    Number: {
+        message: 'Use number instead',
+        fixWith: 'number',
+    },
+    Object: {
+        message: 'Use Record<string, any> instead',
+        fixWith: 'Record<string, any>',
+    },
+    Symbol: {
+        message: 'Use symbol instead',
+        fixWith: 'symbol',
+    },
+};
 exports.default = util.createRule({
     name: 'ban-types',
     meta: {
@@ -60,43 +88,24 @@ exports.default = util.createRule({
                             ],
                         },
                     },
+                    extendDefaults: {
+                        type: 'boolean',
+                    },
                 },
                 additionalProperties: false,
             },
         ],
     },
-    defaultOptions: [
-        {
-            types: {
-                String: {
-                    message: 'Use string instead',
-                    fixWith: 'string',
-                },
-                Boolean: {
-                    message: 'Use boolean instead',
-                    fixWith: 'boolean',
-                },
-                Number: {
-                    message: 'Use number instead',
-                    fixWith: 'number',
-                },
-                Object: {
-                    message: 'Use Record<string, any> instead',
-                    fixWith: 'Record<string, any>',
-                },
-                Symbol: {
-                    message: 'Use symbol instead',
-                    fixWith: 'symbol',
-                },
-            },
-        },
-    ],
-    create(context, [{ types }]) {
-        const bannedTypes = Object.keys(types).reduce((res, type) => (Object.assign(Object.assign({}, res), { [removeSpaces(type)]: types[type] })), {});
-        function checkBannedTypes(typeNode) {
-            const name = stringifyTypeName(typeNode, context.getSourceCode());
-            if (name in bannedTypes) {
-                const bannedType = bannedTypes[name];
+    defaultOptions: [{}],
+    create(context, [options]) {
+        var _a, _b;
+        const extendDefaults = (_a = options.extendDefaults) !== null && _a !== void 0 ? _a : true;
+        const customTypes = (_b = options.types) !== null && _b !== void 0 ? _b : {};
+        const types = Object.assign(Object.assign({}, (extendDefaults ? defaultTypes : {})), customTypes);
+        const bannedTypes = new Map(Object.entries(types).map(([type, data]) => [removeSpaces(type), data]));
+        function checkBannedTypes(typeNode, name = stringifyTypeName(typeNode, context.getSourceCode())) {
+            const bannedType = bannedTypes.get(name);
+            if (bannedType !== undefined) {
                 const customMessage = getCustomMessage(bannedType);
                 const fixWith = bannedType && typeof bannedType === 'object' && bannedType.fixWith;
                 context.report({
@@ -112,8 +121,15 @@ exports.default = util.createRule({
                 });
             }
         }
-        return {
-            TSTypeLiteral(node) {
+        return Object.assign(Object.assign(Object.assign({}, (bannedTypes.has('null') && {
+            TSNullKeyword(node) {
+                checkBannedTypes(node, 'null');
+            },
+        })), (bannedTypes.has('undefined') && {
+            TSUndefinedKeyword(node) {
+                checkBannedTypes(node, 'undefined');
+            },
+        })), { TSTypeLiteral(node) {
                 if (node.members.length) {
                     return;
                 }
@@ -121,8 +137,7 @@ exports.default = util.createRule({
             },
             TSTypeReference({ typeName }) {
                 checkBannedTypes(typeName);
-            },
-        };
+            } });
     },
 });
 //# sourceMappingURL=ban-types.js.map

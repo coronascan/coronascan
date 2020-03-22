@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const adjacent_overload_signatures_1 = __importDefault(require("./adjacent-overload-signatures"));
 const array_type_1 = __importDefault(require("./array-type"));
 const await_thenable_1 = __importDefault(require("./await-thenable"));
-const ban_ts_ignore_1 = __importDefault(require("./ban-ts-ignore"));
 const ban_ts_comment_1 = __importDefault(require("./ban-ts-comment"));
+const ban_ts_ignore_1 = __importDefault(require("./ban-ts-ignore"));
 const ban_types_1 = __importDefault(require("./ban-types"));
 const brace_style_1 = __importDefault(require("./brace-style"));
 const camelcase_1 = __importDefault(require("./camelcase"));
@@ -28,15 +28,16 @@ const member_naming_1 = __importDefault(require("./member-naming"));
 const member_ordering_1 = __importDefault(require("./member-ordering"));
 const naming_convention_1 = __importDefault(require("./naming-convention"));
 const no_array_constructor_1 = __importDefault(require("./no-array-constructor"));
+const no_base_to_string_1 = __importDefault(require("./no-base-to-string"));
 const no_dupe_class_members_1 = __importDefault(require("./no-dupe-class-members"));
 const no_dynamic_delete_1 = __importDefault(require("./no-dynamic-delete"));
 const no_empty_function_1 = __importDefault(require("./no-empty-function"));
 const no_empty_interface_1 = __importDefault(require("./no-empty-interface"));
 const no_explicit_any_1 = __importDefault(require("./no-explicit-any"));
+const no_extraneous_class_1 = __importDefault(require("./no-extraneous-class"));
 const no_extra_non_null_assertion_1 = __importDefault(require("./no-extra-non-null-assertion"));
 const no_extra_parens_1 = __importDefault(require("./no-extra-parens"));
 const no_extra_semi_1 = __importDefault(require("./no-extra-semi"));
-const no_extraneous_class_1 = __importDefault(require("./no-extraneous-class"));
 const no_floating_promises_1 = __importDefault(require("./no-floating-promises"));
 const no_for_in_array_1 = __importDefault(require("./no-for-in-array"));
 const no_implied_eval_1 = __importDefault(require("./no-implied-eval"));
@@ -45,8 +46,8 @@ const no_magic_numbers_1 = __importDefault(require("./no-magic-numbers"));
 const no_misused_new_1 = __importDefault(require("./no-misused-new"));
 const no_misused_promises_1 = __importDefault(require("./no-misused-promises"));
 const no_namespace_1 = __importDefault(require("./no-namespace"));
-const no_non_null_assertion_1 = __importDefault(require("./no-non-null-assertion"));
 const no_non_null_asserted_optional_chain_1 = __importDefault(require("./no-non-null-asserted-optional-chain"));
+const no_non_null_assertion_1 = __importDefault(require("./no-non-null-assertion"));
 const no_parameter_properties_1 = __importDefault(require("./no-parameter-properties"));
 const no_require_imports_1 = __importDefault(require("./no-require-imports"));
 const no_this_alias_1 = __importDefault(require("./no-this-alias"));
@@ -57,6 +58,9 @@ const no_unnecessary_condition_1 = __importDefault(require("./no-unnecessary-con
 const no_unnecessary_qualifier_1 = __importDefault(require("./no-unnecessary-qualifier"));
 const no_unnecessary_type_arguments_1 = __importDefault(require("./no-unnecessary-type-arguments"));
 const no_unnecessary_type_assertion_1 = __importDefault(require("./no-unnecessary-type-assertion"));
+const no_unsafe_call_1 = __importDefault(require("./no-unsafe-call"));
+const no_unsafe_member_access_1 = __importDefault(require("./no-unsafe-member-access"));
+const no_unsafe_return_1 = __importDefault(require("./no-unsafe-return"));
 const no_untyped_public_signature_1 = __importDefault(require("./no-untyped-public-signature"));
 const no_unused_expressions_1 = __importDefault(require("./no-unused-expressions"));
 const no_unused_vars_1 = __importDefault(require("./no-unused-vars"));
@@ -72,6 +76,7 @@ const prefer_namespace_keyword_1 = __importDefault(require("./prefer-namespace-k
 const prefer_nullish_coalescing_1 = __importDefault(require("./prefer-nullish-coalescing"));
 const prefer_optional_chain_1 = __importDefault(require("./prefer-optional-chain"));
 const prefer_readonly_1 = __importDefault(require("./prefer-readonly"));
+const prefer_readonly_parameter_types_1 = __importDefault(require("./prefer-readonly-parameter-types"));
 const prefer_regexp_exec_1 = __importDefault(require("./prefer-regexp-exec"));
 const prefer_string_starts_ends_with_1 = __importDefault(require("./prefer-string-starts-ends-with"));
 const promise_function_async_1 = __importDefault(require("./promise-function-async"));
@@ -94,9 +99,10 @@ exports.default = {
     'adjacent-overload-signatures': adjacent_overload_signatures_1.default,
     'array-type': array_type_1.default,
     'await-thenable': await_thenable_1.default,
-    'ban-ts-ignore': ban_ts_ignore_1.default,
     'ban-ts-comment': ban_ts_comment_1.default,
+    'ban-ts-ignore': ban_ts_ignore_1.default,
     'ban-types': ban_types_1.default,
+    'no-base-to-string': no_base_to_string_1.default,
     'brace-style': brace_style_1.default,
     camelcase: camelcase_1.default,
     'class-name-casing': class_name_casing_1.default,
@@ -127,28 +133,31 @@ exports.default = {
     'no-extraneous-class': no_extraneous_class_1.default,
     'no-floating-promises': no_floating_promises_1.default,
     'no-for-in-array': no_for_in_array_1.default,
-    'no-inferrable-types': no_inferrable_types_1.default,
     'no-implied-eval': no_implied_eval_1.default,
+    'no-inferrable-types': no_inferrable_types_1.default,
     'no-magic-numbers': no_magic_numbers_1.default,
     'no-misused-new': no_misused_new_1.default,
     'no-misused-promises': no_misused_promises_1.default,
     'no-namespace': no_namespace_1.default,
-    'no-non-null-assertion': no_non_null_assertion_1.default,
     'no-non-null-asserted-optional-chain': no_non_null_asserted_optional_chain_1.default,
+    'no-non-null-assertion': no_non_null_assertion_1.default,
     'no-parameter-properties': no_parameter_properties_1.default,
     'no-require-imports': no_require_imports_1.default,
     'no-this-alias': no_this_alias_1.default,
-    'no-type-alias': no_type_alias_1.default,
     'no-throw-literal': no_throw_literal_1.default,
+    'no-type-alias': no_type_alias_1.default,
     'no-unnecessary-boolean-literal-compare': no_unnecessary_boolean_literal_compare_1.default,
     'no-unnecessary-condition': no_unnecessary_condition_1.default,
     'no-unnecessary-qualifier': no_unnecessary_qualifier_1.default,
     'no-unnecessary-type-arguments': no_unnecessary_type_arguments_1.default,
     'no-unnecessary-type-assertion': no_unnecessary_type_assertion_1.default,
+    'no-unsafe-call': no_unsafe_call_1.default,
+    'no-unsafe-member-access': no_unsafe_member_access_1.default,
+    'no-unsafe-return': no_unsafe_return_1.default,
     'no-untyped-public-signature': no_untyped_public_signature_1.default,
-    'no-unused-vars': no_unused_vars_1.default,
-    'no-unused-vars-experimental': no_unused_vars_experimental_1.default,
     'no-unused-expressions': no_unused_expressions_1.default,
+    'no-unused-vars-experimental': no_unused_vars_experimental_1.default,
+    'no-unused-vars': no_unused_vars_1.default,
     'no-use-before-define': no_use_before_define_1.default,
     'no-useless-constructor': no_useless_constructor_1.default,
     'no-var-requires': no_var_requires_1.default,
@@ -159,6 +168,7 @@ exports.default = {
     'prefer-namespace-keyword': prefer_namespace_keyword_1.default,
     'prefer-nullish-coalescing': prefer_nullish_coalescing_1.default,
     'prefer-optional-chain': prefer_optional_chain_1.default,
+    'prefer-readonly-parameter-types': prefer_readonly_parameter_types_1.default,
     'prefer-readonly': prefer_readonly_1.default,
     'prefer-regexp-exec': prefer_regexp_exec_1.default,
     'prefer-string-starts-ends-with': prefer_string_starts_ends_with_1.default,

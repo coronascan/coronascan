@@ -58,12 +58,74 @@ function isTypeAssertion(node) {
         node.type === experimental_utils_1.AST_NODE_TYPES.TSTypeAssertion);
 }
 exports.isTypeAssertion = isTypeAssertion;
+function isVariableDeclarator(node) {
+    return (node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_NODE_TYPES.VariableDeclarator;
+}
+exports.isVariableDeclarator = isVariableDeclarator;
+function isFunction(node) {
+    if (!node) {
+        return false;
+    }
+    return [
+        experimental_utils_1.AST_NODE_TYPES.ArrowFunctionExpression,
+        experimental_utils_1.AST_NODE_TYPES.FunctionDeclaration,
+        experimental_utils_1.AST_NODE_TYPES.FunctionExpression,
+    ].includes(node.type);
+}
+exports.isFunction = isFunction;
+function isFunctionType(node) {
+    if (!node) {
+        return false;
+    }
+    return [
+        experimental_utils_1.AST_NODE_TYPES.TSCallSignatureDeclaration,
+        experimental_utils_1.AST_NODE_TYPES.TSConstructorType,
+        experimental_utils_1.AST_NODE_TYPES.TSConstructSignatureDeclaration,
+        experimental_utils_1.AST_NODE_TYPES.TSEmptyBodyFunctionExpression,
+        experimental_utils_1.AST_NODE_TYPES.TSFunctionType,
+        experimental_utils_1.AST_NODE_TYPES.TSMethodSignature,
+    ].includes(node.type);
+}
+exports.isFunctionType = isFunctionType;
+function isFunctionOrFunctionType(node) {
+    return isFunction(node) || isFunctionType(node);
+}
+exports.isFunctionOrFunctionType = isFunctionOrFunctionType;
+function isTSFunctionType(node) {
+    return (node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_NODE_TYPES.TSFunctionType;
+}
+exports.isTSFunctionType = isTSFunctionType;
+function isTSConstructorType(node) {
+    return (node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_NODE_TYPES.TSConstructorType;
+}
+exports.isTSConstructorType = isTSConstructorType;
+function isClassOrTypeElement(node) {
+    if (!node) {
+        return false;
+    }
+    return [
+        // ClassElement
+        experimental_utils_1.AST_NODE_TYPES.ClassProperty,
+        experimental_utils_1.AST_NODE_TYPES.FunctionExpression,
+        experimental_utils_1.AST_NODE_TYPES.MethodDefinition,
+        experimental_utils_1.AST_NODE_TYPES.TSAbstractClassProperty,
+        experimental_utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition,
+        experimental_utils_1.AST_NODE_TYPES.TSEmptyBodyFunctionExpression,
+        experimental_utils_1.AST_NODE_TYPES.TSIndexSignature,
+        // TypeElement
+        experimental_utils_1.AST_NODE_TYPES.TSCallSignatureDeclaration,
+        experimental_utils_1.AST_NODE_TYPES.TSConstructSignatureDeclaration,
+        // AST_NODE_TYPES.TSIndexSignature,
+        experimental_utils_1.AST_NODE_TYPES.TSMethodSignature,
+        experimental_utils_1.AST_NODE_TYPES.TSPropertySignature,
+    ].includes(node.type);
+}
+exports.isClassOrTypeElement = isClassOrTypeElement;
 /**
  * Checks if a node is a constructor method.
  */
 function isConstructor(node) {
-    var _a;
-    return (((_a = node) === null || _a === void 0 ? void 0 : _a.type) === experimental_utils_1.AST_NODE_TYPES.MethodDefinition &&
+    return ((node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_NODE_TYPES.MethodDefinition &&
         node.kind === 'constructor');
 }
 exports.isConstructor = isConstructor;
@@ -78,8 +140,26 @@ function isSetter(node) {
 }
 exports.isSetter = isSetter;
 function isIdentifier(node) {
-    var _a;
-    return ((_a = node) === null || _a === void 0 ? void 0 : _a.type) === experimental_utils_1.AST_NODE_TYPES.Identifier;
+    return (node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_NODE_TYPES.Identifier;
 }
 exports.isIdentifier = isIdentifier;
+/**
+ * Checks if a node represents an `await …` expression.
+ */
+function isAwaitExpression(node) {
+    return (node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_NODE_TYPES.AwaitExpression;
+}
+exports.isAwaitExpression = isAwaitExpression;
+/**
+ * Checks if a possible token is the `await` keyword.
+ */
+function isAwaitKeyword(node) {
+    return (node === null || node === void 0 ? void 0 : node.type) === experimental_utils_1.AST_TOKEN_TYPES.Identifier && node.value === 'await';
+}
+exports.isAwaitKeyword = isAwaitKeyword;
+function isMemberOrOptionalMemberExpression(node) {
+    return (node.type === experimental_utils_1.AST_NODE_TYPES.MemberExpression ||
+        node.type === experimental_utils_1.AST_NODE_TYPES.OptionalMemberExpression);
+}
+exports.isMemberOrOptionalMemberExpression = isMemberOrOptionalMemberExpression;
 //# sourceMappingURL=astUtils.js.map

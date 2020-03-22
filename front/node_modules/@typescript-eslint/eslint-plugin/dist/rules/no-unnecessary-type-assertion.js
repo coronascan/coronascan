@@ -73,39 +73,6 @@ exports.default = util.createRule({
             return true;
         }
         /**
-         * Returns the contextual type of a given node.
-         * Contextual type is the type of the target the node is going into.
-         * i.e. the type of a called function's parameter, or the defined type of a variable declaration
-         */
-        function getContextualType(checker, node) {
-            const parent = node.parent;
-            if (!parent) {
-                return;
-            }
-            if (tsutils_1.isCallExpression(parent) || tsutils_1.isNewExpression(parent)) {
-                if (node === parent.expression) {
-                    // is the callee, so has no contextual type
-                    return;
-                }
-            }
-            else if (tsutils_1.isVariableDeclaration(parent) ||
-                tsutils_1.isPropertyDeclaration(parent) ||
-                tsutils_1.isParameterDeclaration(parent)) {
-                return parent.type
-                    ? checker.getTypeFromTypeNode(parent.type)
-                    : undefined;
-            }
-            else if (tsutils_1.isJsxExpression(parent)) {
-                return checker.getContextualType(parent);
-            }
-            else if (![ts.SyntaxKind.TemplateSpan, ts.SyntaxKind.JsxExpression].includes(parent.kind)) {
-                // parent is not something we know we can get the contextual type of
-                return;
-            }
-            // TODO - support return statement checking
-            return checker.getContextualType(node);
-        }
-        /**
          * Returns true if there's a chance the variable has been used before a value has been assigned to it
          */
         function isPossiblyUsedBeforeAssigned(node) {
@@ -160,7 +127,7 @@ exports.default = util.createRule({
                 else {
                     // we know it's a nullable type
                     // so figure out if the variable is used in a place that accepts nullable types
-                    const contextualType = getContextualType(checker, originalNode);
+                    const contextualType = util.getContextualType(checker, originalNode);
                     if (contextualType) {
                         // in strict mode you can't assign null to undefined, so we have to make sure that
                         // the two types share a nullable type

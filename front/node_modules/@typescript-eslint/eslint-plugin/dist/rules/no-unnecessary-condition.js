@@ -283,7 +283,7 @@ exports.default = util_1.createRule({
             });
         }
         function checkOptionalMemberExpression(node) {
-            checkOptionalChain(node, node.object, '.');
+            checkOptionalChain(node, node.object, node.computed ? '' : '.');
         }
         function checkOptionalCallExpression(node) {
             checkOptionalChain(node, node.callee, '');
