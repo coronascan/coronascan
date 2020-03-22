@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 const ResultContext = createContext({
   target: '',
   changeTarget: () => { },
-  color: '#fff',
+  color: '#FBFBFC',
   changeBg: () => { },
 });
 
