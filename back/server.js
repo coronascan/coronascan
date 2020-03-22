@@ -99,7 +99,7 @@ app.post('/mail', (req, res)=>{
       else console.log('Email sent: ' + info.response);
     });
   
-    res.redirect(config.server_url + "/mail");
+    res.redirect("/mail");
 })
 
 
