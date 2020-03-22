@@ -17,7 +17,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     background: rgba(255, 255, 255, 0.5);
-    padding: 20px 30px;
+    padding: 20px 25px;
     border: 1px solid #E9ECF3;
     border-radius: 15px;
     box-shadow: 0 10px 21px #f7f6f6;
@@ -59,14 +59,14 @@
     line-height: 25px;
     text-align: justify;
     margin-top: 20px;
+    margin-bottom: 0;
 }
 .member-box__member{
     display: flex;
     align-items: flex-end;
 }
 .member__name-box{
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin: auto 0 auto 20px;
 }
 .member__name-box h3{
     font-size: 18px;

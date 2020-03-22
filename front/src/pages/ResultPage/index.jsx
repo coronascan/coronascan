@@ -76,7 +76,7 @@ const ResultPage = props => {
               : `입국 가능`}
         </h3>
         <p className="source">출처 : 외교부</p>
-        <p className="body">{data?.detail}</p>
+        <p className="body">{data.detail !== undefined ? data.detail : `'${target}'은(는) 입국 가능한 국가입니다.`}</p>
       </div>
       <Button variant="dark" onClick={handleClick}>
         다른 국가 확인하기
