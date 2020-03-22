@@ -95,11 +95,13 @@ app.post('/mail', (req, res)=>{
     };
   
     transporter.sendMail(mailOptions, function(error, info){
-      if (error) console.log(error);
-      else console.log('Email sent: ' + info.response);
+      if (error) { console.log(error); res.send(404);}
+      else {
+        console.log('Email sent: ' + info.response);
+        res.send(200);
+      }
     });
   
-    res.redirect("");
 })
 
 
