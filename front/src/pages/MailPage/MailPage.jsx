@@ -34,6 +34,7 @@ class MailPage extends Component {
             headers: { 'Content-Type': 'application/json', },
             body: JSON.stringify(data)
         }).then((response) => {
+            console.log(response)
             if (response.redirected) {
                 window.location.href = response.url;
             }
