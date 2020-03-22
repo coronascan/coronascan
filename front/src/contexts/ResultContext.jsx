@@ -2,14 +2,14 @@ import React, { createContext, useState } from 'react';
 
 const ResultContext = createContext({
   target: '',
-  changeTarget: () => {},
+  changeTarget: () => { },
   color: '#fff',
-  changeBg: () => {},
+  changeBg: () => { },
 });
 
 export const ResultProvider = ({ children }) => {
   const [target, setTarget] = useState('');
-  const [bg, setBg] = useState('#fff');
+  const [bg, setBg] = useState('#FBFBFC');
 
   const value = {
     target,

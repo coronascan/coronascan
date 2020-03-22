@@ -50,7 +50,7 @@ class WarningEntryPage extends Component {
                                 </ul>
                                 <ul className="warning__step">
                                     <li className="warning__title"><h3>대상 국가</h3></li>
-                                    <li>03.19 0시부터 국내에 입국하는 모든 내, 외국인 대상 특별입국 절차 적용</li>
+                                    <li>03.19 0시부터 <strong>국내에 입국하는 모든 내, 외국인 대상</strong> 특별입국 절차 적용</li>
                                     <li>03.16 0시부터 유럽발 국내 입국자에 특별입국 절차 적용</li>
                                     <li>03.12 이탈리아, 프랑스, 독일, 스페인, 영국, 네덜란드발 국내 입국자에 특별입국 절차 적용</li>
                                     <li>03.12 이탈리아, 이란발 국내 입국자에 특별입국 절차 적용</li>
