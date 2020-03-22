@@ -32,7 +32,7 @@ let markers = [
   { markerOffset: -15, name: "상투메프린시페", coordinates: [6.673950, 0.288768] }
 ];
 
-const MapChart = ({ setTooltipContent, countries }) => {
+const MapChart = ({ selected, setTooltipContent, countries }) => {
   return (
     <div>
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
