@@ -33,17 +33,18 @@ export function MapPage(props) {
   }
 
   useEffect(() => {
+    changeBg("#FBFBFC");
     fetchUrl();
   }, []);
 
-  const context = useContext(ResultContext);
+  const { target, changeBg } = useContext(ResultContext);
 
   return (
     <section className="section__map-page">
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
       <div className="map-area">
         <MapChart
-          selected={context.target}
+          selected={target}
           countries={countries}
           setTooltipContent={setContent}
         />
