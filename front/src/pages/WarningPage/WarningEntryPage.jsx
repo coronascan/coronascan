@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Map from '../../components/MapPage/Map';
+import SpecialMap from '../../components/MapPage/SpecialMap';
 import './Warning.css';
 
 let data = [
@@ -66,7 +66,7 @@ class WarningEntryPage extends Component {
                             </Col>
                             <Col md={12} lg={6}>
                                 <div className="warning__map special">
-                                    <Map countries={this.state.countries}></Map>
+                                    <SpecialMap countries={this.state.countries}></SpecialMap>
                                 </div>
                             </Col>
                         </Row>
