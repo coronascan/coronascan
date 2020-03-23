@@ -62,7 +62,9 @@ const ResultPage = props => {
   }, []);
 
   const history = useHistory();
-  const handleClick = () => history.replace('/');
+  const handleClick = () => {
+    window.location.replace('/')
+  }
   return (
     <section className="result-area">
       <div className="result-card">
