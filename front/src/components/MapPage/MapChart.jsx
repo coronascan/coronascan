@@ -32,9 +32,10 @@ let markers = [
   { markerOffset: -15, name: "상투메프린시페", coordinates: [6.673950, 0.288768] }
 ];
 
-const MapChart = ({ selected, setTooltipContent, countries }) => {
+const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) => {
   return (
-    <div>
+    <div 
+    onTouchMove = {()=>setTooltipHide(true)}>
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
       {/* <ZoomableGroup zoom={window.innerWidth > 767 ? 1 : 2} center={window.innerWidth > 767 ? [0, -20] : [70, -10]}> */}
       <ZoomableGroup zoom={2}>
@@ -50,7 +51,10 @@ const MapChart = ({ selected, setTooltipContent, countries }) => {
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {
-                      if (cur) setTooltipContent(`${cur.nation_kr} — ${cur.tooltip}`);
+                      if (cur) {
+                        setTooltipHide(false)
+                        setTooltipContent(`${cur.nation_kr} — ${cur.tooltip}`);
+                      }
                     }}
                     onMouseLeave={() => {
                       setTooltipContent("");

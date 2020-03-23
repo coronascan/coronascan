@@ -67,6 +67,7 @@
 }
 .member__name-box{
     margin: auto 0 auto 20px;
+    width: 50%;
 }
 .member__name-box h3{
     font-size: 18px;
