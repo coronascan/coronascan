@@ -8,7 +8,34 @@ path.rsm-geography {
 .map-area{
     overflow: hidden;
 }
-
+.legend {
+    padding: 5% 0 2% 0;
+    width: 90%;
+    display: flex;
+    margin : 5px 5px 5px 5px auto;
+}
+.legend_text {
+    flex : 1;
+    margin-left: 4px;
+}
+.legend_restriction{
+    flex : 1;
+    max-width: 2%;
+    padding-bottom: 2%;
+    background-color: #E7A3A2;
+}
+.legend_prohibition{
+    flex : 1;
+    max-width: 2%;
+    padding-bottom: 2%;
+    background-color: #731B1A;
+}
+.legend_able{
+    flex : 1;
+    max-width: 2%;
+    padding-bottom: 2%;
+    background-color: #EEEEEE;
+}
 @media screen and (max-width:767px){
     .map-area svg {
         width: 100%;
