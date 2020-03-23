@@ -58,7 +58,7 @@ const HomePage = props => {
         <div className="count__parent">
           <span className="prohibitions">입국 금지 : <CountUp end={136} /></span>
           <span className="restrictions">입국 제한 : <CountUp end={40} /></span>
-          <span className="count__source">출처 : {source}</span>
+          <span className="count__source">※ 중국은 각 지역별로 카운트 <br />출처 : {source}</span>
         </div>
       </div>
       <div className="homepage__contents">

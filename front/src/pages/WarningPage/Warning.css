@@ -43,13 +43,6 @@ label{
     font-weight: bold;
 }
 
-/* .warning__map.special path {
-    fill: #E7A3A2;
-} */
-.warning__map.warning path {
-    /* fill : #3D6298; */
-}
-
 @media (max-width: 960px){
     .warning__container{
         margin-top: 20px;

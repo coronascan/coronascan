@@ -76,9 +76,10 @@
 }
 .count__parent .count__source{
     display: block;
-    font-size: 14px;
     font-weight: 400;
     margin-top: 5px;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 /* AutoComplete */
