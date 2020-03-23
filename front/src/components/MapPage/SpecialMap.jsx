@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
     ComposableMap,
     Geographies,
@@ -7,14 +7,10 @@ import {
     Marker,
 } from "react-simple-maps";
 
-let markers = [
-    { markerOffset: -15, name: "후베이", coordinates: [111.009985, 31.786975] }
-]
-
 const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const Map = ({ setTooltipContent, countries }) => {
+const SpecialMap = ({ setTooltipContent, countries }) => {
     return (
         <div>
             <ComposableMap data-tip="" projectionConfig={{ scale: 170 }}>
@@ -22,22 +18,22 @@ const Map = ({ setTooltipContent, countries }) => {
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map(geo => {
-                                const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
+                                const cur = '';
                                 return (
                                     <Geography
-                                        fill={cur ? (cur.state === 1 ? "#3D6298" : cur.state === 2 ? "#e0b64e" : cur.state === 3 ? "#af3a3a" : "#2b2b2b") : "#3D6298"}
+                                        fill={geo.properties.CONTINENT === 'Europe' ? "#731B1A" : "#E7A3A2"}
                                         key={geo.rsmKey}
                                         geography={geo}
-                                        onMouseEnter={() => {
-                                            if (cur) {
-                                                let tooltip;
-                                                cur.state === 1 ? tooltip = "여행 유의" : cur.state === 2 ? tooltip = "여행 자제" : cur.state === 3 ? tooltip = "철수 권고" : tooltip = "여행 금지"
-                                                setTooltipContent(`${cur.nation_kr} — ${tooltip}`);
-                                            }
-                                        }}
-                                        onMouseLeave={() => {
-                                            setTooltipContent("");
-                                        }}
+                                    // onMouseEnter={() => {
+                                    //     if (cur) {
+                                    //         let tooltip;
+                                    //         cur.state === 1 ? tooltip = "여행 유의" : cur.state === 2 ? tooltip = "여행 자제" : cur.state === 3 ? tooltip = "철수 권고" : tooltip = "여행 금지"
+                                    //         setTooltipContent(`${cur.nation_kr} — ${tooltip}`);
+                                    //     }
+                                    // }}
+                                    // onMouseLeave={() => {
+                                    //     setTooltipContent("");
+                                    // }}
                                     />
                                 )
                             })
@@ -45,7 +41,7 @@ const Map = ({ setTooltipContent, countries }) => {
                     </Geographies>
 
                     {/* marker */}
-                    {markers.map(({ name, coordinates }) => (
+                    {/* {markers.map(({ name, coordinates }) => (
                         <Marker key={name} coordinates={coordinates}
                             onMouseEnter={() => {
                                 let tooltip;
@@ -60,11 +56,11 @@ const Map = ({ setTooltipContent, countries }) => {
                         >
                             <circle r={5} fill="#c34041" />
                         </Marker>
-                    ))}
+                    ))} */}
                 </ZoomableGroup>
             </ComposableMap>
         </div >
     );
 };
 
-export default Map
+export default SpecialMap;
