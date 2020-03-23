@@ -18,10 +18,10 @@ const SpecialMap = ({ setTooltipContent, countries }) => {
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map(geo => {
-                                const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
+                                const cur = '';
                                 return (
                                     <Geography
-                                        fill={cur ? (cur.state === 1 ? "#3D6298" : cur.state === 2 ? "#e0b64e" : cur.state === 3 ? "#af3a3a" : "#2b2b2b") : "#3D6298"}
+                                        fill={geo.properties.CONTINENT === 'Europe' ? "#731B1A" : "#E7A3A2"}
                                         key={geo.rsmKey}
                                         geography={geo}
                                     // onMouseEnter={() => {
