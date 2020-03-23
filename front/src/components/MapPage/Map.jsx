@@ -18,26 +18,27 @@ const Map = ({ setTooltipContent, countries }) => {
     return (
         <div>
             <ComposableMap data-tip="" projectionConfig={{ scale: 170 }}>
-                <ZoomableGroup zoom={1} center={[0, -10]}>
+                <ZoomableGroup zoom={1} center={[15, -10]}>
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map(geo => {
                                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
                                 return (
                                     <Geography
-                                        fill={cur ? (cur.state === 1 ? "#3D6298" : cur.state === 2 ? "#e0b64e" : cur.state === 3 ? "#af3a3a" : "#2b2b2b") : "#3D6298"}
+                                        // fill={cur ? (cur.state === 1 ? "#3D6298" : cur.state === 2 ? "#e0b64e" : cur.state === 3 ? "#af3a3a" : "#2b2b2b") : "#CB6E6D"}
+                                        fill={"#CB6E6D"}
                                         key={geo.rsmKey}
                                         geography={geo}
-                                        onMouseEnter={() => {
-                                            if (cur) {
-                                                let tooltip;
-                                                cur.state === 1 ? tooltip = "여행 유의" : cur.state === 2 ? tooltip = "여행 자제" : cur.state === 3 ? tooltip = "철수 권고" : tooltip = "여행 금지"
-                                                setTooltipContent(`${cur.nation_kr} — ${tooltip}`);
-                                            }
-                                        }}
-                                        onMouseLeave={() => {
-                                            setTooltipContent("");
-                                        }}
+                                    // onMouseEnter={() => {
+                                    //     if (cur) {
+                                    //         let tooltip;
+                                    //         cur.state === 1 ? tooltip = "여행 유의" : cur.state === 2 ? tooltip = "여행 자제" : cur.state === 3 ? tooltip = "철수 권고" : tooltip = "여행 금지"
+                                    //         setTooltipContent(`${cur.nation_kr} — ${tooltip}`);
+                                    //     }
+                                    // }}
+                                    // onMouseLeave={() => {
+                                    //     setTooltipContent("");
+                                    // }}
                                     />
                                 )
                             })
@@ -58,7 +59,7 @@ const Map = ({ setTooltipContent, countries }) => {
                                 setTooltipContent("");
                             }}
                         >
-                            <circle r={5} fill="#c34041" />
+                            <circle r={4} fill="#731B1A" />
                         </Marker>
                     ))}
                 </ZoomableGroup>
