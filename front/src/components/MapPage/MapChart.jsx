@@ -32,7 +32,7 @@ let markers = [
   { markerOffset: -15, name: "상투메프린시페", coordinates: [6.673950, 0.288768] }
 ];
 
-const MapChart = ({ setTooltipContent, countries }) => {
+const MapChart = ({ selected, setTooltipContent, countries }) => {
   return (
     <div>
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
@@ -43,7 +43,9 @@ const MapChart = ({ setTooltipContent, countries }) => {
                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
                 return (
                   <Geography
-                    fill={cur ? (cur.state == 0 ? "#731B1A" : "#E7A3A2") : "#EEEEEE"}
+                    fill={cur ? (cur.nation_kr === selected ? "blue" :
+                      (cur.state === 0 ? "#731B1A" : "#E7A3A2")) :
+                      "#EEEEEE"}
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {

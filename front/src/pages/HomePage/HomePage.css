@@ -1,9 +1,7 @@
 .homepage{
     position: relative;
     text-align: center;
-    height: 100vh;
     max-width: 100%;
-    overflow-y: hidden;
 }
 .homepage__contents{
     max-width: 900px;
@@ -100,6 +98,11 @@
 
 .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]{
     padding-right: 10px;
+}
+.homepage__notice{
+    font-size: 12px;
+    margin: 50px auto;
+    color: #242424;
 }
 
 @media (max-width: 767px){
