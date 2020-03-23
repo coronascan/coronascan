@@ -5,6 +5,7 @@
     "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
   },
   "dependencies": {
+    "@material-ui/icons": "^4.9.1",
     "@vx/pattern": "^0.0.195",
     "async": "^3.2.0",
     "cf": "^0.0.3",
