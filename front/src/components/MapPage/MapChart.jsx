@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import IconButton from '@material-ui/core/IconButton';
+import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import './style.css';
 import {
   ComposableMap,
   Geographies,
@@ -33,11 +37,33 @@ let markers = [
 ];
 
 const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) => {
+  const [zoom, setZoom] = useState(1);
+
+  function handleZoomIn() {
+    if (zoom >= 4) return;
+    setZoom(zoom * 2);
+  }
+
+  function handleZoomOut() {
+    if (zoom <= 1) return;
+    setZoom(zoom / 2);
+  }
+
   return (
     <div 
     onTouchMove = {()=>setTooltipHide(true)}>
+      <div>
+        <IconButton className = "button" size="large" variant="outlined" onClick={handleZoomIn}>
+          <AddCircleIcon className = "button"/>
+        </IconButton>
+       
+        <IconButton className = "button" size="large" variant="outlined" onClick={handleZoomOut}>
+         <RemoveCircleIcon className = "button"/>
+        </IconButton>
+      </div>
+
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
-        <ZoomableGroup zoom={window.innerWidth > 767 ? 1 : 2} center={window.innerWidth > 767 ? [0, -20] : [70, -10]}>
+        <ZoomableGroup zoom={zoom} center={window.innerWidth > 767 ? [0, -20] : [70, -10]}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {

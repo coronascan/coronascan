@@ -1,0 +1,10 @@
+
+@media (max-width: 767px) {
+    .buttons{
+        display: block;
+    }
+    .button{
+        max-width: 50px;
+        max-height: 50px;
+    }
+  }
