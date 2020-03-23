@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import ResultContext from '../../contexts/ResultContext';
 import './style.css';
 import Config from '../../config/config'
@@ -8,6 +8,8 @@ import Config from '../../config/config'
 
 const ResultPage = props => {
   let [data, setData] = useState({});
+  let [isFetching, setFetch] = useState(false);
+
   const { target, changeBg } = useContext(ResultContext);
 
   useEffect(() => {
@@ -55,22 +57,23 @@ const ResultPage = props => {
         const bg =
           state == '0' ? '#A43F3D' : state == '1' ? '#E7A3A2' : `#9FD3D0`;
         changeBg(bg);
+        setFetch(true)
       }
     };
 
     fetchData();
   }, []);
 
-  const history = useHistory();
   const handleClick = () => {
     window.location.replace('/')
   }
   return (
-    <section className="result-area">
+    <ul>
+      {isFetching ?
+      <section className="result-area">
       <div className="result-card">
         <p className="name">{target}</p>
         <h3 className="action">
-          {/* // TODO: 입국 허용일 때 문구 추가 */}
           {data?.state == '0'
             ? '입국 금지 조치'
             : data?.state == '1'
@@ -84,6 +87,12 @@ const ResultPage = props => {
         다른 국가 확인하기
       </Button>
     </section>
+    :
+    <div className="spinner">
+      <Spinner className="spinner_center" animation="grow"/>
+    </div>}
+    </ul>
+    
   );
 };
 
