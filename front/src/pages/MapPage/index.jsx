@@ -4,7 +4,6 @@ import MapChart from '../../components/MapPage/MapChart'
 import Config from '../../config/config'
 import ResultContext from '../../contexts/ResultContext';
 import './MapPage.css';
-import styled from "styled-components";
 
 let items = [];
 let data = [];
@@ -43,6 +42,17 @@ export function MapPage(props) {
   return (
     <section className="section__map-page">
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
+      
+      <div className="legend">
+        <div className="legend_prohibition"/>
+        <div className="legend_text"> 입국 금지</div>
+        <div className="legend_restriction"/>
+        <div className="legend_text">입국 제한</div>
+        <div className="legend_able"/>
+        <div className="legend_text">입국 가능</div>
+
+      </div>
+    
       <div className="map-area">
         <MapChart
           selected={target}
