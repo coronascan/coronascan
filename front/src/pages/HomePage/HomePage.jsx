@@ -23,11 +23,12 @@ const HomePage = props => {
   }
 
   useEffect(() => {
+    changeBg("#FBFBFC");
     getRestrictionsCount();
   }, []);
 
 
-  const { changeTarget } = useContext(ResultContext);
+  const { changeTarget, changeBg } = useContext(ResultContext);
   const getResult = (route, country) => {
     let target = country;
     if (target === '') {

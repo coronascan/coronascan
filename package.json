@@ -3,9 +3,10 @@
     "install": "(cd front && npm install) && (cd back && npm install)",
     "start": "concurrently \"cd front && npm start\" \"cd back && npm start\"",
     "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
-    },
+  },
   "dependencies": {
     "@vx/pattern": "^0.0.195",
+    "async": "^3.2.0",
     "cf": "^0.0.3",
     "concurrently": "^5.1.0",
     "google": "^2.1.0",
@@ -15,6 +16,7 @@
     "react-dom": "^16.13.0",
     "react-search": "^2.1.1",
     "react-simple-maps": "^1.0.0-beta.0",
-    "react-tooltip": "^4.0.5"
+    "react-tooltip": "^4.0.5",
+    "supports-color": "^7.1.0"
   }
 }
