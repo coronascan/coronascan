@@ -4,14 +4,15 @@ import MapChart from '../../components/MapPage/MapChart'
 import Config from '../../config/config'
 import ResultContext from '../../contexts/ResultContext';
 import './MapPage.css';
+import styled from "styled-components";
 
 let items = [];
 let data = [];
-
 export function MapPage(props) {
 
   const [content, setContent] = useState("");
   const [countries, setData] = useState([]);
+  const [hidden, setHide] = useState(false);
 
   async function fetchUrl() {
     const response = await fetch(Config.server_url + '/map');
@@ -38,7 +39,7 @@ export function MapPage(props) {
   }, []);
 
   const { target, changeBg } = useContext(ResultContext);
-
+  
   return (
     <section className="section__map-page">
       <h2>🗺 입국 제한 조치 시행국 지도로 보기</h2>
@@ -47,11 +48,17 @@ export function MapPage(props) {
           selected={target}
           countries={countries}
           setTooltipContent={setContent}
+          setTooltipHide={(ret)=>{
+            setHide(ret)
+            ReactTooltip.hide(hidden)
+          }}
         />
         <ReactTooltip>{content}</ReactTooltip>
       </div>
+
     </section>
   );
 }
+
 
 export default MapPage;
