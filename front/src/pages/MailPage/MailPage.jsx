@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Spinner } from "react-bootstrap";
 import './MailPage.css';
 import Config from '../../config/config'
 
@@ -10,7 +10,8 @@ class MailPage extends Component {
         this.state = {
             email: "",
             subject: "",
-            contents: ""
+            contents: "",
+            isFetching : false
         }
     }
 
@@ -22,6 +23,7 @@ class MailPage extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
+        this.setState({isFetching : true})
 
         const data = {
             "email": this.state.email,
@@ -35,9 +37,13 @@ class MailPage extends Component {
             body: JSON.stringify(data)
         }).then((response) => {
             if (response.status === 200) {
+                alert('메일 전송 완료!\n 피드백 감사합니다.😄')
+                this.setState({isFetching : false})
                 document.location = "/mail";
             }else{
-                console.log("error!")
+                alert('오류 발생 😢\n coronascan2020@gmail.com으로 메일 부탁드립니다.')
+                this.setState({isFetching : false})
+                document.location = "/mail";
             }
         })
 
@@ -47,7 +53,10 @@ class MailPage extends Component {
         return (
             <section className="mail_section">
                 <Container><h2>✉️ Mail Us</h2></Container>
-                <Form onSubmit={this.handleSubmit}>
+                <ul>
+                    {this.state.isFetching ?<div className="mail"><Spinner className="mail_spinner" animation="grow"/></div> :
+                    <Form onSubmit={this.handleSubmit}>
+                
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control name="email" type="email" placeholder="Enter email"
@@ -75,7 +84,9 @@ class MailPage extends Component {
                     <Button variant="dark" type="submit" className="mail_submit_btn">
                         Submit
                     </Button>
-                </Form>
+                    </Form>
+                    }
+                </ul>
             </section>
         )
     }
