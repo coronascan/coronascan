@@ -50,13 +50,13 @@ const HomePage = props => {
 
   return (
     <section className="homepage">
-      <h2>✈️ 입국 가능 국가 조회하기</h2>
+      <h2>✈️ 입국 가능 국가, 지역 조회하기</h2>
       <div className="count__container">
         <img src={personImg} alt="person illust" />
         <img src={signImg} alt="sign illust" />
         <div className="count__parent">
-          <span className="prohibitions">입국 금지 : <CountUp end={prohibitions} /></span>
-          <span className="restrictions">입국 제한 : <CountUp end={restrictions} /></span>
+          <span className="prohibitions">입국 금지 : <CountUp end={136} /></span>
+          <span className="restrictions">입국 제한 : <CountUp end={40} /></span>
           <span className="count__source">출처 : {source}</span>
         </div>
       </div>
