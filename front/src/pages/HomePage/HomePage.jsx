@@ -17,8 +17,8 @@ const HomePage = props => {
     const response = await fetch(Config.server_url + '/main');
     const body = await response.json();
 
-    //setProhibitions(body.prohibitions);
-    //setRestrictions(body.restrictions);
+    setProhibitions(body.prohibitions);
+    setRestrictions(body.restrictions);
     setSource(body.source[0].source);
   }
 
