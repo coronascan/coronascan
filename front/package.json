@@ -37,15 +37,11 @@
     "react-search": "^2.1.1",
     "react-simple-maps": "^1.0.0-beta.0",
     "react-tooltip": "^4.1.1",
-<<<<<<< HEAD
     "schema-utils": "^2.6.5",
     "terser": "^4.6.7",
-    "use-places-autocomplete": "^1.0.4",
-    "w3c-hr-time": "^1.0.2"
-=======
+    "w3c-hr-time": "^1.0.2",
     "supports-color": "^7.1.0",
-    "use-places-autocomplete": "^1.0.2"
->>>>>>> 4432557f4cc4489cd24750e9bafd0c8b9b5db507
+    "use-places-autocomplete": "^1.0.4"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
