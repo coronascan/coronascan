@@ -40,7 +40,6 @@ section {
   background: #FBFBFC;
   margin: auto;
 }
-
 .btn {
   min-width: 120px;
   height: 50px;
@@ -72,7 +71,7 @@ section {
 }
 
 .bg-grey{
-  background: #f4f4f4;
+  background: #eeeeee;
 }
 .bg-red01{
   background: #EDD3D2;
@@ -92,18 +91,20 @@ section {
 
 .bg-alert-red{
   /* .bg-red04 */
-  background: #A43F3D;
+  background: #731B1A;
 }
 .bg-alert-yellow{
-  background: #BDAF7E;
+  background: #e0b64e;
 }
 .bg-alert-blue{
   background: #3D6298;
 }
 .bg-alert-black{
-  background: #3E3E3E;
+  background: #2b2b2b;
 }
-
+.bg-alert-special{
+  background: #CB6E6D;
+}
 
 #root > main.bg-denied {
   /* .bg-red04 */
@@ -122,4 +123,22 @@ section {
 #reactgooglegraph-1 > div > div:first-child {
   width: 100% !important;
   height: 100% !important;
+}
+
+/* legend */
+.legend__container {
+  text-align: center;
+  margin: 20px auto;
+  list-style: none;
+}
+.legend{
+    padding: 0 10px;
+    display: inline-block;
+}
+.legend .legend_box {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: text-top;
 }

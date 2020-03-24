@@ -56,9 +56,9 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
         <IconButton className = "button" size="large" variant="outlined" onClick={handleZoomIn}>
           <AddCircleIcon className = "button"/>
         </IconButton>
-       
-        <IconButton className = "button" size="large" variant="outlined" onClick={handleZoomOut}>
-         <RemoveCircleIcon className = "button"/>
+
+        <IconButton className="button" size="large" variant="outlined" onClick={handleZoomOut}>
+          <RemoveCircleIcon className="button" />
         </IconButton>
       </div> */}
 
