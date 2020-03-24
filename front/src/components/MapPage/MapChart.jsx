@@ -50,15 +50,15 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
   }
 
   return (
-    <div 
-    onTouchMove = {()=>setTooltipHide(true)}>
-      <div>
-        <IconButton className = "button" size="large" variant="outlined" onClick={handleZoomIn}>
-          <AddCircleIcon className = "button"/>
+    <div
+      onTouchMove={() => setTooltipHide(true)}>
+      <div className="zoomBtn__container">
+        <IconButton className="button" size="large" variant="outlined" onClick={handleZoomIn}>
+          <AddCircleIcon className="button" />
         </IconButton>
-       
-        <IconButton className = "button" size="large" variant="outlined" onClick={handleZoomOut}>
-         <RemoveCircleIcon className = "button"/>
+
+        <IconButton className="button" size="large" variant="outlined" onClick={handleZoomOut}>
+          <RemoveCircleIcon className="button" />
         </IconButton>
       </div>
 

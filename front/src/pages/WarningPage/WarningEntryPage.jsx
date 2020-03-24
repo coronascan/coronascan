@@ -7,7 +7,6 @@ let data = [
     ['Country', 'State', { role: "tooltip", type: "string", p: { html: true } }]
 ]
 class WarningEntryPage extends Component {
-
     state = {
         countries: data
     }
@@ -55,17 +54,21 @@ class WarningEntryPage extends Component {
                                     <li>유증상시 1399 연계 및 선별 진료소 안내, 무응답시 유선 확인</li>
                                 </ul>
                                 <ul className="warning__step">
-                                    <li className="warning__title"><h3>대상 국가</h3></li>
+                                    <li className="warning__title"><h3>특별입국절차 대상 국가</h3></li>
                                     <li>03.22 유럽발 입국 내·외국인 대상 코로나 19 진단검사 시행</li>
                                     <li>03.19 국내에 입국하는 모든 내·외국인 대상 특별입국 절차 적용</li>
-                                    <li>03.12 이탈리아, 프랑스, 독일, 스페인, 영국, 네덜란드발 국내 입국자에 특별입국 절차 적용</li>
-                                    <li>03.12 이탈리아, 이란발 국내 입국자에 특별입국 절차 적용</li>
-                                    <li>03.09 일본발 국내 입국자에 특별입국 절차 적용</li>
-                                    <li>02.04 중국발 국내 입국자에 특별입국 절차 적용</li>
                                 </ul>
                             </Col>
                             <Col md={12} lg={6}>
                                 <div className="warning__map special">
+                                    <ul className="legend__container">
+                                        <li className="legend">
+                                            <span className="legend_box bg-red04" />코로나 19 진단검사
+                                        </li>
+                                        <li className="legend">
+                                            <span className="legend_box bg-red02" />특별입국절차
+                                        </li>
+                                    </ul>
                                     <SpecialMap countries={this.state.countries}></SpecialMap>
                                 </div>
                             </Col>

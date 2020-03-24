@@ -21,7 +21,7 @@ const SpecialMap = ({ setTooltipContent, countries }) => {
                                 const cur = '';
                                 return (
                                     <Geography
-                                        fill={geo.properties.CONTINENT === 'Europe' ? "#731B1A" : "#E7A3A2"}
+                                        fill={geo.properties.CONTINENT === 'Europe' ? "#A43F3D" : "#E7A3A2"}
                                         key={geo.rsmKey}
                                         geography={geo}
                                     // onMouseEnter={() => {
