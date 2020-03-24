@@ -54,6 +54,7 @@
 
 @media screen and (max-width:767px){
   .result-card{
-    min-width: 80%;
+    width: 90%;
+    min-width: 300px;
   }
 }

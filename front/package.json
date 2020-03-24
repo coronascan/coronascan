@@ -24,8 +24,13 @@
     "browser-process-hrtime": "^1.0.0",
     "create-react-app": "^3.4.1",
     "material-ui": "^0.20.2",
+<<<<<<< HEAD
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0-beta.17",
+=======
+    "react": "^16.13.0",
+    "react-bootstrap": "^1.0.0",
+>>>>>>> b098ac2bfb1abb91037b55c7bd6cb9119fefcce4
     "react-bootstrap-typeahead": "^4.0.0",
     "react-calendar": "^2.19.2",
     "react-cool-onclickoutside": "^1.3.3",
