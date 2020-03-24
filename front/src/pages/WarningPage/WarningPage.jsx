@@ -52,6 +52,23 @@ const WarningPage = () => {
           <Row>
             <Col sm>
               <div className="warning__map warning">
+                <ul className="legend__container">
+                  <li className="legend">
+                    <span className="legend_box bg-alert-blue" />남색경보
+                    </li>
+                  <li className="legend">
+                    <span className="legend_box bg-alert-yellow" />황색경보
+                  </li>
+                  <li className="legend">
+                    <span className="legend_box bg-alert-special" />특별여행주의보
+                  </li>
+                  <li className="legend">
+                    <span className="legend_box bg-alert-red" />적색경보
+                  </li>
+                  <li className="legend">
+                    <span className="legend_box bg-alert-black" />흑색경보
+                  </li>
+                </ul>
                 <Map
                   countries={countries}
                   setTooltipContent={setContent}

@@ -18,7 +18,7 @@ const Map = ({ setTooltipContent, countries }) => {
     return (
         <div>
             <ComposableMap data-tip="" projectionConfig={{ scale: 170 }}>
-                <ZoomableGroup zoom={1} center={[15, -10]}>
+                <ZoomableGroup zoom={1} center={[0, -20]}>
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map(geo => {

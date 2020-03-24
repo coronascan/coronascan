@@ -5,7 +5,7 @@
     margin-top: 50px;
 }
 
-.warning__container ul{
+.warning__container ul.warning__step{
     z-index: 10;
     background: #fff;
     border: 1px solid #E9ECF3;
@@ -44,6 +44,9 @@ label{
 }
 
 @media (max-width: 960px){
+    .warning__map{
+        margin-top: 30px;
+    }
     .warning__container{
         margin-top: 20px;
     }
