@@ -5,6 +5,7 @@
     "build": "concurrently \"cd front && PORT=3001 npm build\" \"cd back && PORT=3001 npm build\""
   },
   "dependencies": {
+    "@material-ui/icons": "^4.9.1",
     "@vx/pattern": "^0.0.195",
     "async": "^3.2.0",
     "cf": "^0.0.3",
@@ -12,6 +13,7 @@
     "google": "^2.1.0",
     "nodemailer": "^6.4.6",
     "pdftk": "^0.0.0-rc.0",
+    "pify": "^5.0.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
     "react-search": "^2.1.1",
