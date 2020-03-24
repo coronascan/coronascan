@@ -39,16 +39,8 @@ app.get('/main', (req, res)=>{
 })
 
 app.get('/maps/:selected', (req, res)=>{
+  console.log("maps in")
   const selected = req.params.selected
-  Restriction.findOne({nation_kr : selected,
-    $meta: ""
-  }, (err, result) =>{
-    if(err){console.log(err); return false;}
-    console
-    if(result) return res.send(result)
-    res.send({})
-  });
-
   Restriction.findOne({nation_kr : selected}, (err, result) =>{
     if(err){console.log(err); return false;}
     if(result) return res.send(result)

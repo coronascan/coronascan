@@ -14,18 +14,6 @@ const ResultPage = props => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (target === '중국') {
-        setData({
-          _id: '',
-          continent: '중국',
-          nation_kr: '중국',
-          nation_eng: 'China',
-          state: '1',
-          detail: '자세한 내용은 다시 검색해주세요. ex) 중국 후난성',
-          tooltip: '입국 제한',
-        });
-        return;
-      }
       try {
         const response = await fetch(Config.server_url + '/maps/' + target);
         console.log('response', response);
