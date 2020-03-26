@@ -41,7 +41,8 @@ class WarningEntryPage extends Component {
                         <Row>
                             <Col md={12} lg={6}>
                                 <ul className="warning__step">
-                                    <li className="warning__title"><h3>유럽발 입국자 전원 코로나19 진단검사 시행</h3></li>
+                                    <li className="warning__title"><h3>유럽·미국발 입국자 전원 코로나19 진단검사 시행</h3></li>
+                                    <li>유럽발 입국자 전원 검사, 미국발 입국자 중 유증상자·단기체류 외국인 코로나19 진단검사 시행</li>
                                     <li>유증상자 - 검역소 격리시설, 무증상자 - 지정 임시생활시설에서 검사</li>
                                     <li>내국인, 장기체류 외국인 14일 격리 조치(생활지원금, 유급휴가비 정부지원)</li>
                                     <li>단기 체류 외국인 14일간 능동감시(전화로 본인 건강 상태 설명)</li>
@@ -55,6 +56,7 @@ class WarningEntryPage extends Component {
                                 </ul>
                                 <ul className="warning__step">
                                     <li className="warning__title"><h3>특별입국절차 대상 국가</h3></li>
+                                    <li>03.27 미국발 입국자 중 유증상자, 단기체류 외국인 코로나19 진단검사 시행</li>
                                     <li>03.22 유럽발 입국 내·외국인 대상 코로나 19 진단검사 시행</li>
                                     <li>03.19 국내에 입국하는 모든 내·외국인 대상 특별입국 절차 적용</li>
                                 </ul>
