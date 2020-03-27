@@ -37,7 +37,7 @@ let markers = [
 ];
 
 const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) => {
-  const [zoom, setZoom] = useState(1);
+  let [zoom, setZoom] = useState(1);
 
   function handleZoomIn() {
     if (zoom >= 4) return;
@@ -63,7 +63,7 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
       </div>
 
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
-        <ZoomableGroup zoom={zoom} center={window.innerWidth > 767 ? [0, -20] : [70, -10]}>
+        <ZoomableGroup zoom={zoom} center={window.innerWidth > 767 ? [0, -20] : [10, 20]}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {
@@ -71,7 +71,7 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
                 return (
                   <Geography
                     fill={cur ? (cur.nation_kr === selected ? "blue" :
-                      (cur.state === 0 ? "#731B1A" : "#E7A3A2")) :
+                      (cur.state === 0 ? "#A43F3D" : "#E7A3A2")) :
                       "#EEEEEE"}
                     key={geo.rsmKey}
                     geography={geo}
