@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
-import Map from '../../components/MapPage/Map';
-import ResultContext from '../../contexts/ResultContext';
-import Config from '../../config/config'
+import React from 'react';
+// import Map from '../../components/MapPage/Map';
+// import ResultContext from '../../contexts/ResultContext';
+// import Config from '../../config/config'
 import MapChart from '../../components/MapPage/MapChart'
 import ReactTooltip from "react-tooltip";
 

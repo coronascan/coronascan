@@ -28,16 +28,17 @@ let markers = [
   { markerOffset: -15, name: "세인트키츠 네비스", coordinates: [-62.588495, 17.167367] },
   { markerOffset: -15, name: "바베이도스", coordinates: [-59.501907, 13.348333] },
   { markerOffset: -15, name: "몰타", coordinates: [14.427318, 35.898707] },
-  // { markerOffset: -15, name: "사우디", coordinates: [44.872394, 24.014474] },
   { markerOffset: -15, name: "에리트리아", coordinates: [38.850710, 15.346032] },
   { markerOffset: -15, name: "폴리네시아 (프랑스령)", coordinates: [-149.505037, -17.838525] },
   { markerOffset: -15, name: "솔로몬제도", coordinates: [160.367371, -9.719082] },
   { markerOffset: -15, name: "앤티가바부다", coordinates: [-61.782445, 17.623778] },
-  { markerOffset: -15, name: "상투메프린시페", coordinates: [6.673950, 0.288768] }
+  { markerOffset: -15, name: "상투메프린시페", coordinates: [6.673950, 0.288768] },
+  { markerOffset: -15, name: "도미니카공화국", coordinates: [-70.125439, 18.905797] },
+  { markerOffset: -15, name: "투르크메니스탄", coordinates: [59.260050, 38.997273] }
 ];
 
 const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) => {
-  const [zoom, setZoom] = useState(1);
+  let [zoom, setZoom] = useState(1);
 
   function handleZoomIn() {
     if (zoom >= 4) return;
@@ -63,15 +64,15 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
       </div>
 
       <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
-        <ZoomableGroup zoom={zoom} center={window.innerWidth > 767 ? [0, -20] : [70, -10]}>
+        <ZoomableGroup zoom={zoom} center={window.innerWidth > 767 ? [0, -20] : [10, 20]}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map(geo => {
                 const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
                 return (
                   <Geography
-                    fill={cur ? (cur.nation_kr === selected ? "blue" :
-                      (cur.state === 0 ? "#731B1A" : "#E7A3A2")) :
+                    fill={cur ? (cur.nation_kr === selected ? "#ffd245" :
+                      (cur.state === 0 ? "#A43F3D" : "#E7A3A2")) :
                       "#EEEEEE"}
                     key={geo.rsmKey}
                     geography={geo}
@@ -105,7 +106,7 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
                 setTooltipContent("");
               }}
             >
-              <circle r={3} fill="#FF5533" />
+              <circle r={3} fill="#242424" />
             </Marker>
           ))}
         </ZoomableGroup>
