@@ -105,7 +105,7 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
                 setTooltipContent("");
               }}
             >
-              <circle r={3} fill="#FF5533" />
+              <circle r={3} fill="#242424" />
             </Marker>
           ))}
         </ZoomableGroup>
