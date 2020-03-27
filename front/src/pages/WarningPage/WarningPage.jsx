@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Map from '../../components/MapPage/Map';
 import './Warning.css';
