@@ -42,7 +42,6 @@ const HomePage = props => {
     if (target.includes(',')) {
       target = target.split(', ')[1];
     }
-    console.log('target', target);
 
     changeTarget(target);
     props.history.push(`/${route}`);
