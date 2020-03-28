@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
     ComposableMap,
     Geographies,
@@ -22,7 +22,7 @@ const Map = ({ setTooltipContent, countries }) => {
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map(geo => {
-                                const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
+                                // const cur = countries.find(s => s.nation_eng === geo.properties.ISO_A3);
                                 return (
                                     <Geography
                                         // fill={cur ? (cur.state === 1 ? "#3D6298" : cur.state === 2 ? "#e0b64e" : cur.state === 3 ? "#af3a3a" : "#2b2b2b") : "#CB6E6D"}

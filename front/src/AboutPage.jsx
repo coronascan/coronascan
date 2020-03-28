@@ -16,7 +16,7 @@ function renderAboutUs({ name, img, position, info, link }) {
 
 const MemberList = [
   {
-    name: 'Devv',
+    name: 'Dan',
     img: 'devv',
     position: 'Front-end Developer, Design',
     info:

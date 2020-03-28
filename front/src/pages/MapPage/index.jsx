@@ -46,7 +46,7 @@ export function MapPage(props) {
 
       <ul className="legend__container">
         <li className="legend">
-          <span className="legend_box bg-red05" />입국 금지
+          <span className="legend_box bg-red04" />입국 금지
         </li>
         <li className="legend">
           <span className="legend_box bg-red02" />입국 제한
