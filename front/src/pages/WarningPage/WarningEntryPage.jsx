@@ -63,6 +63,7 @@ class WarningEntryPage extends Component {
                                 </ul>
                                 <ul className="warning__step">
                                     <li className="warning__title"><h3>특별입국절차 대상 국가</h3></li>
+                                    <li>04.01 모든 해외 입국자 2주 자가격리 의무화</li>
                                     <li>03.30 체온 37.5℃를 넘는 입국자 한국행 비행기 탑승 금지</li>
                                     <li>03.27 미국발 입국자 중 유증상자, 단기체류 외국인 코로나19 진단검사 시행</li>
                                     <li>03.22 유럽발 입국 내·외국인 대상 코로나 19 진단검사 시행</li>
