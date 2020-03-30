@@ -28,6 +28,9 @@
     border-bottom: 1px solid #E9ECF3;
     color: #A43F3D;
 }
+.warning__style_none{
+    list-style: none;
+}
 
 .mail_submit_btn{
     position: relative;
