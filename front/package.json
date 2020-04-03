@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.9.0",
-    "@material-ui/core": "^4.9.7",
+    "@material-ui/core": "^4.9.8",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.45",
+    "@material-ui/lab": "^4.0.0-alpha.47",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -36,13 +36,13 @@
     "react-script": "^2.0.5",
     "react-scripts": "3.4.0",
     "react-search": "^2.1.1",
-    "react-simple-maps": "^1.0.0-beta.0",
-    "react-tooltip": "^4.1.1",
+    "react-simple-maps": "^1.0.0",
+    "react-tooltip": "^4.1.5",
     "schema-utils": "^2.6.5",
-    "terser": "^4.6.7",
-    "w3c-hr-time": "^1.0.2",
     "supports-color": "^7.1.0",
-    "use-places-autocomplete": "^1.0.4"
+    "terser": "^4.6.10",
+    "use-places-autocomplete": "^1.0.4",
+    "w3c-hr-time": "^1.0.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
