@@ -18,6 +18,10 @@ const Restriction = require('./collections/restrictions.model');
 const Warning = require('./collections/warnings.model');
 const Source = require('./collections/sources.model');
 
+app.get('/', (req, res)=>{
+  res.send("hello!")
+})
+
 app.get('/main', (req, res)=>{
   console.log("/main in")
   
