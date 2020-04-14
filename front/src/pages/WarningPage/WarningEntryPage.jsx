@@ -103,11 +103,13 @@ class WarningEntryPage extends Component {
                   <li>
                     내·외국인 건강 상태 질문서, 특별 검역 신고서 제출 의무
                   </li>
-                  <li>1대 1 발열 검사, 국내 체류 주소, 연락처 제출</li>
-                  <li>
+                  <li className="warning__style_none">
+                    1대 1 발열 검사, 국내 체류 주소, 연락처 제출
+                  </li>
+                  <li className="warning__style_none">
                     입국 후 자가 진단 앱* 설치 후 매일 건강 상태 제출 의무
                   </li>
-                  <li>
+                  <li className="warning__style_none">
                     유증상시 1399 연계 및 선별 진료소 안내, 무응답시 유선 확인
                   </li>
                   <li className="warning__style_none">*미설치시 입국 불허</li>
