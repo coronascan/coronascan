@@ -76,6 +76,8 @@ class WarningEntryPage extends Component {
                     확인
                   </li>
                 </ul>
+              </Col>
+              <Col>
                 <ul className="warning__step">
                   <li className="warning__title">
                     <h3>코로나19 진단검사 시행 대상 국가</h3>
@@ -88,11 +90,15 @@ class WarningEntryPage extends Component {
                     03.22 유럽발 입국 내·외국인 대상 코로나 19 진단검사 시행
                   </li>
                 </ul>
-              </Col>
-              <Col>
                 <ul className="warning__step">
                   <li className="warning__title">
-                    <h3>내·외국인 특별입국 절차</h3>
+                    <h3>특별입국절차</h3>
+                  </li>
+                  <li>
+                    03.30 체온 37.5℃를 넘는 입국자 한국행 비행기 탑승 금지
+                  </li>
+                  <li>
+                    03.19 국내에 입국하는 모든 내·외국인 대상 특별입국 절차 적용
                   </li>
                   <li>
                     내·외국인 건강 상태 질문서, 특별 검역 신고서 제출 의무
@@ -105,17 +111,6 @@ class WarningEntryPage extends Component {
                     유증상시 1399 연계 및 선별 진료소 안내, 무응답시 유선 확인
                   </li>
                   <li className="warning__style_none">*미설치시 입국 불허</li>
-                </ul>
-                <ul className="warning__step">
-                  <li className="warning__title">
-                    <h3>특별입국절차 대상 국가</h3>
-                  </li>
-                  <li>
-                    03.30 체온 37.5℃를 넘는 입국자 한국행 비행기 탑승 금지
-                  </li>
-                  <li>
-                    03.19 국내에 입국하는 모든 내·외국인 대상 특별입국 절차 적용
-                  </li>
                 </ul>
               </Col>
             </Row>
