@@ -5,9 +5,8 @@
 
 [👉🏻코로나스캔 바로가기](http://www.coronascan.co.kr/)
 
-<img width="1092" alt="image" src="https://user-images.githubusercontent.com/50170375/79332385-b5f78000-7f57-11ea-81d3-10d522df6905.png">
-<img width="1092" alt="image" src="https://user-images.githubusercontent.com/50170375/79332420-c4459c00-7f57-11ea-9716-894f126fcdb9.png">
-<img width="1092" alt="image" src="https://user-images.githubusercontent.com/50170375/79332442-ce679a80-7f57-11ea-9295-6f1fb8ba0e71.png">
+![코로나스캔](https://user-images.githubusercontent.com/50170375/79334723-ca3d7c00-7f5b-11ea-8e30-a465bb24bd8f.png)
+
 
 ## Collaborators
 
