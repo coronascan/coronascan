@@ -16,6 +16,6 @@
 
 ## Tech Stacks
 
-| Reack | Node.js |
+| React | Node.js |
 | :---: | :-----: |
 
