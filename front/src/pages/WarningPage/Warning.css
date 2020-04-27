@@ -1,62 +1,61 @@
-.section__warning_entry .row{
-    align-items: center;
-}
-.warning__container{
-    margin-top: 50px;
+.warning__container {
+  margin-top: 50px;
 }
 
-.warning__container ul.warning__step{
-    z-index: 10;
-    background: #fff;
-    border: 1px solid #E9ECF3;
-    padding: 30px 30px 30px 50px;
-    border-radius: 15px;
-    margin: 10px 0 20px;
+.warning__container ul.warning__step {
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #e9ecf3;
+  padding: 30px 30px 30px 50px;
+  border-radius: 15px;
+  margin: 10px 0 20px;
 }
-.warning__step{
-    margin-left: 20px;
+.warning__step {
+  margin-left: 20px;
 }
-.warning__title{
-    list-style: none;
+.warning__title {
+  list-style: none;
 }
-.warning__title h3{
-    font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    margin-left: -20px;
-    border-bottom: 1px solid #E9ECF3;
-    color: #A43F3D;
+.warning__title h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-left: -20px;
+  border-bottom: 1px solid #e9ecf3;
+  color: #a43f3d;
 }
-.warning__style_none{
-    list-style: none;
+.warning__style_none {
+  list-style: none;
 }
 
-.mail_submit_btn{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+.mail_submit_btn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
-label{
-    font-size: 14px;
+label {
+  font-size: 14px;
 }
 
 .tooltip_kr {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-@media (max-width: 960px){
-    .warning__map{
-        margin-top: 30px;
-    }
-    .warning__container{
-        margin-top: 20px;
-    }
-    .warning__container ul{
-        margin: 10px 0;
-    }
-    .col-sm, .col-lg-6, .col-md-12{
-        padding: 0 5px;
-    }
+@media (max-width: 960px) {
+  .warning__map {
+    margin-top: 30px;
+  }
+  .warning__container {
+    margin-top: 20px;
+  }
+  .warning__container ul {
+    margin: 10px 0;
+  }
+  .col-sm,
+  .col-lg-6,
+  .col-md-12 {
+    padding: 0 5px;
+  }
 }
