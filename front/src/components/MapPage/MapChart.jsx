@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import IconButton from '@material-ui/core/IconButton';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import './style.css';
+import ResultContext from '../../contexts/ResultContext';
+import {Redirect,useHistory ,Link} from 'react-router-dom'
 import {
   ComposableMap,
   Geographies,
@@ -39,6 +41,8 @@ let markers = [
 
 const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) => {
   let [zoom, setZoom] = useState(1);
+  const { changeTarget } = useContext(ResultContext);
+  const history = useHistory();
 
   function handleZoomIn() {
     if (zoom >= 4) return;
@@ -50,6 +54,10 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
     setZoom(zoom / 2);
   }
 
+  const onNationClicked = (link)=>{
+    changeTarget(link)
+    history.push(`/result`)
+  }
   return (
     <div
       onTouchMove={() => setTooltipHide(true)}>
@@ -76,6 +84,7 @@ const MapChart = ({ setTooltipHide, selected, setTooltipContent, countries }) =>
                       "#EEEEEE"}
                     key={geo.rsmKey}
                     geography={geo}
+                    onClick={()=>{if(cur) onNationClicked(cur.nation_kr)}}
                     onMouseEnter={() => {
                       if (cur) {
                         setTooltipHide(false)
