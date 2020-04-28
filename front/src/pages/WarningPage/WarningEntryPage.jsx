@@ -43,7 +43,7 @@ class WarningEntryPage extends Component {
     return (
       <Fragment>
         <section className="section__warning_entry">
-          <h2>❗️ 특별입국 절차 대상 국가</h2>
+          <h2><span>❗️</span> 특별입국 절차 대상 국가</h2>
           <div className="warning__container">
             <Container fluid>
               <Row>
@@ -191,7 +191,7 @@ class WarningEntryPage extends Component {
               </li>
             </ul>
             <a href="http://www.0404.go.kr/dev/newest_view.mofa?id=ATC0000000007761&pagenum=1&mst_id=MST0000000000041">
-              👉🏻외교부 공지사항 바로가기
+              <span>👉🏻</span>외교부 공지사항 바로가기
             </a>
           </Modal.Body>
           <Modal.Footer>
