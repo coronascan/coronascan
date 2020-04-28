@@ -4,7 +4,7 @@ import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import './style.css';
 import ResultContext from '../../contexts/ResultContext';
-import {Redirect,useHistory ,Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {
   ComposableMap,
   Geographies,

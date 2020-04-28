@@ -9,7 +9,7 @@ import Config from '../../config/config'
 const ResultPage = props => {
   let [data, setData] = useState({});
   let [isFetching, setFetch] = useState(false);
-
+  const history = useHistory();
   const { target, changeBg } = useContext(ResultContext);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const ResultPage = props => {
   }, []);
 
   const handleClick = () => {
-    window.location.replace('/')
+    history.goBack();
   }
   return (
     <ul>
