@@ -2,7 +2,6 @@ import {
   MapPage,
   HomePage,
   ResultPage,
-  ResultMapPage,
   WorldPage,
   WarningPage,
   AboutPage,
@@ -29,12 +28,6 @@ const ROUTES = [
     path: '/result',
     name: '입국 가능 국가 조회 결과(나라 입력 후)',
     component: ResultPage,
-    exact: true,
-  },
-  {
-    path: '/maps',
-    name: '입국 가능 국가 조회 결과(국가 선택 후)',
-    component: ResultMapPage,
     exact: true,
   },
   {

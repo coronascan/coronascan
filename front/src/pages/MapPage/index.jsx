@@ -17,12 +17,12 @@ export function MapPage(props) {
     const response = await fetch(Config.server_url + '/map');
     const body = await response.json();
     body.forEach(elem => {
-      let country = new Array();
+      let country = [];
       country.push(elem.nation_eng);
       country.push(elem.state);
       country.push(elem.tooltip);
 
-      if (elem.listview == true) {
+      if (elem.listview === true) {
         items.push(country);
         return true;
       }

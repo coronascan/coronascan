@@ -13,7 +13,7 @@ const WarningPage = () => {
     const response = await fetch(Config.server_url + '/warning');
     const body = await response.json();
     body.forEach(elem => {
-      let country = new Array();
+      let country = [];
       country.push(elem.nation_eng);
       country.push(elem.state);
       country.push(elem.tooltip);
@@ -27,7 +27,7 @@ const WarningPage = () => {
 
   return (
     <section className="section__warning">
-      <h2>❗️ 코로나 관련 외교부 여행 권고사항</h2>
+      <h2><span>❗️</span> 코로나 관련 외교부 여행 권고사항</h2>
       <div className="warning__container">
         <Container fluid>
           <Row>
