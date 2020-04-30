@@ -27,7 +27,7 @@ const ResultPage = props => {
             nation_eng: list.nation_eng,
             state: list.state,
             detail: list.detail,
-            tooltip: list.state === '0' ? '입국 금지' : '입국 제한',
+            tooltip: list.state === 0 ? '입국 금지' : '입국 제한',
           }
           setData(data)
         }
@@ -38,8 +38,9 @@ const ResultPage = props => {
       } finally {
         // TODO: 입국 허용일 때 배경색 추가
         const { state } = data;
+        console.log(state);
         const bg =
-          state === '0' ? '#A43F3D' : state === '1' ? '#E7A3A2' : `#9FD3D0`;
+          state === 0 ? '#A43F3D' : state === 1 ? '#E7A3A2' : `#9FD3D0`;
         changeBg(bg);
         setFetch(true)
       }
@@ -58,9 +59,9 @@ const ResultPage = props => {
       <div className="result-card">
         <p className="name">{target}</p>
         <h3 className="action">
-          {data?.state === '0'
+          {data?.state === 0
             ? '입국 금지 조치'
-            : data?.state === '1'
+            : data?.state === 1
               ? '입국 제한 조치'
               : `입국 가능`}
         </h3>
