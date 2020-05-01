@@ -25,6 +25,9 @@
   border-bottom: 1px solid #e9ecf3;
   color: #a43f3d;
 }
+.warning__step {
+  list-style: disc;
+}
 .warning__style_none {
   list-style: none;
 }
