@@ -60,9 +60,9 @@ const ResultPage = props => {
         <p className="name">{target}</p>
         <h3 className="action">
           {data?.state === 0
-            ? '입국 금지 조치'
+            ? '입국 금지'
             : data?.state === 1
-              ? '입국 제한 조치'
+              ? '입국 제한'
               : `입국 가능`}
         </h3>
         <p className="source">출처 : 외교부</p>
