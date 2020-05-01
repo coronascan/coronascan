@@ -1,95 +1,96 @@
-.about-us__text{
-    display: block;
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 40px;
+.about-us__text {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 
-.member__container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
-    padding: 0 40px;
-    margin-bottom: 20px;
+.member__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 20px;
 }
-.member-box{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 20px 25px;
-    border: 1px solid #E9ECF3;
-    border-radius: 15px;
-    box-shadow: 0 10px 21px #f7f6f6;
-}
-
-.member-box div[class*="member__img"]{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-}
-.member-box div[class*="aimb"]{
-    background: url(../../images/aimb.jpg) no-repeat center;
-    background-size: cover;
-}
-.member-box div[class*="devv"]{
-    background: url(../../images/devv.jpg) no-repeat center;
-    background-size: cover;
-}
-.member-box div[class*="joabyjoa"]{
-    background: url(../../images/joabyjoa.jpg) no-repeat center;
-    background-size: cover;
-}
-.member-box div[class*="nahia"]{
-    background: url(../../images/nahia.jpg) no-repeat center;
-    background-size: cover;
-}
-.member-box div[class*="sonia"]{
-    background: url(../../images/sonia.jpg) no-repeat center;
-    background-size: cover;
+.member-box {
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px 25px;
+  margin: 20px 0;
+  border: 1px solid #e9ecf3;
+  border-radius: 15px;
+  box-shadow: 0 10px 21px #f7f6f6;
 }
 
-.member-box div[class*="greyay"]{
-    background: url(../../images/greyay.jpg) no-repeat center;
-    background-size: cover;
+.member-box div[class*='member__img'] {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+.member-box div[class*='aimb'] {
+  background: url(../../images/aimb.jpg) no-repeat center;
+  background-size: cover;
+}
+.member-box div[class*='devv'] {
+  background: url(../../images/devv.jpg) no-repeat center;
+  background-size: cover;
+}
+.member-box div[class*='joabyjoa'] {
+  background: url(../../images/joabyjoa.jpg) no-repeat center;
+  background-size: cover;
+}
+.member-box div[class*='nahia'] {
+  background: url(../../images/nahia.jpg) no-repeat center;
+  background-size: cover;
+}
+.member-box div[class*='sonia'] {
+  background: url(../../images/sonia.jpg) no-repeat center;
+  background-size: cover;
 }
 
-.member-box p{
-    font-size: 16px;
-    line-height: 25px;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 0;
+.member-box div[class*='greyay'] {
+  background: url(../../images/greyay.jpg) no-repeat center;
+  background-size: cover;
 }
-.member-box__member{
-    display: flex;
-    align-items: flex-end;
+
+.member-box p {
+  font-size: 16px;
+  line-height: 25px;
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
-.member__name-box{
-    margin: auto 0 auto 20px;
-    width: 50%;
+.member-box__member {
+  display: flex;
+  align-items: flex-end;
 }
-.member__name-box h3{
-    font-size: 18px;
+.member__name-box {
+  margin: auto 0 auto 20px;
+  width: 50%;
+}
+.member__name-box h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+}
+.member__name-box span {
+  font-size: 14px;
+  color: #777777;
+}
+
+@media screen and (max-width: 1120px) {
+  .member-box {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .member__container {
     margin: 0;
-    font-weight: bold;
-}
-.member__name-box span{
-    font-size: 14px;
-    color: #777777;
-}
-
-@media screen and (max-width:1120px){
-    .member__container{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (max-width:767px){
-    .member__container{
-        grid-template-columns: repeat(1, 1fr);
-        padding: 0;
-    }
-    .member__container{
-        grid-gap: 20px;
-    }
+  }
+  .member-box {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
