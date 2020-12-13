@@ -10,12 +10,12 @@
 
 ## Collaborators
 
-| [aimb-p](https://github.com/aimb-p) | [forbid403](https://github.com/forbid403) | [greyay](https://github.com/greyay) | [joabyjoa](https://github.com/joabyjoa) | [Nahia428](https://github.com/Nahia428) | [ofkande](https://github.com/ofkande) |
+| [aimb](https://github.com/da-head0) | [forbid403](https://github.com/forbid403) | [greyay](https://github.com/greyay) | [joabyjoa](https://github.com/joabyjoa) | [Nahia428](https://github.com/Nahia428) | [ofkande](https://github.com/ofkande) |
 | :---------------------------------: | :---------------------------------------: | :---------------------------------: | --------------------------------------- | --------------------------------------- | ------------------------------------- |
 
 
 ## Tech Stacks
 
-| React | Node.js |
-| :---: | :-----: |
+| React | Node.js | python |
+| :---: | :-----: | :----: |
 
