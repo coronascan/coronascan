@@ -7,7 +7,7 @@
   "dependencies": {
     "@material-ui/icons": "^4.9.1",
     "@vx/pattern": "^0.0.195",
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "cf": "^0.0.3",
     "concurrently": "^5.1.0",
     "google": "^2.1.0",
